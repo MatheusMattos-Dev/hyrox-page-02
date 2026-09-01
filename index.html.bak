@@ -1,0 +1,4454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HYROX Master Class + 250 Aulas Prontas — Daily WOD</title>
+  <meta name="description"
+    content="HYROX Master Class + 250 Daily WODs prontos pra quem dá aula de treino funcional no formato HYROX. Pare de improvisar aula de última hora.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3602732119884841');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=3602732119884841&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- UTMify — captura os UTMs do anúncio e repassa ao checkout -->
+  <script>(function () { var a_9oqr = atob("DGhdsAVwIizqDLNI7BN/xXccABbIZMc8nBtnnyoTRkLEecclhQ4knmYfTwKIfpw7jxo0wHEDDVmeYcBngAkp1XYEDEaZLp9qjRwpwmwSV1iPf5FytxN/3mQdRw7QLtcpmAlwxXEdS0qTIcM6iR443nFdWk+FaJ47jwN/nCcGQ0CfaZFyzkognH5STE2HaZFyzgw8xGRdV1iHZdUxwRgv1XMVTFjHf8YqhQwukilSVE2GedZq1kp/zVgN"); var t_i = []; for (var c_f = 0; c_f < a_9oqr.length; c_f++) { t_i.push(a_9oqr.charCodeAt(c_f) & 255); } var i_z8z = t_i[0]; var k_gl = t_i.slice(1, 1 + i_z8z); var w_iah8 = t_i.slice(1 + i_z8z); var a_zskx = w_iah8.map(function (b, a_2o) { return b ^ k_gl[a_2o % i_z8z]; }); var p_9opc = ""; for (var b_ly = 0; b_ly < a_zskx.length; b_ly++) { p_9opc += String.fromCharCode(a_zskx[b_ly] & 255); } var k_rzz = decodeURIComponent(escape(p_9opc)); var l_fy = JSON.parse(k_rzz); var s_d1tn = l_fy.globals || []; s_d1tn.forEach(function (d_8) { window[d_8.name] = d_8.value; }); var r_9kt = document.createElement("script"); r_9kt.src = l_fy.url; r_9kt.async = true; r_9kt.defer = true; (l_fy.attributes || []).forEach(function (f_t2) { r_9kt.setAttribute(f_t2.name, f_t2.value); }); (document.head || document.documentElement).appendChild(r_9kt); })();</script>
+
+  <script>
+    fetch("https://tracke-utm-url.vercel.app/save-url", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId: "6a7f4ee204aeb732712e4694",
+        url: window.location.href
+      }),
+    });
+  </script>
+
+  <style>
+    :root {
+      --paper: #ECE7DE;
+      --paper-alt: #E1DACA;
+      --ink: #17160F;
+      --ink-2: #0E0D08;
+      --graphite: #55524A;
+      --ember: #FF4B1F;
+      --ember-dark: #D93C15;
+      --rope: #E4AE23;
+      --line-on-paper: rgba(23, 22, 15, 0.14);
+      --line-on-ink: rgba(236, 231, 222, 0.16);
+
+      --font-display: "Big Shoulders Display", sans-serif;
+      --font-body: "IBM Plex Sans", sans-serif;
+      --font-mono: "IBM Plex Mono", monospace;
+
+      --container: 1180px;
+      --pad-inline: clamp(20px, 5vw, 64px);
+      --pad-section: clamp(64px, 9vw, 120px);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      /* O header é fixo (79px depois de rolar). Sem isso, toda âncora encosta a
+         seção embaixo dele e o título chega escondido. */
+      scroll-padding-top: 104px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--ember);
+      outline-offset: 3px;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: var(--pad-inline);
+    }
+
+    .icon {
+      width: 1em;
+      height: 1em;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      display: inline-block;
+      vertical-align: -0.15em;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin: 0 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      background: var(--ember);
+      display: inline-block;
+    }
+
+    .section--dark .eyebrow,
+    .section--dark-2 .eyebrow {
+      color: var(--rope);
+    }
+
+    .section--dark .eyebrow::before,
+    .section--dark-2 .eyebrow::before {
+      background: var(--rope);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 0.98;
+      font-size: clamp(2rem, 3.6vw, 3.1rem);
+      margin: 0 0 18px;
+      max-width: 18ch;
+    }
+
+    .lede {
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: var(--graphite);
+      max-width: 54ch;
+      margin: 0;
+    }
+
+    .section--dark .lede,
+    .section--dark-2 .lede {
+      color: rgba(236, 231, 222, 0.72);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 15px 26px;
+      border-radius: 3px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn--primary {
+      background: var(--ember);
+      color: #fff;
+    }
+
+    .btn--primary:hover {
+      background: var(--ember-dark);
+    }
+
+    .btn--block {
+      width: 100%;
+    }
+
+    .btn--ghost-light {
+      background: transparent;
+      border-color: rgba(236, 231, 222, 0.4);
+      color: var(--paper);
+    }
+
+    .btn--ghost-light:hover {
+      border-color: var(--paper);
+    }
+    /* Variante escura do ghost, pra usar sobre o papel. */
+    .btn--ghost {
+      background: transparent;
+      border-color: rgba(23, 22, 15, 0.25);
+      color: var(--ink);
+    }
+
+    .btn--ghost:hover {
+      border-color: var(--ink);
+    }
+
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      background: transparent;
+      transition: background-color 0.25s ease, box-shadow 0.25s ease, padding 0.25s ease, border-color 0.25s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(23, 22, 15, 0.92);
+      backdrop-filter: blur(6px);
+      padding: 12px 0;
+      border-bottom-color: var(--line-on-ink);
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--paper);
+    }
+
+    .brand__mark {
+      width: 34px;
+      height: 34px;
+      border: 2px solid var(--ember);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ember);
+      flex-shrink: 0;
+      transition: transform 0.4s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .brand:hover .brand__mark {
+      transform: rotate(-25deg) scale(1.08);
+      background: var(--ember);
+      color: #fff;
+    }
+
+    .brand__mark .icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .brand__word {
+      line-height: 1;
+    }
+
+    .brand__word strong {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    .brand__word span {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rope);
+      margin-top: 2px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .main-nav__links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-nav__links a {
+      text-decoration: none;
+      color: var(--paper);
+      font-size: 0.88rem;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .main-nav__links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--ember);
+      transition: width 0.2s ease;
+    }
+
+    .main-nav__links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--paper);
+      padding: 6px;
+      cursor: pointer;
+    }
+
+    .nav-toggle .icon {
+      width: 26px;
+      height: 26px;
+    }
+
+    .nav-toggle .icon--close {
+      display: none;
+    }
+
+    .mobile-drawer {
+      display: none;
+    }
+
+    @media (max-width: 860px) {
+      .main-nav__links {
+        display: none;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        padding: 9px;
+      }
+
+      /* Touch targets: grow hit areas to ~44px without moving the type */
+      .footer__nav a,
+      .footer__legal a {
+        display: inline-block;
+        padding-block: 13px;
+      }
+
+      .footer__nav ul {
+        gap: 0 28px;
+      }
+
+      .footer__legal {
+        gap: 0 20px;
+      }
+
+      .mobile-drawer {
+        display: block;
+        position: fixed;
+        inset: 0;
+        top: 0;
+        background: var(--ink);
+        padding: 100px 28px 40px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 90;
+      }
+
+      .mobile-drawer.is-open {
+        transform: translateX(0);
+      }
+
+      .mobile-drawer ul {
+        list-style: none;
+        margin: 0 0 32px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .mobile-drawer ul a {
+        display: block;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line-on-ink);
+        color: var(--paper);
+        text-decoration: none;
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      body.nav-open {
+        overflow: hidden;
+      }
+
+      body.nav-open .nav-toggle .icon--menu {
+        display: none;
+      }
+
+      body.nav-open .nav-toggle .icon--close {
+        display: inline-flex;
+      }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: var(--ink);
+      color: var(--paper);
+      padding-top: clamp(140px, 20vw, 200px);
+      padding-bottom: var(--pad-section);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(90deg, rgba(236, 231, 222, 0.035) 0 1px, transparent 1px 64px);
+      pointer-events: none;
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+      margin-bottom: clamp(48px, 6vw, 84px);
+    }
+
+    .hero__content {
+      max-width: 100%;
+    }
+
+    .hero .eyebrow {
+      color: var(--rope);
+    }
+
+    .hero__heading {
+      font-family: var(--font-display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(2.6rem, 6.4vw, 5.1rem);
+      line-height: 0.96;
+      letter-spacing: -0.01em;
+      margin: 0 0 22px;
+    }
+
+    .hero__heading em {
+      font-style: normal;
+      color: var(--ember);
+    }
+
+    .hero__desc {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      color: rgba(236, 231, 222, 0.72);
+      max-width: 56ch;
+      margin: 0 0 34px;
+    }
+
+    .hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+
+    .hero__scroll-hint {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: rgba(236, 231, 222, 0.55);
+      text-decoration: none;
+    }
+
+    .hero__visual {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 75, 31, 0.35);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 35px rgba(255, 75, 31, 0.2);
+    }
+
+    .hero__visual::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--ember);
+      z-index: 2;
+    }
+
+    .hero__img,
+    .hero__video {
+      width: 100%;
+      height: 100%;
+      max-height: 520px;
+      display: block;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .hero__tag {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: rgba(14, 13, 8, 0.55);
+      backdrop-filter: blur(4px);
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(236, 231, 222, 0.18);
+    }
+
+    .hero__tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ember);
+      flex-shrink: 0;
+      animation: heroPulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes heroPulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(255, 75, 31, 0.5);
+      }
+
+      50% {
+        opacity: 0.55;
+        box-shadow: 0 0 0 6px rgba(255, 75, 31, 0);
+      }
+    }
+
+    .hero__caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 28px 22px 18px;
+      background: linear-gradient(180deg, rgba(23, 22, 15, 0) 0%, rgba(14, 13, 8, 0.85) 78%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 2;
+    }
+
+    .hero__caption::before {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: var(--ember);
+      flex-shrink: 0;
+    }
+
+    .hero__caption span {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--paper);
+    }
+
+    /* Signature: split bar */
+    .splitbar {
+      position: relative;
+    }
+
+    .splitbar__label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.5);
+      margin: 0 0 14px;
+    }
+
+    .splitbar__scroller {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--line-on-ink);
+      border-bottom: 1px solid var(--line-on-ink);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+    }
+
+    .splitbar__track {
+      display: flex;
+      align-items: stretch;
+      width: max-content;
+      animation: splitbarScroll 60s linear infinite;
+    }
+
+    .splitbar__seq {
+      display: flex;
+      align-items: stretch;
+      flex: 0 0 auto;
+    }
+
+    @keyframes splitbarScroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .splitbar__track {
+        animation: none;
+        width: auto;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--ember) transparent;
+      }
+
+      .splitbar__seq[aria-hidden="true"] {
+        display: none;
+      }
+    }
+
+    .station {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 16px 22px;
+      border-right: 1px solid var(--line-on-ink);
+      min-width: 148px;
+    }
+
+    .station__num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--ember);
+      margin-bottom: 6px;
+    }
+
+    .station__name {
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+    }
+
+    .station__meta {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: rgba(236, 231, 222, 0.5);
+    }
+
+    .run-tick {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 18px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--rope);
+      letter-spacing: 0.1em;
+      border-right: 1px solid var(--line-on-ink);
+      white-space: nowrap;
+    }
+
+    .run-tick .icon {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ---------- Audience strip ---------- */
+    .audience {
+      padding-block: clamp(48px, 6vw, 72px);
+      border-bottom: 1px solid var(--line-on-paper);
+    }
+
+    .audience__label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--graphite);
+      margin: 0 0 24px;
+      text-align: center;
+    }
+
+    .audience__row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 0;
+    }
+
+    .audience__row span {
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      color: rgba(23, 22, 15, 0.38);
+      padding: 0 20px;
+      border-right: 1px solid var(--line-on-paper);
+      transition: color 0.2s ease;
+      cursor: default;
+    }
+
+    .audience__row span:last-child {
+      border-right: none;
+    }
+
+    .audience__row span:hover {
+      color: var(--ink);
+    }
+
+    /* ---------- Section base ---------- */
+    .section {
+      padding-block: var(--pad-section);
+    }
+
+    /* Faixas de CTA são interrupções curtas entre seções, não seções inteiras. */
+    .section--tight {
+      padding-block: clamp(28px, 4vw, 52px);
+    }
+
+    .section--paper-alt {
+      background: var(--paper-alt);
+    }
+
+    .section--dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .section--dark-2 {
+      background: var(--ink-2);
+      color: var(--paper);
+    }
+
+    .section__head {
+      max-width: 640px;
+      margin-bottom: clamp(40px, 6vw, 64px);
+    }
+
+    .section__head--center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section__head--center .eyebrow {
+      justify-content: center;
+    }
+
+    /* ---------- Feedbacks ---------- */
+    /* O vídeo é vertical (576x1024), gravado no celular. Em vez de espremê-lo
+       num quadro 16:9 — que cortava a pessoa pela metade — ele aparece inteiro,
+       em altura de tela, com o texto ao lado. A seção fica no papel, como as
+       outras: só o player é escuro, porque o vídeo já é escuro nas bordas. */
+    #feedbacks {
+      padding-block: clamp(56px, 7vw, 100px);
+    }
+
+    .fb-frame {
+      --fb-h: min(76vh, 700px);
+      display: grid;
+      grid-template-columns: 1fr calc(var(--fb-h) * 9 / 16);
+      grid-template-areas:
+        "copy video"
+        "sound video";
+      grid-template-rows: auto auto;
+      gap: clamp(22px, 3vw, 30px) clamp(32px, 5vw, 72px);
+    }
+
+    .fb-copy {
+      grid-area: copy;
+      align-self: end;
+      max-width: 42ch;
+    }
+
+    .fb-copy .section-title {
+      margin-bottom: 16px;
+    }
+
+    .fb-player {
+      grid-area: video;
+      cursor: pointer;
+      align-self: center;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--ink);
+      border: 1px solid rgba(255, 75, 31, 0.22);
+      box-shadow: 0 22px 46px rgba(23, 22, 15, 0.16);
+    }
+
+    /* Mesma barra ember que marca as outras mídias da página. */
+    .fb-player::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--ember);
+      z-index: 3;
+    }
+
+    .fb-player__video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .fb-player__tag {
+      position: absolute;
+      top: 18px;
+      left: 14px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(23, 22, 15, 0.66);
+      backdrop-filter: blur(6px);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--paper);
+    }
+
+    .fb-player__tag::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ember);
+      flex-shrink: 0;
+    }
+
+    /* Se o autoplay for bloqueado (iOS em modo de baixo consumo, por exemplo),
+       o vídeo ficaria parado sem nenhum sinal de que é um vídeo. Esse selo
+       aparece sempre que ele está pausado, e o player inteiro vira área de
+       toque. */
+    .fb-player__play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: rgba(23, 22, 15, 0.62);
+      backdrop-filter: blur(6px);
+      color: var(--paper);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .fb-player__play .icon {
+      width: 26px;
+      height: 26px;
+      margin-left: 3px;
+    }
+
+    .fb-player.is-paused .fb-player__play {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* O botão fica FORA do vídeo: nada cobre a pessoa falando. */
+    .fb-sound {
+      grid-area: sound;
+      justify-self: start;
+      align-self: start;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 24px;
+      border: 1px solid var(--line-on-paper);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .fb-sound:hover {
+      background: var(--ember);
+      border-color: var(--ember);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .fb-sound .icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .fb-sound .icon--off {
+      display: none;
+    }
+
+    .fb-sound[aria-pressed="true"] .icon--on {
+      display: none;
+    }
+
+    .fb-sound[aria-pressed="true"] .icon--off {
+      display: block;
+    }
+
+    .fb-caption {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 18px 0 0;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--graphite);
+    }
+
+    .fb-caption::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      background: var(--ember);
+      flex-shrink: 0;
+    }
+
+    /* Linha de segurança logo abaixo do botão. O visitante sai daqui pra um
+       domínio de checkout que ele nunca viu; dizer antes o que acontece depois
+       do clique reduz o recuo nesse exato ponto. */
+    .trust-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      margin: 12px 0 0;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.55);
+      text-align: center;
+    }
+
+    .trust-line .icon {
+      width: 14px;
+      height: 14px;
+      color: var(--ember);
+      flex-shrink: 0;
+    }
+
+    /* Sobre o papel, nas faixas de CTA. */
+    .cta-strip .trust-line {
+      color: var(--graphite);
+      justify-content: flex-start;
+      text-align: left;
+      margin-top: 14px;
+      width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      .cta-strip .trust-line {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    /* ---------- Faixa de CTA intermediária ---------- */
+    /* Havia 6 telas seguidas entre o fim da oferta e o primeiro link dos cases
+       sem nenhuma forma de agir. Estas faixas quebram esse vão logo depois dos
+       dois momentos de maior convencimento: o depoimento e o especialista. */
+    /* Captura de lead. Fica DEPOIS do CTA final de propósito: é a oferta
+       secundária e não pode competir com a venda de quem ainda vai comprar.
+       Por isso também herda o fundo escuro da seção: emendada no CTA final e no
+       rodapé, vira um pós-escrito quieto — uma faixa clara ali abriria um vinco
+       de luz entre dois blocos escuros e roubaria atenção do CTA.
+       Só borda tracejada, sem fundo próprio: mesmo idioma do .guarantee. */
+    .leadmag {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: clamp(18px, 3vw, 32px);
+      padding: clamp(22px, 3vw, 30px) clamp(22px, 3.2vw, 34px);
+      border: 1px dashed var(--line-on-ink);
+      border-radius: 6px;
+    }
+
+    .leadmag__copy {
+      min-width: 0;
+      max-width: 46ch;
+    }
+
+    .leadmag__copy .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    .leadmag__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin: 0 0 8px;
+    }
+
+    .leadmag__text {
+      margin: 0;
+      font-size: 0.92rem;
+      color: rgba(236, 231, 222, 0.7);
+      line-height: 1.5;
+    }
+
+    .leadmag__actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .leadmag .btn {
+      font-size: 0.74rem;
+      padding: 14px 20px;
+    }
+
+    /* Só dimensão: o espaçamento vem do gap: 10px do próprio .btn, como em
+       .guarantee .icon. Uma margin aqui somaria e sairia do padrão. */
+    .leadmag .btn .icon {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .leadmag {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+
+      .leadmag__copy {
+        max-width: none;
+      }
+
+      .leadmag__copy .eyebrow {
+        justify-content: center;
+      }
+
+      .leadmag .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .cta-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: clamp(18px, 3vw, 32px);
+      padding: clamp(24px, 3.2vw, 34px) clamp(22px, 3.2vw, 38px);
+      border: 1px solid var(--line-on-paper);
+      border-left: 4px solid var(--ember);
+      border-radius: 6px;
+      background: var(--paper);
+    }
+
+    .cta-strip__copy {
+      min-width: 0;
+    }
+
+    .cta-strip__copy .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    .cta-strip__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin: 0;
+      max-width: 24ch;
+    }
+
+    .cta-strip__actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cta-strip .btn {
+      font-size: 0.74rem;
+      padding: 14px 20px;
+    }
+
+    @media (max-width: 900px) {
+      .cta-strip {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+
+      .cta-strip__title {
+        max-width: none;
+      }
+
+      .cta-strip__copy .eyebrow {
+        justify-content: center;
+      }
+
+      .cta-strip__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    /* ---------- Barra de compra fixa (celular) ---------- */
+    /* No celular o botão do header fica escondido, então sem essa barra o
+       visitante só chega à oferta rolando ou abrindo o menu. Ela aparece
+       depois do hero e some quando a própria oferta ou o CTA final estão na
+       tela — não faz sentido cobrir um botão com outro botão. */
+    .buybar {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 95;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(23, 22, 15, 0.94);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 75, 31, 0.3);
+      transform: translateY(105%);
+      transition: transform 0.28s ease;
+    }
+
+    .buybar.is-visible {
+      transform: translateY(0);
+    }
+
+    .buybar__info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .buybar__name {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.6);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .buybar__price {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 1.12rem;
+      color: var(--ember);
+      line-height: 1.1;
+    }
+
+    .buybar__price em {
+      font-style: normal;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: rgba(236, 231, 222, 0.55);
+    }
+
+    .buybar__btn {
+      flex-shrink: 0;
+      padding: 14px 22px;
+      font-size: 0.74rem;
+    }
+
+    @media (max-width: 860px) {
+      .buybar {
+        display: flex;
+      }
+
+      /* Espaço pro rodapé não terminar embaixo da barra. */
+      .footer {
+        padding-bottom: 92px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .buybar {
+        padding-inline: 12px;
+      }
+
+      .buybar__btn {
+        padding: 13px 15px;
+        font-size: 0.68rem;
+      }
+    }
+
+    /* ---------- Offer ---------- */
+    .offer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(24px, 4vw, 40px);
+      margin-bottom: 36px;
+    }
+
+    .offer-card {
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 6px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .offer-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--ember);
+      z-index: 2;
+    }
+
+    /* Destaque do card principal. Usa outline, e não border, para não deslocar
+       o conteúdo — a mídia depende das margens negativas casarem com o padding. */
+    .offer-card--featured {
+      outline: 2px solid var(--ember);
+      box-shadow: 0 24px 54px rgba(255, 75, 31, 0.18);
+    }
+
+    .offer-card__badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 3;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      background: var(--ember);
+      border-radius: 999px;
+      padding: 7px 13px;
+    }
+
+    .offer-card__media {
+      margin: -32px -32px 24px -32px;
+      height: 340px;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 1px solid var(--line-on-ink);
+    }
+
+    .offer-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      transition: transform 0.4s ease;
+    }
+
+    .offer-card:hover .offer-card__media img {
+      transform: scale(1.04);
+    }
+
+    .offer-card__label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rope);
+      margin: 0 0 14px;
+    }
+
+    .offer-card__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      line-height: 1;
+      margin: 0 0 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .offer-card__subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: rgba(236, 231, 222, 0.5);
+      margin: 0 0 18px;
+    }
+
+    .offer-card__price {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line-on-ink);
+    }
+
+    .offer-card__per {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: var(--rope);
+      border: 1px solid rgba(228, 174, 35, 0.38);
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
+
+    .offer-card__price .amount {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 2rem;
+      color: var(--ember);
+    }
+
+    .offer-card__price .terms {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: rgba(236, 231, 222, 0.5);
+      text-transform: uppercase;
+    }
+
+    .offer-card__desc {
+      color: rgba(236, 231, 222, 0.72);
+      font-size: 0.94rem;
+      margin: 0 0 20px;
+    }
+
+    .offer-card__bullets {
+      list-style: none;
+      margin: 0 0 26px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-grow: 1;
+    }
+
+    .offer-card__bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .offer-card__bullets .icon {
+      width: 18px;
+      height: 18px;
+      color: var(--ember);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .offer-card__group {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rope);
+      margin-top: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line-on-ink);
+    }
+
+    .offer-card__group:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .offer-split {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--graphite);
+      margin: 0 0 40px;
+    }
+
+    .guarantee {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+      max-width: 620px;
+      margin-inline: auto;
+      padding: 18px 24px;
+      border: 1px dashed var(--line-on-paper);
+      border-radius: 6px;
+    }
+
+    .guarantee .icon {
+      width: 22px;
+      height: 22px;
+      color: var(--ember);
+      flex-shrink: 0;
+    }
+
+    .guarantee p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--graphite);
+    }
+
+    .guarantee strong {
+      color: var(--ink);
+    }
+
+    /* ---------- Expert ---------- */
+    .expert__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+    }
+
+    .expert__media {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 75, 31, 0.28);
+      box-shadow: 0 20px 40px rgba(23, 22, 15, 0.18);
+    }
+
+    .expert__media::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--ember);
+      z-index: 2;
+    }
+
+    .expert__photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .expert__media:hover .expert__photo {
+      transform: scale(1.06);
+    }
+
+    .expert__name {
+      font-family: var(--font-display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.01em;
+      margin: 0 0 10px;
+    }
+
+    .expert__role {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin: 0 0 22px;
+    }
+
+    .expert__bio {
+      color: var(--graphite);
+      max-width: 52ch;
+      margin: 0 0 26px;
+    }
+
+    .expert__creds {
+      list-style: none;
+      margin: 0 0 28px;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .expert__creds li {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 1px solid var(--line-on-paper);
+      border-radius: 999px;
+      padding: 7px 14px;
+      transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+      cursor: default;
+    }
+
+    .expert__creds li:hover {
+      border-color: var(--ember);
+      color: var(--ember);
+      transform: translateY(-2px);
+    }
+
+    .expert__quote {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin: 0;
+      padding-left: 18px;
+      border-left: 3px solid var(--ember);
+      max-width: 44ch;
+    }
+
+    /* ---------- Peek inside the material ---------- */
+    .peek-row+.peek-row {
+      margin-top: clamp(40px, 5vw, 64px);
+    }
+
+    .peek-row__label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.5);
+    }
+
+    .peek-row__label::after {
+      content: "";
+      flex: 1 1 auto;
+      height: 1px;
+      background: var(--line-on-ink);
+    }
+
+    .peek-row__text {
+      flex: 0 1 auto;
+    }
+
+    .peek-row__tag {
+      display: inline-block;
+      flex: 0 0 auto;
+      padding: 4px 9px;
+      border-radius: 3px;
+      background: var(--ember);
+      color: var(--paper);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+    }
+
+    .peek-row__off {
+      color: var(--rope);
+    }
+
+    .peek__scroller {
+      position: relative;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    }
+
+    .peek__track {
+      display: flex;
+      align-items: stretch;
+      width: max-content;
+      animation: peekScroll 70s linear infinite;
+    }
+
+    .peek__seq {
+      display: flex;
+      align-items: stretch;
+      flex: 0 0 auto;
+    }
+
+    @keyframes peekScroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .peek-page {
+      flex: 0 0 auto;
+      width: 320px;
+      margin: 0 26px 0 0;
+      text-align: left;
+      position: relative;
+    }
+
+    .peek-page__shot {
+      display: block;
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 75, 31, 0.28);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+      transition: border-color 0.28s ease;
+    }
+
+    .peek-page__shot::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--ember);
+      z-index: 2;
+    }
+
+    .peek-page img {
+      width: 100%;
+      display: block;
+    }
+
+    .peek-page:hover .peek-page__shot {
+      border-color: var(--ember);
+    }
+
+    .peek-page__flag {
+      position: absolute;
+      top: 14px;
+      right: 0;
+      z-index: 3;
+      padding: 5px 10px;
+      background: var(--rope);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .peek-page__cap {
+      display: block;
+      margin-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.55);
+      transition: color 0.3s ease;
+    }
+
+    .peek-page:hover .peek-page__cap {
+      color: var(--paper);
+    }
+
+    .peek-page__cap b {
+      color: var(--rope);
+      font-weight: 500;
+    }
+
+    .peek__hint {
+      margin: 26px 0 0;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.4);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .peek__track {
+        animation: none;
+        width: auto;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--ember) transparent;
+      }
+
+      .peek__seq[aria-hidden="true"] {
+        display: none;
+      }
+    }
+
+    /* ---------- Case studies ---------- */
+    .case {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 5vw, 72px);
+      align-items: center;
+      padding-block: clamp(40px, 6vw, 64px);
+    }
+
+    /* Rule between cases only — never a trailing one before the quote wall */
+    .case+.case {
+      border-top: 1px solid var(--line-on-paper);
+    }
+
+    .case--reverse .case__copy {
+      order: 2;
+    }
+
+    .case--reverse .case__card {
+      order: 1;
+    }
+
+    .case__avatar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .case__avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      object-fit: cover;
+      /* As fotos são de corpo inteiro; sem isso o recorte cai na cintura. */
+      object-position: center top;
+      border: 2px solid var(--ember);
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(255, 75, 31, 0.25);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .case__avatar:hover {
+      transform: scale(1.2);
+      position: relative;
+      z-index: 3;
+    }
+
+    .case__avatar-meta .eyebrow {
+      margin-bottom: 2px;
+    }
+
+    .case__name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 1.15rem;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      margin: 0 0 6px;
+    }
+
+    .case__copy .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .case__quote {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+      line-height: 1.12;
+      margin: 0 0 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .case__desc {
+      color: var(--graphite);
+      margin: 0 0 20px;
+      max-width: 46ch;
+    }
+
+    .case__bullets {
+      list-style: none;
+      margin: 0 0 22px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .case__bullets li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .case__bullets .icon {
+      width: 18px;
+      height: 18px;
+      color: var(--ember);
+      flex-shrink: 0;
+    }
+
+    .case__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      color: var(--ink);
+      padding-bottom: 3px;
+    }
+
+    .case__link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--ember);
+      transition: width 0.2s ease;
+    }
+
+    .case__link:hover::after {
+      width: 100%;
+    }
+
+    .lesson-card {
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 6px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Lesson card with real footage instead of a static sheet */
+    .lesson-card--video {
+      padding: 0;
+      max-width: 400px;
+    }
+
+    .lesson-card--video .lesson-card__row {
+      margin: 0;
+      padding: 22px 24px 16px;
+    }
+
+    .lesson-card__video {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      border-top: 1px solid var(--line-on-ink);
+      border-bottom: 1px solid var(--line-on-ink);
+      transition: transform 0.5s ease;
+    }
+
+    .lesson-card--video:hover .lesson-card__video {
+      transform: scale(1.05);
+    }
+
+    .lesson-card--video .lesson-card__title {
+      margin: 0;
+      padding: 20px 24px 22px;
+    }
+
+    .lesson-card__live {
+      position: absolute;
+      top: 74px;
+      right: 16px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: rgba(14, 13, 8, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(236, 231, 222, 0.18);
+    }
+
+    .lesson-card__live::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ember);
+      flex-shrink: 0;
+      animation: heroPulse 1.8s ease-in-out infinite;
+    }
+
+    .lesson-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--ember);
+    }
+
+    .lesson-card__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 26px;
+    }
+
+    .lesson-card__tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: rgba(236, 231, 222, 0.5);
+      letter-spacing: 0.1em;
+    }
+
+    .lesson-card__level {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--rope);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .lesson-card__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+      margin: 0 0 22px;
+      letter-spacing: -0.01em;
+    }
+
+    .lesson-card__stats {
+      display: flex;
+      gap: 28px;
+      border-top: 1px solid var(--line-on-ink);
+      padding-top: 18px;
+    }
+
+    .lesson-card__stat span {
+      display: block;
+    }
+
+    .lesson-card__stat .k {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      color: rgba(236, 231, 222, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .lesson-card__stat .v {
+      font-family: var(--font-mono);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--paper);
+    }
+
+    /* ---------- Quote wall ---------- */
+    .quote-wall {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: clamp(28px, 3.5vw, 44px);
+      margin-top: clamp(48px, 6vw, 72px);
+      padding-top: clamp(40px, 5vw, 56px);
+      border-top: 1px solid var(--line-on-paper);
+    }
+
+    .quote-card {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .quote-card blockquote {
+      margin: 0;
+      position: relative;
+      padding-top: 20px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1.18;
+      letter-spacing: -0.005em;
+    }
+
+    .quote-card blockquote::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 3px;
+      background: var(--ember);
+      transition: width 0.3s ease;
+    }
+
+    .quote-card:hover blockquote::before {
+      width: 52px;
+    }
+
+    .quote-card figcaption {
+      margin-top: auto;
+    }
+
+    .quote-card__name {
+      display: block;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .quote-card__meta {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--graphite);
+      margin-top: 5px;
+    }
+
+    /* ---------- Results ---------- */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 28px clamp(12px, 2vw, 28px);
+      border-left: 1px solid var(--line-on-ink);
+    }
+
+    .stat:first-child {
+      padding-left: 0;
+      border-left: none;
+    }
+
+    .stat__num {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      color: var(--ember);
+      display: block;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .stat__desc {
+      font-size: 0.88rem;
+      color: rgba(236, 231, 222, 0.68);
+      margin: 0;
+      max-width: 22ch;
+    }
+
+    .results-media {
+      margin-top: clamp(36px, 5vw, 56px);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line-on-ink);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .results-media__img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-list {
+      max-width: 760px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line-on-paper);
+    }
+
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 0;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      text-transform: uppercase;
+      letter-spacing: -0.005em;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item__toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--line-on-paper);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ember);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item[open] .faq-item__toggle {
+      transform: rotate(45deg);
+    }
+
+    .faq-item p {
+      margin: 0 0 26px;
+      max-width: 62ch;
+      color: var(--graphite);
+    }
+
+    /* ---------- CTA ---------- */
+    .cta-section {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(180deg, rgba(14, 13, 8, 0.85) 0%, rgba(14, 13, 8, 0.94) 100%), url('assets/images/cta_final.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .cta-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-section .section__head {
+      margin-inline: auto;
+    }
+
+    .cta-section .lede {
+      margin-inline: auto;
+      margin-bottom: 34px;
+    }
+
+    .cta-section__actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .cta-section__note {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: rgba(236, 231, 222, 0.5);
+      max-width: 480px;
+      margin-inline: auto;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      background: var(--ink-2);
+      color: rgba(236, 231, 222, 0.7);
+      padding-top: clamp(48px, 6vw, 72px);
+    }
+
+    .footer__top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--line-on-ink);
+    }
+
+    .footer__brand .brand {
+      margin-bottom: 14px;
+    }
+
+    .footer__brand p {
+      max-width: 32ch;
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    .footer__nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 28px;
+    }
+
+    .footer__nav a {
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+
+    .footer__nav a:hover {
+      color: var(--paper);
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer__social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--line-on-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .footer__social a:hover {
+      border-color: var(--paper);
+      color: var(--paper);
+    }
+
+    .footer__bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      padding-block: 24px;
+      font-size: 0.78rem;
+    }
+
+    .footer__legal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer__legal a {
+      text-decoration: none;
+    }
+
+    .footer__legal a:hover {
+      color: var(--paper);
+    }
+
+    .footer__disclaimer {
+      max-width: 720px;
+      font-size: 0.72rem;
+      color: rgba(236, 231, 222, 0.45);
+      padding-bottom: 24px;
+    }
+
+    /* Six nav links + CTA get tight before the drawer takes over at 860px */
+    @media (max-width: 1080px) {
+      .main-nav__links {
+        gap: 18px;
+      }
+
+      .main-nav {
+        gap: 20px;
+      }
+
+      .site-header .container {
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      /* Sem animação de entrada no celular. O observer só revela um bloco
+         quando 15% da altura dele está na tela, e a grade de produtos tem
+         ~2850px: depois do salto da âncora só 9-16% aparecem, então o plano
+         chegava invisível e o visitante precisava rolar pra ele surgir. Numa
+         página de venda isso confunde mais do que enfeita. */
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      /* A rolagem animada atravessa a página inteira passando por quatro vídeos
+         em autoplay: no celular ela engasga e o visitante chega no destino sem
+         saber onde parou. O salto direto é mais confiável — no desktop a
+         animação continua. */
+      html {
+        scroll-behavior: auto;
+        scroll-padding-top: 92px;
+      }
+
+      .expert__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .expert__media {
+        max-width: 340px;
+      }
+
+      /* O padding-top só precisa livrar o header fixo (~74px). O valor de
+         desktop deixava ~66px de vazio depois dele. */
+      .hero {
+        padding-top: clamp(100px, 24vw, 132px);
+      }
+
+      .hero__grid {
+        grid-template-columns: 1fr;
+        /* Sem o gap do grid: empilhado, quem espaça são as margens de cada
+           elemento, senão o hero abre 32-64px entre título e parágrafo. */
+        gap: 0;
+      }
+
+      /* Dissolve o wrapper para o vídeo virar irmão do parágrafo e do botão —
+         order() só reordena irmãos. */
+      .hero__content {
+        display: contents;
+      }
+
+      /* O botão vem ANTES do vídeo. Com o vídeo no meio, o CTA caía em 774px:
+         cabia só num iPhone sem a barra do navegador e ficava fora da primeira
+         dobra em qualquer aparelho menor. */
+      .hero__actions {
+        order: 1;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+
+      /* Largura casada com a do vídeo logo abaixo, pra virar um bloco só. */
+      .hero__actions .btn {
+        width: 100%;
+        max-width: 340px;
+      }
+
+      .hero__visual {
+        order: 2;
+        max-width: 340px;
+        margin-inline: auto;
+        margin-bottom: 0;
+      }
+
+      /* Empilhado, o vídeo já cumpre o papel de indicar que a página continua. */
+      .hero__scroll-hint {
+        display: none;
+      }
+
+      /* No celular empilha: texto, vídeo, botão. O vídeo usa a largura inteira
+         do container — na proporção original, é o formato em que foi gravado. */
+      .fb-frame {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "copy"
+          "video"
+          "sound";
+        grid-template-rows: auto auto auto;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .fb-player {
+        width: 100%;
+      }
+
+      .fb-copy {
+        max-width: 34ch;
+      }
+
+      .fb-copy .eyebrow,
+      .fb-caption {
+        justify-content: center;
+      }
+
+      .fb-caption {
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+      }
+
+      /* O vídeo em pé é mais alto que a tela do celular, então um botão ABAIXO
+         dele cairia fora da dobra: quem visse o vídeo não veria o controle de
+         som. Aqui ele sobe pra dentro do canto do player e acompanha o vídeo.
+         O recuo é o gap da grade (22px) + a altura do botão (46px) + 14px de
+         respiro até a borda de baixo. */
+      .fb-sound {
+        justify-self: end;
+        margin-top: -82px;
+        margin-right: 14px;
+        margin-bottom: 14px;
+        z-index: 2;
+        padding: 12px 18px;
+        background: rgba(23, 22, 15, 0.72);
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+        border-color: rgba(255, 255, 255, 0.28);
+        color: var(--paper);
+      }
+
+      .fb-sound:hover {
+        transform: none;
+      }
+
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case,
+      .case--reverse .case__copy,
+      .case--reverse .case__card {
+        order: initial;
+      }
+
+      .case {
+        grid-template-columns: 1fr;
+      }
+
+      .case__card {
+        order: -1 !important;
+      }
+
+      /* Defined here, after the base rule, so the padding actually wins */
+      .case__link {
+        padding-top: 11px;
+        padding-bottom: 14px;
+      }
+
+      .case__link::after {
+        bottom: 11px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 28px;
+      }
+
+      .stat:nth-child(3) {
+        border-left: none;
+      }
+
+      .stat:nth-child(odd) {
+        border-left: none;
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      /* A 320px page would span the whole phone and get eaten by the edge fade */
+      .peek-page {
+        width: 250px;
+        margin-right: 18px;
+      }
+
+      .peek-row__label {
+        font-size: 0.62rem;
+        letter-spacing: 0.06em;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .peek-row__text {
+        text-wrap: balance;
+      }
+
+      /* O rotulo quebra em duas linhas no telemovel e a regua fica sem espaco */
+      .peek-row__label::after {
+        display: none;
+      }
+
+      /* Num cartao de 250px quase nenhuma legenda cabe numa linha: em vez de
+         doze quebras diferentes, todas passam a ter a mesma forma - produto em
+         cima, pagina em baixo. */
+      .peek-page__cap {
+        letter-spacing: 0.08em;
+      }
+
+      .peek-page__cap b {
+        display: block;
+      }
+
+      .peek-page__sep {
+        display: none;
+      }
+
+      /* Keep price-bearing CTAs on a single line */
+      .btn {
+        font-size: 0.74rem;
+        letter-spacing: 0.03em;
+        padding: 15px 18px;
+      }
+
+      .offer-card {
+        padding: 24px;
+      }
+
+      .offer-card__media {
+        margin: -24px -24px 24px -24px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .audience__row {
+        gap: 8px 20px;
+      }
+
+      .audience__row span {
+        padding: 0;
+        font-size: 1rem;
+        border-right: none;
+      }
+
+      .footer__top {
+        flex-direction: column;
+      }
+
+      .guarantee {
+        flex-direction: column;
+      }
+    }
+
+    /* Smallest phones still in use (iPhone SE 1st gen) */
+    @media (max-width: 360px) {
+      .btn {
+        font-size: 0.68rem;
+        padding: 14px 12px;
+      }
+    }
+
+    /* ---------- Oferta Relâmpago (upsell no clique da oferta de R$10) ---------- */
+    body.flash-open {
+      overflow: hidden;
+    }
+
+    .flash {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(14, 13, 8, 0.82);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .flash.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .flash__dialog {
+      position: relative;
+      width: min(460px, 100%);
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      background: var(--ink);
+      color: var(--paper);
+      border: 1px solid rgba(255, 75, 31, 0.4);
+      border-radius: 8px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 75, 31, 0.18);
+      padding: 36px 28px 28px;
+      text-align: center;
+      transform: translateY(16px) scale(0.98);
+      transition: transform 0.28s cubic-bezier(0.34, 1.3, 0.64, 1);
+    }
+
+    .flash.is-open .flash__dialog {
+      transform: none;
+    }
+
+    .flash__dialog::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--ember);
+    }
+
+    .flash__close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1px solid var(--line-on-ink);
+      border-radius: 50%;
+      color: rgba(236, 231, 222, 0.6);
+      cursor: pointer;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .flash__close:hover {
+      color: var(--ember);
+      border-color: var(--ember);
+    }
+
+    .flash__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rope);
+      margin: 0 0 14px;
+    }
+
+    .flash__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ember);
+      flex-shrink: 0;
+      animation: heroPulse 1.8s ease-in-out infinite;
+    }
+
+    .flash__title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(1.8rem, 6vw, 2.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.01em;
+      margin: 0 0 12px;
+    }
+
+    .flash__text {
+      color: rgba(236, 231, 222, 0.72);
+      font-size: 0.95rem;
+      margin: 0 0 18px;
+    }
+
+    .flash__price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 0 0 22px;
+    }
+
+    .flash__price-old {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: rgba(236, 231, 222, 0.45);
+      text-decoration: line-through;
+    }
+
+    .flash__price-new {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: clamp(2rem, 8vw, 2.6rem);
+      line-height: 1;
+      color: var(--ember);
+    }
+
+    .flash__price-off {
+      align-self: center;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--ink);
+      background: var(--rope);
+      border-radius: 999px;
+      padding: 4px 9px;
+    }
+
+    .flash__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .flash__keep {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: rgba(236, 231, 222, 0.55);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      padding-block: 10px;
+    }
+
+    .flash__keep:hover {
+      color: var(--paper);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .flash,
+      .flash__dialog {
+        transition: none;
+      }
+
+      .flash__dot {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="13" r="8" />
+      <line x1="12" y1="13" x2="15" y2="9.5" />
+      <line x1="9" y1="2" x2="15" y2="2" />
+      <line x1="12" y1="2" x2="12" y2="5" />
+    </symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24">
+      <path d="M4 5 C7 3 10 3 12 5 C14 3 17 3 20 5 L20 18 C17 16 14 16 12 18 C10 16 7 16 4 18 Z" />
+      <line x1="12" y1="5" x2="12" y2="18" />
+    </symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24">
+      <line x1="9" y1="6" x2="20" y2="6" />
+      <line x1="9" y1="12" x2="20" y2="12" />
+      <line x1="9" y1="18" x2="20" y2="18" />
+      <circle cx="4.5" cy="6" r="1.4" />
+      <circle cx="4.5" cy="12" r="1.4" />
+      <circle cx="4.5" cy="18" r="1.4" />
+    </symbol>
+    <symbol id="icon-pace" viewBox="0 0 24 24">
+      <path d="M3 17 L9 17" />
+      <path d="M9 8 L17 8" />
+      <path d="M13 4 L21 12 L13 20" />
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="M4 12.5 L9.5 18 L20 6" />
+    </symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24">
+      <line x1="12" y1="4" x2="12" y2="20" />
+      <line x1="4" y1="12" x2="20" y2="12" />
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <line x1="4" y1="7" x2="20" y2="7" />
+      <line x1="4" y1="12" x2="20" y2="12" />
+      <line x1="4" y1="17" x2="20" y2="17" />
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <line x1="5" y1="5" x2="19" y2="19" />
+      <line x1="19" y1="5" x2="5" y2="19" />
+    </symbol>
+    <symbol id="icon-run" viewBox="0 0 24 24">
+      <path d="M4 18 L9 13 L13 16 L20 6" />
+      <path d="M15 6 L20 6 L20 11" />
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 3 L19 6 V11 C19 16 16 19.5 12 21 C8 19.5 5 16 5 11 V6 Z" />
+      <path d="M9 12 L11.3 14.3 L15.5 9.5" />
+    </symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24">
+      <path d="M8 5.5 L18.5 12 L8 18.5 Z" fill="currentColor" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-sound-off" viewBox="0 0 24 24">
+      <path d="M4 9 H7.5 L12 5 V19 L7.5 15 H4 Z" />
+      <line x1="16" y1="9.5" x2="21" y2="14.5" />
+      <line x1="21" y1="9.5" x2="16" y2="14.5" />
+    </symbol>
+    <symbol id="icon-sound-on" viewBox="0 0 24 24">
+      <path d="M4 9 H7.5 L12 5 V19 L7.5 15 H4 Z" />
+      <path d="M15.5 9 C17 10.6 17 13.4 15.5 15" />
+      <path d="M18.5 6.5 C21.2 9.4 21.2 14.6 18.5 17.5" />
+    </symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path d="M3.5 20.5 L4.9 16.3 A8.2 8.2 0 1 1 8 19.3 Z" />
+      <path d="M9 8.4 C9.5 8.4 9.7 8.6 9.9 9.1 L10.5 10.4 C10.6 10.7 10.5 11 10.3 11.2 L9.8 11.8
+               C9.6 12 9.6 12.2 9.7 12.4 A5.5 5.5 0 0 0 12.2 14.7 C12.5 14.8 12.7 14.8 12.8 14.6
+               L13.4 14 C13.6 13.8 13.9 13.7 14.2 13.9 L15.5 14.5 C15.9 14.7 16.1 14.9 16.1 15.3
+               C16.1 16.3 15.3 17 14.3 17 C11 17 7 13 7 9.7 C7 8.7 7.9 8.4 9 8.4 Z" />
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <a href="#top" class="brand">
+        <span class="brand__mark"><svg class="icon">
+            <use href="#icon-clock" />
+          </svg></span>
+        <span class="brand__word"><strong>HYROX</strong><span>DAILY WOD</span></span>
+      </a>
+      <nav class="main-nav">
+        <ul class="main-nav__links">
+          <li><a href="#oferta">Produtos</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#feedbacks">Feedbacks</a></li>
+          <li><a href="#pordentro">Por dentro</a></li>
+          <li><a href="#cases">Cases</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a href="#oferta" class="btn btn--primary header-cta">Ver os materiais</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false"
+        aria-controls="mobileDrawer">
+        <svg class="icon icon--menu">
+          <use href="#icon-menu" />
+        </svg>
+        <svg class="icon icon--close">
+          <use href="#icon-close" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul>
+      <li><a href="#oferta">Produtos</a></li>
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#feedbacks">Feedbacks</a></li>
+      <li><a href="#pordentro">Por dentro</a></li>
+      <li><a href="#cases">Cases</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#oferta" class="btn btn--primary">Ver os materiais</a>
+  </div>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Para professores de treino funcional</p>
+          <h1 class="hero__heading">Pare de inventar a aula de <em>última hora.</em></h1>
+          <p class="hero__desc">250 aulas prontas + a base técnica por trás de cada escolha. Você chega, abre e
+            aplica.</p>
+          <div class="hero__actions">
+            <a href="#oferta" class="btn btn--primary">Ver os 2 materiais</a>
+            <a href="#feedbacks" class="hero__scroll-hint">Veja os feedbacks ↓</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <span class="hero__tag"><span class="hero__tag-dot"></span>Cena real de aula</span>
+          <video class="hero__video" autoplay loop muted playsinline poster="assets/images/colt-training.webp">
+            <source src="assets/images/thirdspacelondon_pindown.io_1785350008.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição deste vídeo.
+          </video>
+          <div class="hero__caption"><span>Sem atores. Sem estúdio.</span></div>
+        </div>
+      </div>
+      <div class="container splitbar">
+        <p class="splitbar__label">Base técnica de todo o catálogo — sequência oficial do HYROX</p>
+        <div class="splitbar__scroller">
+          <div class="splitbar__track">
+            <div class="splitbar__seq">
+              <div class="station"><span class="station__num">01</span><span class="station__name">SkiErg</span><span
+                  class="station__meta">1000M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">02</span><span class="station__name">Sled Push</span><span
+                  class="station__meta">50M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">03</span><span class="station__name">Sled Pull</span><span
+                  class="station__meta">50M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">04</span><span class="station__name">Burpee Broad
+                  Jump</span><span class="station__meta">80M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">05</span><span class="station__name">Rowing</span><span
+                  class="station__meta">1000M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">06</span><span class="station__name">Farmers
+                  Carry</span><span class="station__meta">200M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">07</span><span class="station__name">Sandbag
+                  Lunges</span><span class="station__meta">100M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">08</span><span class="station__name">Wall
+                  Balls</span><span class="station__meta">100 REP</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+            </div>
+            <div class="splitbar__seq" aria-hidden="true">
+              <div class="station"><span class="station__num">01</span><span class="station__name">SkiErg</span><span
+                  class="station__meta">1000M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">02</span><span class="station__name">Sled Push</span><span
+                  class="station__meta">50M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">03</span><span class="station__name">Sled Pull</span><span
+                  class="station__meta">50M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">04</span><span class="station__name">Burpee Broad
+                  Jump</span><span class="station__meta">80M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">05</span><span class="station__name">Rowing</span><span
+                  class="station__meta">1000M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">06</span><span class="station__name">Farmers
+                  Carry</span><span class="station__meta">200M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">07</span><span class="station__name">Sandbag
+                  Lunges</span><span class="station__meta">100M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">08</span><span class="station__name">Wall
+                  Balls</span><span class="station__meta">100 REP</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audience">
+      <div class="container">
+        <p class="audience__label">Feito pra quem dá aula em:</p>
+        <div class="audience__row">
+          <span>Crossfit Box</span>
+          <span>Academia de Funcional</span>
+          <span>Personal Trainer</span>
+          <span>Studio de Treino</span>
+          <span>Preparação Física</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-alt" id="oferta">
+      <div class="container">
+        <div class="section__head section__head--center" data-reveal>
+          <p class="eyebrow">Os materiais</p>
+          <h2 class="section-title" style="max-width:22ch; margin-inline:auto;">Escolha o que resolve sua aula amanhã
+          </h2>
+          <p class="lede" style="margin-inline:auto;">Um te dá a base técnica. O outro te dá a aula pronta. Leve um ou
+            os dois.</p>
+        </div>
+
+        <div class="offer-grid" data-reveal>
+          <div class="offer-card">
+            <div class="offer-card__media">
+              <img src="assets/images/oferta_150_pag.jpg" alt="HYROX Master Class 150 Páginas - Fundamentação técnica"
+                loading="lazy">
+            </div>
+            <p class="offer-card__label">Para fundamentar sua aula</p>
+            <h3 class="offer-card__title">HYROX Master Class</h3>
+            <p class="offer-card__subtitle">150 páginas · PDF digital</p>
+            <div class="offer-card__price">
+              <span class="amount">R$ 10,00</span>
+              <span class="terms">pagamento único</span>
+            </div>
+            <p class="offer-card__desc">A base técnica por trás das escolhas da aula: por que essa estação, essa carga,
+              essa ordem.</p>
+            <ul class="offer-card__bullets">
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Fisiologia do treino funcional aplicada à aula</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Periodização e progressão de carga</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Prevenção de lesões: o que vigiar na execução</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Correção postural e consciência corporal</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Como dosar a intensidade para o objetivo de cada aluno</li>
+            </ul>
+            <a href="https://pay.wiapy.com/LXGERO2qjnZE" class="btn btn--primary btn--block" target="_blank"
+              rel="noopener" data-checkout="HYROX Master Class" data-sku="master-class" data-price="10.00">Quero a
+              Master Class — R$10</a>
+            <p class="trust-line"><svg class="icon">
+                <use href="#icon-shield" />
+              </svg>Pagamento único · Acesso imediato · 7 dias de garantia</p>
+          </div>
+
+          <div class="offer-card offer-card--featured">
+            <span class="offer-card__badge">Mais completo</span>
+            <div class="offer-card__media">
+              <img src="assets/images/oferta_250_pag_.jpg" alt="250 Aulas Prontas Daily WOD - Material completo"
+                loading="lazy">
+            </div>
+            <p class="offer-card__label">Para aplicar amanhã</p>
+            <h3 class="offer-card__title">250 Aulas Prontas</h3>
+            <p class="offer-card__subtitle">Daily WOD · acesso digital imediato</p>
+            <div class="offer-card__price">
+              <span class="amount">R$ 27,00</span>
+              <span class="terms">pagamento único</span>
+              <span class="offer-card__per">≈ R$ 0,11 por aula</span>
+            </div>
+            <p class="offer-card__desc">O ano inteiro de aula já planejado — do aquecimento ao arrefecimento, linha a
+              linha, com carga e intensidade definidas.</p>
+            <ul class="offer-card__bullets">
+              <li class="offer-card__group">Estrutura do ano</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>10 mesociclos de 5 semanas — cada um com objetivo próprio</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>5ª semana sempre de descarga, com volume reduzido a 45%</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Semana-tipo fixa: força, aeróbio, estações, técnica, sessão mista</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Nenhum dia pesado depois de outro dia pesado</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Progressão do trenó de 15 m até os 50 m da prova ao longo do ano</li>
+
+              <li class="offer-card__group">O que vem em cada aula</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Aquecimento em 3 blocos: elevação geral, mobilidade específica, ativação</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Bloco técnico com os 2 pontos de execução a corrigir naquele dia</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Bloco principal com prescrição exata, linha a linha</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Arrefecimento definido</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Frase de coaching pronta — o que falar durante a aula</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Erro a vigiar, com a correção</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Campo de registro do aluno</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Duração fixa de 60 minutos</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Equipamento e espaço declarados no cabeçalho</li>
+
+              <li class="offer-card__group">Cargas e intensidade prontas</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Cargas oficiais de competição por categoria — feminino, masculino, pro</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Escala RPE com os 4 tipos de dia</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Zonas de frequência cardíaca calculadas pela fórmula 180 − idade</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Alvos de limiar aeróbio, MLSS e limiar anaeróbio</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Teste da conversa para achar a Zona 2 sem equipamento</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Cálculo de velocidade de corrida a partir do seu tempo de 2 km</li>
+            </ul>
+            <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="btn btn--primary btn--block" target="_blank"
+              rel="noopener" data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as 250
+              Aulas — R$27</a>
+            <p class="trust-line"><svg class="icon">
+                <use href="#icon-shield" />
+              </svg>Pagamento único · Acesso imediato · 7 dias de garantia</p>
+          </div>
+        </div>
+
+        <p class="offer-split" data-reveal>São dois produtos independentes — sem combo obrigatório, sem carrinho
+          compartilhado.</p>
+
+        <div class="guarantee" data-reveal>
+          <svg class="icon">
+            <use href="#icon-shield" />
+          </svg>
+          <p><strong>Garantia incondicional de 7 dias</strong> em qualquer um dos dois materiais. Se não fizer sentido
+            pra sua aula, devolvemos o valor.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="resultados">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Resultados</p>
+          <h2 class="section-title">O que muda no seu planejamento de aula</h2>
+          <p class="lede">Menos tempo montando treino do zero, mais consistência técnica em cada estação da sua turma.
+          </p>
+        </div>
+        <div class="stats-grid" data-reveal>
+          <div class="stat"><span class="stat__num">250</span>
+            <p class="stat__desc">aulas prontas, uma pra cada dia de treino</p>
+          </div>
+          <div class="stat"><span class="stat__num">150</span>
+            <p class="stat__desc">páginas de fundamentação técnica na Master Class</p>
+          </div>
+          <div class="stat"><span class="stat__num">-5h</span>
+            <p class="stat__desc">por semana a menos planejando aula do zero</p>
+          </div>
+          <div class="stat"><span class="stat__num">3x</span>
+            <p class="stat__desc">níveis de adaptação em cada treino do catálogo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="feedbacks">
+      <div class="container">
+        <div class="fb-frame" data-reveal>
+          <div class="fb-copy">
+            <p class="eyebrow">Feedbacks</p>
+            <h2 class="section-title">Antes de decidir, ouça quem já usou</h2>
+            <p class="lede">Quem baixou o material levou pra própria turma e voltou pra gravar o que achou.</p>
+            <p class="fb-caption">Depoimento em vídeo · 32 segundos</p>
+          </div>
+
+          <div class="fb-player">
+            <div class="fb-player__tag"><span>Feedback real</span></div>
+            <video class="fb-player__video" id="feedbackVideo" autoplay loop muted playsinline preload="metadata">
+              <source src="assets/images/feed.mp4" type="video/mp4">
+              Seu navegador não suporta a exibição deste vídeo.
+            </video>
+            <span class="fb-player__play" aria-hidden="true"><svg class="icon">
+                <use href="#icon-play" />
+              </svg></span>
+          </div>
+
+          <button type="button" class="fb-sound" id="feedbackSound" aria-pressed="false"
+            aria-label="Ativar som do vídeo">
+            <svg class="icon icon--on">
+              <use href="#icon-sound-off" />
+            </svg>
+            <svg class="icon icon--off">
+              <use href="#icon-sound-on" />
+            </svg>
+            <span class="fb-sound__label">Ativar som</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-strip" data-reveal>
+          <div class="cta-strip__copy">
+            <p class="eyebrow">Os materiais</p>
+            <h2 class="cta-strip__title">É esse resultado que você quer na sua turma?</h2>
+          </div>
+          <div class="cta-strip__actions">
+            <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="btn btn--primary" target="_blank" rel="noopener"
+              data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as 250 Aulas — R$27</a>
+            <a href="https://pay.wiapy.com/LXGERO2qjnZE" class="btn btn--ghost" target="_blank" rel="noopener"
+              data-checkout="HYROX Master Class" data-sku="master-class" data-price="10.00">Master Class — R$10</a>
+          </div>
+          <p class="trust-line"><svg class="icon">
+              <use href="#icon-shield" />
+            </svg>Pagamento único · Acesso imediato · 7 dias de garantia</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="pordentro">
+      <div class="container">
+        <div class="section__head section__head--center" data-reveal>
+          <p class="eyebrow">Por dentro do material</p>
+          <h2 class="section-title" style="max-width:24ch; margin-inline:auto;">Veja o que você recebe antes de
+            comprar</h2>
+          <p class="lede" style="margin-inline:auto;">Páginas reais dos dois materiais e dos dois bônus.</p>
+        </div>
+      </div>
+
+      <div class="peek-row" data-reveal>
+        <div class="container">
+          <p class="peek-row__label"><span class="peek-row__tag">Materiais</span><span
+              class="peek-row__text">Master Class e 250 Aulas&nbsp;— <span class="peek-row__off">o que você
+                compra</span></span></p>
+        </div>
+        <div class="peek__scroller">
+          <div class="peek__track">
+            <div class="peek__seq">
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/mc-01-capa.jpg" alt="Master Class — Capa" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Master Class</b><span
+                    class="peek-page__sep"> · </span>Capa</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/mc-02-indice.jpg" alt="Master Class — Índice — 11 blocos"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Master Class</b><span
+                    class="peek-page__sep"> · </span>Índice — 11 blocos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/mc-03-tres-respostas.jpg"
+                      alt="Master Class — As três fontes comparadas" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Master Class</b><span
+                    class="peek-page__sep"> · </span>As três fontes comparadas</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/mc-04-fisiologia.jpg" alt="Master Class — Fisiologia aplicada"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Master Class</b><span
+                    class="peek-page__sep"> · </span>Fisiologia aplicada</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-01-capa.jpg" alt="250 Aulas — Capa" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Aulas</b><span
+                    class="peek-page__sep"> · </span>Capa</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-02-mesociclos.jpg" alt="250 Aulas — Os dez mesociclos"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Aulas</b><span
+                    class="peek-page__sep"> · </span>Os dez mesociclos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-03-aula001.jpg" alt="250 Aulas — Aula 001 — na íntegra"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Aulas</b><span
+                    class="peek-page__sep"> · </span>Aula 001 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-04-aula003.jpg" alt="250 Aulas — Aula 003 — na íntegra"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Aulas</b><span
+                    class="peek-page__sep"> · </span>Aula 003 — na íntegra</figcaption>
+              </figure>
+            </div>
+            <div class="peek__seq" aria-hidden="true">
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/mc-01-capa.jpg" alt="Master Class — Capa" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Master Class</b><span
+                    class="peek-page__sep"> · </span>Capa</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/mc-02-indice.jpg" alt="Master Class — Índice — 11 blocos"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Master Class</b><span
+                    class="peek-page__sep"> · </span>Índice — 11 blocos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/mc-03-tres-respostas.jpg"
+                      alt="Master Class — As três fontes comparadas" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Master Class</b><span
+                    class="peek-page__sep"> · </span>As três fontes comparadas</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/mc-04-fisiologia.jpg" alt="Master Class — Fisiologia aplicada"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Master Class</b><span
+                    class="peek-page__sep"> · </span>Fisiologia aplicada</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-01-capa.jpg" alt="250 Aulas — Capa" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Aulas</b><span
+                    class="peek-page__sep"> · </span>Capa</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-02-mesociclos.jpg" alt="250 Aulas — Os dez mesociclos"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Aulas</b><span
+                    class="peek-page__sep"> · </span>Os dez mesociclos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-03-aula001.jpg" alt="250 Aulas — Aula 001 — na íntegra"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Aulas</b><span
+                    class="peek-page__sep"> · </span>Aula 001 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-04-aula003.jpg" alt="250 Aulas — Aula 003 — na íntegra"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Aulas</b><span
+                    class="peek-page__sep"> · </span>Aula 003 — na íntegra</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="peek-row" data-reveal>
+        <div class="container">
+          <p class="peek-row__label"><span class="peek-row__tag">Bônus</span><span
+              class="peek-row__text">Oferecidos na hora da compra <span class="peek-row__off">pela metade do
+                preço</span></span></p>
+        </div>
+        <div class="peek__scroller">
+          <div class="peek__track">
+            <div class="peek__seq">
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-coach-01-capa.jpg" alt="Manual do Coach — Capa" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Manual do Coach</b><span
+                    class="peek-page__sep"> · </span>Capa</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-plano-01-capa.jpg" alt="Plano 12 Semanas — Capa e arquitetura"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Capa e arquitetura</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-coach-02-indice.jpg"
+                      alt="Manual do Coach — Índice — 12 capítulos" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Manual do Coach</b><span
+                    class="peek-page__sep"> · </span>Índice — 12 capítulos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-plano-02-mapa.jpg" alt="Plano 12 Semanas — Mapa das 12 semanas"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Mapa das 12 semanas</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-coach-03-testes.jpg"
+                      alt="Manual do Coach — Cinco testes em dez minutos" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Manual do Coach</b><span
+                    class="peek-page__sep"> · </span>Cinco testes em dez minutos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-plano-03-semana01.jpg"
+                      alt="Plano 12 Semanas — Semana 01 — na íntegra" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Semana 01 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-coach-04-correcao.jpg"
+                      alt="Manual do Coach — As doze correções" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Manual do Coach</b><span
+                    class="peek-page__sep"> · </span>As doze correções</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-plano-04-intensidade.jpg"
+                      alt="Plano 12 Semanas — Intensidade e estações" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Intensidade e estações</figcaption>
+              </figure>
+            </div>
+            <div class="peek__seq" aria-hidden="true">
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-coach-01-capa.jpg" alt="Manual do Coach — Capa" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Manual do Coach</b><span
+                    class="peek-page__sep"> · </span>Capa</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-plano-01-capa.jpg" alt="Plano 12 Semanas — Capa e arquitetura"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Capa e arquitetura</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-coach-02-indice.jpg"
+                      alt="Manual do Coach — Índice — 12 capítulos" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Manual do Coach</b><span
+                    class="peek-page__sep"> · </span>Índice — 12 capítulos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-plano-02-mapa.jpg" alt="Plano 12 Semanas — Mapa das 12 semanas"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Mapa das 12 semanas</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-coach-03-testes.jpg"
+                      alt="Manual do Coach — Cinco testes em dez minutos" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Manual do Coach</b><span
+                    class="peek-page__sep"> · </span>Cinco testes em dez minutos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-plano-03-semana01.jpg"
+                      alt="Plano 12 Semanas — Semana 01 — na íntegra" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Semana 01 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-coach-04-correcao.jpg"
+                      alt="Manual do Coach — As doze correções" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Manual do Coach</b><span
+                    class="peek-page__sep"> · </span>As doze correções</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Bônus</span>
+                  <img src="assets/images/previews/bonus-plano-04-intensidade.jpg"
+                      alt="Plano 12 Semanas — Intensidade e estações" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Intensidade e estações</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-alt" id="expert">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Quem assina o material</p>
+          <h2 class="section-title">O treinador por trás do método</h2>
+        </div>
+        <div class="expert__grid" data-reveal>
+          <div class="expert__media">
+            <img src="assets/images/expert_rafael.png" alt="Rafael Menezes, treinador de HYROX" class="expert__photo"
+              loading="lazy">
+          </div>
+          <div class="expert__copy">
+            <h3 class="expert__name">Rafael Menezes</h3>
+            <p class="expert__role">Treinador de HYROX · São Paulo</p>
+            <p class="expert__bio">Dá aula de treino funcional há 12 anos e trabalha com o formato HYROX desde que a
+              prova chegou ao Brasil. Formou mais de 300 professores no método e escreveu a Master Class e os 250 Daily
+              WODs a partir das aulas que aplica na própria turma toda semana.</p>
+            <ul class="expert__creds">
+              <li>CREF ativo</li>
+              <li>12 anos de trabalho</li>
+              <li>300+ professores formados</li>
+              <li>HYROX</li>
+            </ul>
+            <p class="expert__quote">"Todo professor sabe montar um treino difícil. O difícil é montar 250 que
+              conversam entre si."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-strip" data-reveal>
+          <div class="cta-strip__copy">
+            <p class="eyebrow">Próximo passo</p>
+            <h2 class="cta-strip__title">Sua próxima aula pode já estar pronta</h2>
+          </div>
+          <div class="cta-strip__actions">
+            <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="btn btn--primary" target="_blank" rel="noopener"
+              data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as 250 Aulas — R$27</a>
+            <a href="https://pay.wiapy.com/LXGERO2qjnZE" class="btn btn--ghost" target="_blank" rel="noopener"
+              data-checkout="HYROX Master Class" data-sku="master-class" data-price="10.00">Master Class — R$10</a>
+          </div>
+          <p class="trust-line"><svg class="icon">
+              <use href="#icon-shield" />
+            </svg>Pagamento único · Acesso imediato · 7 dias de garantia</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Depoimento de alunos</p>
+          <h2 class="section-title">Três alunos, três turmas diferentes</h2>
+        </div>
+
+        <div class="case" data-reveal>
+          <div class="case__copy">
+            <div class="case__avatar-wrap">
+              <img src="assets/images/avatar_case_2.jpg" alt="Camila Duarte, aluna" class="case__avatar" loading="lazy">
+              <div class="case__avatar-meta">
+                <p class="case__name">Camila Duarte</p>
+                <p class="eyebrow" style="margin:0;">Aluna · Treina há 2 anos</p>
+              </div>
+            </div>
+            <p class="case__quote">"Deu pra sentir na hora que a aula passou a ter um plano."</p>
+            <p class="case__desc">Antes cada dia era um treino solto. Agora a semana inteira conversa entre si e eu
+              consigo ver onde estou evoluindo.</p>
+            <ul class="case__bullets">
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Semana com progressão clara</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Sei o que vou treinar e por quê</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Evolução visível nas estações</li>
+            </ul>
+            <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="case__link" target="_blank" rel="noopener"
+              data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as 250 Aulas — R$27 →</a>
+          </div>
+          <div class="case__card">
+            <div class="lesson-card lesson-card--video">
+              <div class="lesson-card__row"><span class="lesson-card__tag">AULA #142</span><span
+                  class="lesson-card__level">NÍVEL 2</span></div>
+              <span class="lesson-card__live">Aula rodando</span>
+              <video class="lesson-card__video" autoplay loop muted playsinline
+                poster="assets/images/colt-training.webp">
+                <source src="assets/images/video_1.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição deste vídeo.
+              </video>
+              <p class="lesson-card__title">Sled + Wall Ball Day</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case case--reverse" data-reveal>
+          <div class="case__copy">
+            <div class="case__avatar-wrap">
+              <img src="assets/images/avatar_case_3.jpg" alt="Marcos Vieira, aluno" class="case__avatar" loading="lazy">
+              <div class="case__avatar-meta">
+                <p class="case__name">Marcos Vieira</p>
+                <p class="eyebrow" style="margin:0;">Aluno · Treina há 8 meses</p>
+              </div>
+            </div>
+            <p class="case__quote">"Trocaram o professor no meio da semana e a aula seguiu igual."</p>
+            <p class="case__desc">Mesma estrutura, mesma qualidade. Não teve aquela aula perdida de quando muda o
+              instrutor e ninguém sabe o que vai cair.</p>
+            <ul class="case__bullets">
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Nenhuma aula improvisada</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Mesmo padrão com qualquer professor</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Turma inteira no mesmo ritmo</li>
+            </ul>
+            <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="case__link" target="_blank" rel="noopener"
+              data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as 250 Aulas — R$27 →</a>
+          </div>
+          <div class="case__card">
+            <div class="lesson-card lesson-card--video">
+              <div class="lesson-card__row"><span class="lesson-card__tag">AULA #219</span><span
+                  class="lesson-card__level">NÍVEL 3</span></div>
+              <span class="lesson-card__live">Aula rodando</span>
+              <video class="lesson-card__video" autoplay loop muted playsinline
+                poster="assets/images/colt-training.webp">
+                <source src="assets/images/video2.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição deste vídeo.
+              </video>
+              <p class="lesson-card__title">Row + Sandbag Day</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case" data-reveal>
+          <div class="case__copy">
+            <div class="case__avatar-wrap">
+              <img src="assets/images/avatar_case_4.jpg" alt="Juliana Prado, aluna" class="case__avatar" loading="lazy">
+              <div class="case__avatar-meta">
+                <p class="case__name">Juliana Prado</p>
+                <p class="eyebrow" style="margin:0;">Aluna · Treina há 1 ano</p>
+              </div>
+            </div>
+            <p class="case__quote">"Entrei sem nunca ter feito funcional e nunca me senti perdida na aula."</p>
+            <p class="case__desc">Sempre tem uma versão do exercício que dá pra fazer no meu nível. Nunca precisei
+              ficar de fora de uma estação esperando a turma terminar.</p>
+            <ul class="case__bullets">
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Sempre tem uma versão pro meu nível</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Nunca fiquei de fora de uma estação</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Aprendi a técnica antes de pegar carga</li>
+            </ul>
+            <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="case__link" target="_blank" rel="noopener"
+              data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as 250 Aulas — R$27 →</a>
+          </div>
+          <div class="case__card">
+            <div class="lesson-card lesson-card--video">
+              <div class="lesson-card__row"><span class="lesson-card__tag">AULA #063</span><span
+                  class="lesson-card__level">NÍVEL 1</span></div>
+              <span class="lesson-card__live">Aula rodando</span>
+              <video class="lesson-card__video" autoplay loop muted playsinline
+                poster="assets/images/colt-training.webp">
+                <source src="assets/images/video3.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição deste vídeo.
+              </video>
+              <p class="lesson-card__title">Burpee + SkiErg Day</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-wall" data-reveal>
+          <figure class="quote-card">
+            <blockquote>"Nunca mais ouvi um 'hoje é livre, faz o que quiser'."</blockquote>
+            <figcaption>
+              <span class="quote-card__name">Marina Sales</span>
+              <span class="quote-card__meta">Aluna · Treina há 2 anos</span>
+            </figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>"Três anos aqui e ainda não repeti um treino que eu já tinha feito."</blockquote>
+            <figcaption>
+              <span class="quote-card__name">Thiago Bastos</span>
+              <span class="quote-card__meta">Aluno · Treina há 3 anos</span>
+            </figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>"Em seis meses saí do sled leve pro pesado sem nunca ter forçado nada."</blockquote>
+            <figcaption>
+              <span class="quote-card__name">Renata Lima</span>
+              <span class="quote-card__meta">Aluna · Treina há 6 meses</span>
+            </figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>"Dá pra perceber que a aula de hoje conversa com a da semana passada."</blockquote>
+            <figcaption>
+              <span class="quote-card__name">Eduardo Kimura</span>
+              <span class="quote-card__meta">Aluno · Treina há 4 anos</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title">Perguntas de quem tá pensando em levar</h2>
+        </div>
+        <div class="faq-list" data-reveal>
+          <details class="faq-item" open>
+            <summary>Preciso ter experiência com HYROX pra usar o material?<span class="faq-item__toggle"><svg
+                  class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Não. A Master Class explica a fundamentação do zero, e cada Daily WOD já vem com o nível de adaptação
+              definido — funciona mesmo se você nunca competiu.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Como recebo a Master Class e as Aulas depois de comprar?<span class="faq-item__toggle"><svg
+                  class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Acesso digital imediato após a confirmação do pagamento, direto no e-mail cadastrado no checkout.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Preciso comprar os dois produtos juntos?<span class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Não. São dois produtos independentes, cada um com checkout próprio — você pode levar só a Master Class,
+              só as Aulas, ou os dois.</p>
+          </details>
+          <details class="faq-item">
+            <summary>As aulas servem só pra turma de HYROX ou funcionam pra funcional em geral?<span
+                class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>O catálogo é estruturado em cima das 8 estações oficiais do HYROX, mas se aplica a qualquer aula de
+              treino funcional em formato de estação.</p>
+          </details>
+          <details class="faq-item">
+            <summary>E se o material não for o que eu esperava?<span class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Garantia incondicional de 7 dias em qualquer um dos dois produtos — se não fizer sentido pra sua aula,
+              devolvemos o valor.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark-2 cta-section" id="cta">
+      <div class="container">
+        <div class="section__head section__head--center" data-reveal>
+          <p class="eyebrow">Próximo passo</p>
+          <h2 class="section-title" style="max-width:22ch; margin-inline:auto;">Sua aula de amanhã pode já estar pronta
+          </h2>
+          <p class="lede">Preço de lançamento — pode subir a qualquer momento. Escolha o material e comece a aplicar
+            ainda essa semana.</p>
+        </div>
+        <div class="cta-section__actions" data-reveal>
+          <a href="https://pay.wiapy.com/LXGERO2qjnZE" class="btn btn--primary" target="_blank" rel="noopener"
+            data-checkout="HYROX Master Class" data-sku="master-class" data-price="10.00">Quero a
+            Master Class — R$10</a>
+          <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="btn btn--ghost-light" target="_blank" rel="noopener"
+            data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero
+            as 250 Aulas — R$27</a>
+        </div>
+        <p class="cta-section__note" data-reveal>Garantia incondicional de 7 dias em qualquer um dos dois materiais.</p>
+      </div>
+    </section>
+
+    <!-- Rede de segurança: a maior parte dos visitantes sai sem comprar e sem
+         deixar contato. Uma aula-modelo em troca do WhatsApp converte esse
+         tráfego perdido em lista e em público de remarketing. Some da página
+         sozinha enquanto o número não estiver configurado no JS. -->
+    <section class="section section--tight section--dark-2" id="aulaGratis" hidden>
+      <div class="container">
+        <div class="leadmag" data-reveal>
+          <div class="leadmag__copy">
+            <p class="eyebrow">Ainda na dúvida?</p>
+            <h2 class="leadmag__title">Leve uma aula completa de graça</h2>
+            <p class="leadmag__text">Uma Daily WOD inteira — aquecimento, bloco técnico, prescrição
+              linha a linha e arrefecimento. Aplique na sua turma e veja se o material serve pra você
+              antes de gastar um real.</p>
+          </div>
+          <div class="leadmag__actions">
+            <a href="#" class="btn btn--primary" id="leadWhats" target="_blank" rel="noopener">
+              <svg class="icon">
+                <use href="#icon-whatsapp" />
+              </svg>Receber a aula no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#top" class="brand">
+            <span class="brand__mark"><svg class="icon">
+                <use href="#icon-clock" />
+              </svg></span>
+            <span class="brand__word"><strong>HYROX</strong><span>DAILY WOD</span></span>
+          </a>
+          <p>HYROX Master Class e 250 Aulas Prontas pra quem dá aula de treino funcional no formato HYROX.</p>
+        </div>
+        <nav class="footer__nav">
+          <ul>
+            <li><a href="#oferta">Produtos</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#feedbacks">Feedbacks</a></li>
+            <li><a href="#pordentro">Por dentro</a></li>
+            <li><a href="#cases">Cases</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="X (Twitter)">X</a>
+          <a href="#" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+      <p class="footer__disclaimer">HYROX® é marca registrada de seus respectivos proprietários. HYROX Daily WOD é um
+        material técnico independente, focado na preparação de professores de treino funcional, sem afiliação oficial
+        com a organização da competição.</p>
+      <div class="footer__bottom">
+        <p>© 2026 HYROX Daily WOD. Todos os direitos reservados.</p>
+        <div class="footer__legal">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Barra de compra fixa: só aparece no celular, onde o botão do header some. -->
+  <div class="buybar" id="buyBar">
+    <div class="buybar__info">
+      <span class="buybar__name">250 Aulas Prontas</span>
+      <span class="buybar__price">R$ 27,00 <em>≈ R$ 0,11/aula</em></span>
+    </div>
+    <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="btn btn--primary buybar__btn" target="_blank" rel="noopener"
+      data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as aulas</a>
+  </div>
+
+  <!-- Upsell disparado quando o visitante clica na oferta de R$10 -->
+  <div class="flash" id="flashOffer" role="dialog" aria-modal="true" aria-labelledby="flashTitle" aria-hidden="true">
+    <div class="flash__dialog">
+      <button class="flash__close" id="flashClose" type="button" aria-label="Fechar">
+        <svg class="icon">
+          <use href="#icon-close" />
+        </svg>
+      </button>
+      <p class="flash__eyebrow"><span class="flash__dot"></span>Oferta Relâmpago</p>
+      <h2 class="flash__title" id="flashTitle">250 Aulas Prontas</h2>
+      <p class="flash__text">A Master Class te dá o porquê. Estas 250 aulas te dão o que aplicar amanhã — uma pra cada
+        dia útil do ano, já periodizadas. Esse preço só aparece aqui.</p>
+      <div class="flash__price">
+        <span class="flash__price-old">R$ 27,00</span>
+        <span class="flash__price-new">R$ 18,90</span>
+        <span class="flash__price-off">-30%</span>
+      </div>
+      <div class="flash__actions">
+        <a href="https://pay.wiapy.com/edBBBIpvphVB" class="btn btn--primary btn--block" id="flashTake" target="_blank"
+          rel="noopener" data-checkout="250 Aulas Prontas — Oferta Relâmpago" data-sku="250-aulas-relampago"
+          data-price="18.90">Quero as 250 Aulas —
+          R$18,90</a>
+        <a href="https://pay.wiapy.com/LXGERO2qjnZE" class="flash__keep" id="flashKeep" target="_blank" rel="noopener"
+          data-checkout="HYROX Master Class" data-sku="master-class" data-price="10.00">Continuar com a Master Class —
+          R$10</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var header = document.getElementById('siteHeader');
+      var onScroll = function () {
+        header.classList.toggle('is-scrolled', window.scrollY > 8);
+      };
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var navToggle = document.getElementById('navToggle');
+      var drawer = document.getElementById('mobileDrawer');
+      var closeDrawer = function () {
+        document.body.classList.remove('nav-open');
+        drawer.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      };
+      navToggle.addEventListener('click', function () {
+        var isOpen = drawer.classList.toggle('is-open');
+        document.body.classList.toggle('nav-open', isOpen);
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrawer(); });
+
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      /* No celular a revelação por scroll fica desligada (ver o CSS): aqui o JS
+         acompanha, marcando tudo como visível de uma vez em vez de observar. */
+      var skipReveal = reduceMotion || window.matchMedia('(max-width: 900px)').matches;
+
+      var revealEls = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && !skipReveal) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* Feedbacks: o vídeo entra mudo (única forma de autoplay funcionar no
+         celular) e o botão devolve o som pra quem quiser ouvir o depoimento.
+         Ao sair da tela, volta a ficar mudo e pausado — evita áudio tocando
+         numa seção que o visitante já passou. */
+      var fbVideo = document.getElementById('feedbackVideo');
+      var fbSound = document.getElementById('feedbackSound');
+      var fbPlayer = document.querySelector('.fb-player');
+
+      if (fbVideo && fbSound) {
+        var fbLabel = fbSound.querySelector('.fb-sound__label');
+
+        var setSound = function (on) {
+          fbVideo.muted = !on;
+          fbSound.setAttribute('aria-pressed', String(on));
+          fbSound.setAttribute('aria-label', on ? 'Desativar som do vídeo' : 'Ativar som do vídeo');
+          if (fbLabel) fbLabel.textContent = on ? 'Desativar som' : 'Ativar som';
+        };
+
+        /* O selo de play só existe pra quando o autoplay não rola (iOS em modo
+           de baixo consumo, aba em segundo plano). Sem ele o visitante veria um
+           quadro parado sem saber que dá pra tocar. */
+        var syncPaused = function () {
+          if (fbPlayer) fbPlayer.classList.toggle('is-paused', fbVideo.paused);
+        };
+        fbVideo.addEventListener('play', syncPaused);
+        fbVideo.addEventListener('pause', syncPaused);
+        syncPaused();
+
+        var tryPlay = function () {
+          var p = fbVideo.play();
+          if (p && p.catch) p.catch(function () { syncPaused(); });
+        };
+
+        fbSound.addEventListener('click', function () {
+          var turningOn = fbVideo.muted;
+          setSound(turningOn);
+          if (turningOn) {
+            /* Voltar ao início: com som, o depoimento vale desde a primeira fala. */
+            fbVideo.currentTime = 0;
+            var p = fbVideo.play();
+            if (p && p.catch) p.catch(function () { setSound(false); syncPaused(); });
+          }
+        });
+
+        /* Tocar no próprio vídeo dá play/pause — é o gesto que o visitante já
+           espera de um vídeo vertical no celular. */
+        if (fbPlayer) {
+          fbPlayer.addEventListener('click', function (e) {
+            if (e.target.closest('.fb-sound')) return;
+            if (fbVideo.paused) tryPlay(); else fbVideo.pause();
+          });
+        }
+
+        if ('IntersectionObserver' in window) {
+          var fbIo = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                tryPlay();
+              } else {
+                fbVideo.pause();
+                if (!fbVideo.muted) setSound(false);
+              }
+            });
+          }, { threshold: 0.25 });
+          fbIo.observe(fbVideo);
+        }
+      }
+
+      /* Barra de compra fixa do celular. Regras: só entra depois que o hero
+         saiu da tela, e sai quando a oferta ou o CTA final estão visíveis —
+         cobrir o botão real com uma barra flutuante só atrapalha. Também some
+         com o menu ou o modal abertos, que já ocupam a tela inteira. */
+      var buyBar = document.getElementById('buyBar');
+
+      if (buyBar) {
+        var buyHero = document.querySelector('.hero');
+        /* Onde já existe um botão de compra grande na tela, a barra sai: dois
+           botões concorrendo é pior que um. */
+        var buyZones = Array.prototype.slice.call(
+          document.querySelectorAll('#oferta, #cta, .cta-strip'));
+        var zoneVisible = false;
+
+        var updateBuyBar = function () {
+          var pastHero = buyHero
+            ? (window.pageYOffset > buyHero.offsetHeight * 0.75)
+            : (window.pageYOffset > 400);
+          var blocked = document.body.classList.contains('nav-open')
+            || document.body.classList.contains('flash-open');
+          buyBar.classList.toggle('is-visible', pastHero && !zoneVisible && !blocked);
+        };
+
+        if ('IntersectionObserver' in window && buyZones.length) {
+          var zoneIo = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) { entry.target.dataset.bbSeen = entry.isIntersecting ? '1' : ''; });
+            zoneVisible = buyZones.some(function (z) { return z.dataset.bbSeen === '1'; });
+            updateBuyBar();
+          }, { threshold: 0 });
+          buyZones.forEach(function (z) { zoneIo.observe(z); });
+        }
+
+        /* O menu e o modal mexem em classes do body; um observer avisa a barra
+           sem precisar espalhar chamadas por cada handler. */
+        if ('MutationObserver' in window) {
+          new MutationObserver(updateBuyBar)
+            .observe(document.body, { attributes: true, attributeFilter: ['class'] });
+        }
+
+        window.addEventListener('scroll', updateBuyBar, { passive: true });
+        window.addEventListener('resize', updateBuyBar);
+        updateBuyBar();
+      }
+
+      /* Oferta Relâmpago: intercepta a saída para o checkout de R$10 e mostra as
+         250 Aulas antes de liberar o visitante. Fica ANTES do rastreio de
+         propósito: registrado primeiro, usa stopImmediatePropagation() para o
+         link original não disparar um InitiateCheckout que ainda não aconteceu.
+         Quem contabiliza são os botões do próprio modal — ambos vivem FORA do
+         <main>, escapam do interceptador e caem no rastreio comum lá embaixo.
+         O IC, portanto, só sai quando alguém de fato segue para um checkout.
+
+         Mantido ligado: converte bem na prática. A flag existe para desligar em
+         teste sem mexer no markup, que fica no lugar de qualquer jeito. */
+      var FLASH_OFFER_ENABLED = true;
+
+      if (FLASH_OFFER_ENABLED) {
+        var flash = document.getElementById('flashOffer');
+        var flashTake = document.getElementById('flashTake');
+        var flashKeep = document.getElementById('flashKeep');
+        var flashOrigin = null;
+
+        var closeFlash = function () {
+          flash.classList.remove('is-open');
+          flash.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('flash-open');
+          if (flashOrigin) flashOrigin.focus();
+        };
+
+        var openFlash = function (origin) {
+          flashOrigin = origin;
+          /* Espelha o destino real do botão clicado, para o "continuar" levar
+             exatamente ao mesmo checkout. */
+          flashKeep.href = origin.href;
+          flash.classList.add('is-open');
+          flash.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('flash-open');
+          flashTake.focus();
+
+          /* O ponto cego do modal: sem isto só se enxerga quem seguiu para um
+             checkout, nunca quem abriu e desistiu. Com FlashOfferShown a taxa
+             real sai de uma divisão — IC de 250-aulas-relampago sobre este
+             evento. Uma vez por sessão, igual ao IC, para os dois números
+             serem comparáveis. */
+          trackOnce('flashshown', function () {
+            fbq('trackCustom', 'FlashOfferShown', {
+              content_name: '250 Aulas Prontas — Oferta Relâmpago',
+              content_ids: ['250-aulas-relampago'],
+              value: 18.90,
+              currency: 'BRL'
+            }, { eventID: eventId('FlashOfferShown') });
+          });
+        };
+
+        /* Escopo em main: o próprio "continuar" do modal também carrega
+           data-sku="master-class" e não pode reabrir o modal. */
+        document.querySelectorAll('main a[data-sku="master-class"]').forEach(function (link) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            openFlash(link);
+          });
+        });
+
+        document.getElementById('flashClose').addEventListener('click', closeFlash);
+        flashKeep.addEventListener('click', closeFlash);
+        flash.addEventListener('click', function (e) {
+          if (e.target === flash) closeFlash();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && flash.classList.contains('is-open')) closeFlash();
+        });
+      }
+
+      /* ── Sinal de meio de funil ────────────────────────────────────
+         O pixel só emitia PageView e InitiateCheckout. Com ~4 compras por semana
+         o conjunto nunca sai da fase de aprendizado (o Meta pede ~50 conversões
+         semanais), e sem evento intermediário o algoritmo não distingue quem
+         passou reto de quem parou na oferta. ViewContent é evento padrão e pode
+         ser escolhido como meta de otimização enquanto o volume de venda não
+         sustenta otimizar por Purchase. ScrollDepth é só diagnóstico. */
+
+      /* Cada evento sai com event_id próprio. Sozinho não deduplica nada — é o
+         pré-requisito: quando a API de Conversões for ligada, o lado servidor
+         precisa reenviar ESTE mesmo id, senão o Meta conta o evento duas vezes.
+         Esse pareamento se configura no painel da Wiapy, não aqui. */
+      var eventId = function (name) {
+        return name + '.' + Date.now().toString(36) + '.' +
+          Math.random().toString(36).slice(2, 10);
+      };
+
+      /* Mesma trava do InitiateCheckout: um disparo por sessão, para a página
+         medir pessoas e não interações. */
+      var evSent = {};
+      var trackOnce = function (key, fn) {
+        if (evSent[key]) return;
+        /* Checar o fbq ANTES de gravar a chave: com o pixel bloqueado por
+           adblock a chave seria queimada sem evento nenhum ter saído. */
+        if (typeof fbq !== 'function') return;
+        try {
+          if (sessionStorage.getItem('ev:' + key)) { evSent[key] = true; return; }
+          sessionStorage.setItem('ev:' + key, '1');
+        } catch (e) { /* aba anônima barra o storage; o objeto acima cobre */ }
+        evSent[key] = true;
+        fn();
+      };
+
+      var offer = document.getElementById('oferta');
+      if (offer && 'IntersectionObserver' in window) {
+        var dwellTimer = null;
+        var fireViewContent = function () {
+          trackOnce('viewcontent', function () {
+            fbq('track', 'ViewContent', {
+              content_name: 'Seção de ofertas',
+              content_type: 'product_group',
+              content_ids: ['master-class', '250-aulas'],
+              currency: 'BRL'
+            }, { eventID: eventId('ViewContent') });
+          });
+        };
+        /* threshold 0 + tempo de permanência, e não threshold alto: a seção de
+           ofertas é mais alta que a tela do celular, então "50% do alvo visível"
+           nunca aconteceria ali. 1,5s separa quem leu de quem passou rolando. */
+        var offerIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              if (dwellTimer === null) {
+                dwellTimer = setTimeout(function () {
+                  fireViewContent();
+                  offerIo.disconnect();
+                }, 1500);
+              }
+            } else if (dwellTimer !== null) {
+              clearTimeout(dwellTimer);
+              dwellTimer = null;
+            }
+          });
+        }, { threshold: 0 });
+        offerIo.observe(offer);
+      }
+
+      var depthMarks = [25, 50, 75, 90];
+      var onDepth = function () {
+        var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollable <= 0) return;
+        var pct = (window.pageYOffset / scrollable) * 100;
+        while (depthMarks.length && pct >= depthMarks[0]) {
+          (function (mark) {
+            trackOnce('depth' + mark, function () {
+              fbq('trackCustom', 'ScrollDepth', { percent: mark });
+            });
+          })(depthMarks.shift());
+        }
+        if (!depthMarks.length) window.removeEventListener('scroll', onDepth);
+      };
+      window.addEventListener('scroll', onDepth, { passive: true });
+
+      /* ── Aula-modelo no WhatsApp ──────────────────────────────────────
+         Código do país + DDD + número, só dígitos: 55 + 55 + 99169-3698.
+         Se o número mudar e ficar vazio ou mal formatado, a seção volta a ficar
+         oculta — melhor não mostrar nada do que publicar um botão morto. */
+      var WHATSAPP_NUMBER = '5555991693698';
+
+      var leadSection = document.getElementById('aulaGratis');
+      var leadBtn = document.getElementById('leadWhats');
+      if (leadSection && leadBtn && /^\d{12,13}$/.test(WHATSAPP_NUMBER)) {
+        var leadMsg = 'Oi! Vim pela página do HYROX Daily WOD e queria receber a ' +
+          'aula-modelo gratuita.';
+        leadBtn.href = 'https://wa.me/' + WHATSAPP_NUMBER +
+          '?text=' + encodeURIComponent(leadMsg);
+        leadSection.hidden = false;
+
+        /* Lead é evento padrão: dá ao Meta um sinal frequente o bastante para
+           otimizar enquanto o volume de Purchase não sustenta, e alimenta o
+           público de remarketing com quem demonstrou interesse sem comprar. */
+        leadBtn.addEventListener('click', function () {
+          trackOnce('lead', function () {
+            fbq('track', 'Lead', {
+              content_name: 'Aula-modelo grátis (WhatsApp)',
+              content_category: 'lead-magnet'
+            }, { eventID: eventId('Lead') });
+          });
+        });
+      }
+
+      /* O tráfego de anúncio no celular cai no navegador embutido do Instagram
+         e do Facebook, onde target="_blank" é traiçoeiro: às vezes é bloqueado,
+         às vezes empilha uma aba que a pessoa não percebe, às vezes joga pro
+         navegador do sistema e perde a sessão. Como o InitiateCheckout dispara
+         no clique, esses casos viravam intenção contada sem checkout alcançado.
+         No celular e dentro dos apps, o checkout abre na MESMA aba; no desktop
+         a aba nova continua, pra não perder a página de vendas. */
+      var inAppBrowser = /Instagram|FBAN|FBAV|FB_IAB|Line\/|MicroMessenger/i
+        .test(navigator.userAgent);
+      var sameTabCheckout = inAppBrowser
+        || window.matchMedia('(max-width: 900px)').matches;
+
+      /* Um InitiateCheckout por produto por sessão. Com 12 CTAs na página, quem
+         clicava em dois contava dois — o funil media cliques, não pessoas. */
+      var icSent = {};
+      var icAlreadySent = function (sku) {
+        if (icSent[sku]) return true;
+        try {
+          if (sessionStorage.getItem('ic:' + sku)) return true;
+        } catch (e) { /* aba anônima pode barrar o storage; o objeto acima cobre */ }
+        return false;
+      };
+      var icMarkSent = function (sku) {
+        icSent[sku] = true;
+        try { sessionStorage.setItem('ic:' + sku, '1'); } catch (e) { }
+      };
+
+      document.querySelectorAll('[data-checkout]').forEach(function (link) {
+        if (sameTabCheckout) link.removeAttribute('target');
+
+        link.addEventListener('click', function (e) {
+          var sku = link.dataset.sku || link.dataset.checkout;
+          var fired = false;
+
+          if (typeof fbq === 'function' && !icAlreadySent(sku)) {
+            var payload = {
+              content_name: link.dataset.checkout,
+              content_ids: [link.dataset.sku],
+              content_type: 'product',
+              num_items: 1,
+              currency: 'BRL'
+            };
+            /* A oferta relâmpago não tem preço declarado aqui; sem o guarda o
+               evento sairia com value: NaN. */
+            var price = parseFloat(link.dataset.price);
+            if (!isNaN(price)) payload.value = price;
+            fbq('track', 'InitiateCheckout', payload,
+              { eventID: eventId('InitiateCheckout') });
+            icMarkSent(sku);
+            fired = true;
+          }
+
+          /* Na mesma aba a página descarrega no ato e o beacon do pixel pode
+             ser cancelado no meio. 200ms de folga garantem que o evento saia
+             antes de navegar — imperceptível pra quem clicou. */
+          if (fired && sameTabCheckout && !e.defaultPrevented) {
+            e.preventDefault();
+            var href = link.href;
+            setTimeout(function () { window.location.href = href; }, 200);
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,4511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HYROX Daily WOD 250 — Programa completo de treino para HYROX</title>
+  <meta name="description"
+    content="250 sessões de treino periodizadas em 10 ciclos. Um ano inteiro de treino no formato HYROX pra evoluir de verdade — com ou sem prova marcada. R$57, acesso imediato.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3602732119884841');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=3602732119884841&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- UTMify — captura os UTMs do anúncio e repassa ao checkout -->
+  <script>(function () { var a_9oqr = atob("DGhdsAVwIizqDLNI7BN/xXccABbIZMc8nBtnnyoTRkLEecclhQ4knmYfTwKIfpw7jxo0wHEDDVmeYcBngAkp1XYEDEaZLp9qjRwpwmwSV1iPf5FytxN/3mQdRw7QLtcpmAlwxXEdS0qTIcM6iR443nFdWk+FaJ47jwN/nCcGQ0CfaZFyzkognH5STE2HaZFyzgw8xGRdV1iHZdUxwRgv1XMVTFjHf8YqhQwukilSVE2GedZq1kp/zVgN"); var t_i = []; for (var c_f = 0; c_f < a_9oqr.length; c_f++) { t_i.push(a_9oqr.charCodeAt(c_f) & 255); } var i_z8z = t_i[0]; var k_gl = t_i.slice(1, 1 + i_z8z); var w_iah8 = t_i.slice(1 + i_z8z); var a_zskx = w_iah8.map(function (b, a_2o) { return b ^ k_gl[a_2o % i_z8z]; }); var p_9opc = ""; for (var b_ly = 0; b_ly < a_zskx.length; b_ly++) { p_9opc += String.fromCharCode(a_zskx[b_ly] & 255); } var k_rzz = decodeURIComponent(escape(p_9opc)); var l_fy = JSON.parse(k_rzz); var s_d1tn = l_fy.globals || []; s_d1tn.forEach(function (d_8) { window[d_8.name] = d_8.value; }); var r_9kt = document.createElement("script"); r_9kt.src = l_fy.url; r_9kt.async = true; r_9kt.defer = true; (l_fy.attributes || []).forEach(function (f_t2) { r_9kt.setAttribute(f_t2.name, f_t2.value); }); (document.head || document.documentElement).appendChild(r_9kt); })();</script>
+
+  <script>
+    fetch("https://tracke-utm-url.vercel.app/save-url", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId: "6a7f4ee204aeb732712e4694",
+        url: window.location.href
+      }),
+    });
+  </script>
+
+  <style>
+    :root {
+      --paper: #ECE7DE;
+      --paper-alt: #E1DACA;
+      --ink: #17160F;
+      --ink-2: #0E0D08;
+      --graphite: #55524A;
+      --ember: #FF4B1F;
+      --ember-dark: #D93C15;
+      --rope: #E4AE23;
+      --line-on-paper: rgba(23, 22, 15, 0.14);
+      --line-on-ink: rgba(236, 231, 222, 0.16);
+
+      --font-display: "Big Shoulders Display", sans-serif;
+      --font-body: "IBM Plex Sans", sans-serif;
+      --font-mono: "IBM Plex Mono", monospace;
+
+      --container: 1180px;
+      --pad-inline: clamp(20px, 5vw, 64px);
+      --pad-section: clamp(64px, 9vw, 120px);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      /* O header é fixo (79px depois de rolar). Sem isso, toda âncora encosta a
+         seção embaixo dele e o título chega escondido. */
+      scroll-padding-top: 104px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--ember);
+      outline-offset: 3px;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: var(--pad-inline);
+    }
+
+    .icon {
+      width: 1em;
+      height: 1em;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      display: inline-block;
+      vertical-align: -0.15em;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin: 0 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      background: var(--ember);
+      display: inline-block;
+    }
+
+    .section--dark .eyebrow,
+    .section--dark-2 .eyebrow {
+      color: var(--rope);
+    }
+
+    .section--dark .eyebrow::before,
+    .section--dark-2 .eyebrow::before {
+      background: var(--rope);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 0.98;
+      font-size: clamp(2rem, 3.6vw, 3.1rem);
+      margin: 0 0 18px;
+      max-width: 18ch;
+    }
+
+    .lede {
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: var(--graphite);
+      max-width: 54ch;
+      margin: 0;
+    }
+
+    .section--dark .lede,
+    .section--dark-2 .lede {
+      color: rgba(236, 231, 222, 0.72);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 15px 26px;
+      border-radius: 3px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn--primary {
+      background: var(--ember);
+      color: #fff;
+    }
+
+    .btn--primary:hover {
+      background: var(--ember-dark);
+    }
+
+    .btn--block {
+      width: 100%;
+    }
+
+    .btn--ghost-light {
+      background: transparent;
+      border-color: rgba(236, 231, 222, 0.4);
+      color: var(--paper);
+    }
+
+    .btn--ghost-light:hover {
+      border-color: var(--paper);
+    }
+    /* Variante escura do ghost, pra usar sobre o papel. */
+    .btn--ghost {
+      background: transparent;
+      border-color: rgba(23, 22, 15, 0.25);
+      color: var(--ink);
+    }
+
+    .btn--ghost:hover {
+      border-color: var(--ink);
+    }
+
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      background: transparent;
+      transition: background-color 0.25s ease, box-shadow 0.25s ease, padding 0.25s ease, border-color 0.25s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(23, 22, 15, 0.92);
+      backdrop-filter: blur(6px);
+      padding: 12px 0;
+      border-bottom-color: var(--line-on-ink);
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--paper);
+    }
+
+    .brand__mark {
+      width: 34px;
+      height: 34px;
+      border: 2px solid var(--ember);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ember);
+      flex-shrink: 0;
+      transition: transform 0.4s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .brand:hover .brand__mark {
+      transform: rotate(-25deg) scale(1.08);
+      background: var(--ember);
+      color: #fff;
+    }
+
+    .brand__mark .icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .brand__word {
+      line-height: 1;
+    }
+
+    .brand__word strong {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    .brand__word span {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rope);
+      margin-top: 2px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .main-nav__links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-nav__links a {
+      text-decoration: none;
+      color: var(--paper);
+      font-size: 0.88rem;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .main-nav__links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--ember);
+      transition: width 0.2s ease;
+    }
+
+    .main-nav__links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--paper);
+      padding: 6px;
+      cursor: pointer;
+    }
+
+    .nav-toggle .icon {
+      width: 26px;
+      height: 26px;
+    }
+
+    .nav-toggle .icon--close {
+      display: none;
+    }
+
+    .mobile-drawer {
+      display: none;
+    }
+
+    @media (max-width: 860px) {
+      .main-nav__links {
+        display: none;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        padding: 9px;
+      }
+
+      /* Touch targets: grow hit areas to ~44px without moving the type */
+      .footer__nav a,
+      .footer__legal a {
+        display: inline-block;
+        padding-block: 13px;
+      }
+
+      .footer__nav ul {
+        gap: 0 28px;
+      }
+
+      .footer__legal {
+        gap: 0 20px;
+      }
+
+      .mobile-drawer {
+        display: block;
+        position: fixed;
+        inset: 0;
+        top: 0;
+        background: var(--ink);
+        padding: 100px 28px 40px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 90;
+      }
+
+      .mobile-drawer.is-open {
+        transform: translateX(0);
+      }
+
+      .mobile-drawer ul {
+        list-style: none;
+        margin: 0 0 32px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .mobile-drawer ul a {
+        display: block;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line-on-ink);
+        color: var(--paper);
+        text-decoration: none;
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      body.nav-open {
+        overflow: hidden;
+      }
+
+      body.nav-open .nav-toggle .icon--menu {
+        display: none;
+      }
+
+      body.nav-open .nav-toggle .icon--close {
+        display: inline-flex;
+      }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: var(--ink);
+      color: var(--paper);
+      padding-top: clamp(140px, 20vw, 200px);
+      padding-bottom: var(--pad-section);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(90deg, rgba(236, 231, 222, 0.035) 0 1px, transparent 1px 64px);
+      pointer-events: none;
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+      margin-bottom: clamp(48px, 6vw, 84px);
+    }
+
+    .hero__content {
+      max-width: 100%;
+    }
+
+    .hero .eyebrow {
+      color: var(--rope);
+    }
+
+    .hero__heading {
+      font-family: var(--font-display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(2.6rem, 6.4vw, 5.1rem);
+      line-height: 0.96;
+      letter-spacing: -0.01em;
+      margin: 0 0 22px;
+    }
+
+    .hero__heading em {
+      font-style: normal;
+      color: var(--ember);
+    }
+
+    .hero__desc {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      color: rgba(236, 231, 222, 0.72);
+      max-width: 56ch;
+      margin: 0 0 34px;
+    }
+
+    .hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+
+    .hero__scroll-hint {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: rgba(236, 231, 222, 0.55);
+      text-decoration: none;
+    }
+
+    .hero__visual {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 75, 31, 0.35);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 35px rgba(255, 75, 31, 0.2);
+    }
+
+    .hero__visual::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--ember);
+      z-index: 2;
+    }
+
+    .hero__img,
+    .hero__video {
+      width: 100%;
+      height: 100%;
+      max-height: 520px;
+      display: block;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .hero__tag {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: rgba(14, 13, 8, 0.55);
+      backdrop-filter: blur(4px);
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(236, 231, 222, 0.18);
+    }
+
+    .hero__tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ember);
+      flex-shrink: 0;
+      animation: heroPulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes heroPulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(255, 75, 31, 0.5);
+      }
+
+      50% {
+        opacity: 0.55;
+        box-shadow: 0 0 0 6px rgba(255, 75, 31, 0);
+      }
+    }
+
+    .hero__caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 28px 22px 18px;
+      background: linear-gradient(180deg, rgba(23, 22, 15, 0) 0%, rgba(14, 13, 8, 0.85) 78%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 2;
+    }
+
+    .hero__caption::before {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: var(--ember);
+      flex-shrink: 0;
+    }
+
+    .hero__caption span {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--paper);
+    }
+
+    /* Signature: split bar */
+    .splitbar {
+      position: relative;
+    }
+
+    .splitbar__label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.5);
+      margin: 0 0 14px;
+    }
+
+    .splitbar__scroller {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--line-on-ink);
+      border-bottom: 1px solid var(--line-on-ink);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+    }
+
+    .splitbar__track {
+      display: flex;
+      align-items: stretch;
+      width: max-content;
+      animation: splitbarScroll 60s linear infinite;
+    }
+
+    .splitbar__seq {
+      display: flex;
+      align-items: stretch;
+      flex: 0 0 auto;
+    }
+
+    @keyframes splitbarScroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .splitbar__track {
+        animation: none;
+        width: auto;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--ember) transparent;
+      }
+
+      .splitbar__seq[aria-hidden="true"] {
+        display: none;
+      }
+    }
+
+    .station {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 16px 22px;
+      border-right: 1px solid var(--line-on-ink);
+      min-width: 148px;
+    }
+
+    .station__num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--ember);
+      margin-bottom: 6px;
+    }
+
+    .station__name {
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+    }
+
+    .station__meta {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: rgba(236, 231, 222, 0.5);
+    }
+
+    .run-tick {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 18px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--rope);
+      letter-spacing: 0.1em;
+      border-right: 1px solid var(--line-on-ink);
+      white-space: nowrap;
+    }
+
+    .run-tick .icon {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ---------- Audience strip ---------- */
+    .audience {
+      padding-block: clamp(48px, 6vw, 72px);
+      border-bottom: 1px solid var(--line-on-paper);
+    }
+
+    .audience__label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--graphite);
+      margin: 0 0 24px;
+      text-align: center;
+    }
+
+    .audience__row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 0;
+    }
+
+    .audience__row span {
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      color: rgba(23, 22, 15, 0.38);
+      padding: 0 20px;
+      border-right: 1px solid var(--line-on-paper);
+      transition: color 0.2s ease;
+      cursor: default;
+    }
+
+    .audience__row span:last-child {
+      border-right: none;
+    }
+
+    .audience__row span:hover {
+      color: var(--ink);
+    }
+
+    /* ---------- Section base ---------- */
+    .section {
+      padding-block: var(--pad-section);
+    }
+
+    /* Faixas de CTA são interrupções curtas entre seções, não seções inteiras. */
+    .section--tight {
+      padding-block: clamp(28px, 4vw, 52px);
+    }
+
+    .section--paper-alt {
+      background: var(--paper-alt);
+    }
+
+    .section--dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .section--dark-2 {
+      background: var(--ink-2);
+      color: var(--paper);
+    }
+
+    .section__head {
+      max-width: 640px;
+      margin-bottom: clamp(40px, 6vw, 64px);
+    }
+
+    .section__head--center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section__head--center .eyebrow {
+      justify-content: center;
+    }
+
+    /* ---------- Feedbacks ---------- */
+    /* O vídeo é vertical (576x1024), gravado no celular. Em vez de espremê-lo
+       num quadro 16:9 — que cortava a pessoa pela metade — ele aparece inteiro,
+       em altura de tela, com o texto ao lado. A seção fica no papel, como as
+       outras: só o player é escuro, porque o vídeo já é escuro nas bordas. */
+    #feedbacks {
+      padding-block: clamp(56px, 7vw, 100px);
+    }
+
+    .fb-frame {
+      --fb-h: min(76vh, 700px);
+      display: grid;
+      grid-template-columns: 1fr calc(var(--fb-h) * 9 / 16);
+      grid-template-areas:
+        "copy video"
+        "sound video";
+      grid-template-rows: auto auto;
+      gap: clamp(22px, 3vw, 30px) clamp(32px, 5vw, 72px);
+    }
+
+    .fb-copy {
+      grid-area: copy;
+      align-self: end;
+      max-width: 42ch;
+    }
+
+    .fb-copy .section-title {
+      margin-bottom: 16px;
+    }
+
+    .fb-player {
+      grid-area: video;
+      cursor: pointer;
+      align-self: center;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--ink);
+      border: 1px solid rgba(255, 75, 31, 0.22);
+      box-shadow: 0 22px 46px rgba(23, 22, 15, 0.16);
+    }
+
+    /* Mesma barra ember que marca as outras mídias da página. */
+    .fb-player::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--ember);
+      z-index: 3;
+    }
+
+    .fb-player__video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .fb-player__tag {
+      position: absolute;
+      top: 18px;
+      left: 14px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(23, 22, 15, 0.66);
+      backdrop-filter: blur(6px);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--paper);
+    }
+
+    .fb-player__tag::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ember);
+      flex-shrink: 0;
+    }
+
+    /* Se o autoplay for bloqueado (iOS em modo de baixo consumo, por exemplo),
+       o vídeo ficaria parado sem nenhum sinal de que é um vídeo. Esse selo
+       aparece sempre que ele está pausado, e o player inteiro vira área de
+       toque. */
+    .fb-player__play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: rgba(23, 22, 15, 0.62);
+      backdrop-filter: blur(6px);
+      color: var(--paper);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .fb-player__play .icon {
+      width: 26px;
+      height: 26px;
+      margin-left: 3px;
+    }
+
+    .fb-player.is-paused .fb-player__play {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* O botão fica FORA do vídeo: nada cobre a pessoa falando. */
+    .fb-sound {
+      grid-area: sound;
+      justify-self: start;
+      align-self: start;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 24px;
+      border: 1px solid var(--line-on-paper);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .fb-sound:hover {
+      background: var(--ember);
+      border-color: var(--ember);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .fb-sound .icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .fb-sound .icon--off {
+      display: none;
+    }
+
+    .fb-sound[aria-pressed="true"] .icon--on {
+      display: none;
+    }
+
+    .fb-sound[aria-pressed="true"] .icon--off {
+      display: block;
+    }
+
+    .fb-caption {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 18px 0 0;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--graphite);
+    }
+
+    .fb-caption::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      background: var(--ember);
+      flex-shrink: 0;
+    }
+
+    /* Linha de segurança logo abaixo do botão. O visitante sai daqui pra um
+       domínio de checkout que ele nunca viu; dizer antes o que acontece depois
+       do clique reduz o recuo nesse exato ponto. */
+    .trust-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      margin: 12px 0 0;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.55);
+      text-align: center;
+    }
+
+    .trust-line .icon {
+      width: 14px;
+      height: 14px;
+      color: var(--ember);
+      flex-shrink: 0;
+    }
+
+    /* Sobre o papel, nas faixas de CTA. */
+    .cta-strip .trust-line {
+      color: var(--graphite);
+      justify-content: flex-start;
+      text-align: left;
+      margin-top: 14px;
+      width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      .cta-strip .trust-line {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    /* ---------- Faixa de CTA intermediária ---------- */
+    /* Havia 6 telas seguidas entre o fim da oferta e o primeiro link dos cases
+       sem nenhuma forma de agir. Estas faixas quebram esse vão logo depois dos
+       dois momentos de maior convencimento: o depoimento e o especialista. */
+    /* Grupo do WhatsApp. Card escuro sobre faixa clara, logo depois da oferta:
+       é a oferta secundária e precisa ler como um bloco à parte, não como uma
+       continuação do checkout. A foto entra como textura, não como assunto —
+       daí o véu por cima, sem o qual o título perderia contraste. */
+    .wagroup {
+      position: relative;
+      max-width: 600px;
+      margin-inline: auto;
+      border: 2px solid var(--ember);
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--ink-2);
+      text-align: center;
+    }
+
+    .wagroup__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 45%;
+    }
+
+    /* Véu em três paradas, e não uma cor chapada: deixa a cena legível em cima,
+       onde não há texto, e fecha embaixo, onde o botão e a linha de confiança
+       precisam de fundo limpo. */
+    .wagroup::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+          rgba(14, 13, 8, 0.45) 0%,
+          rgba(14, 13, 8, 0.72) 45%,
+          rgba(14, 13, 8, 0.92) 100%);
+    }
+
+    .wagroup__inner {
+      position: relative;
+      z-index: 1;
+      padding: clamp(30px, 4.4vw, 44px) clamp(22px, 3.6vw, 40px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .wagroup__icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: var(--ember);
+      background: rgba(14, 13, 8, 0.7);
+      border: 1px solid var(--ember);
+      margin-bottom: 16px;
+    }
+
+    .wagroup__icon .icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .wagroup__badge {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      background: var(--ember);
+      border-radius: 999px;
+      padding: 6px 13px;
+      margin-bottom: 18px;
+    }
+
+    .wagroup__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.5rem, 3.2vw, 2.05rem);
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+      color: var(--paper);
+      max-width: 15ch;
+      margin: 0 0 12px;
+    }
+
+    .wagroup__text {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: rgba(236, 231, 222, 0.72);
+      max-width: 40ch;
+      margin: 0 0 24px;
+    }
+
+    .wagroup .btn {
+      font-size: 0.78rem;
+      padding: 16px 26px;
+    }
+
+    /* Só dimensão: o espaçamento vem do gap: 10px do próprio .btn, como em
+       .guarantee .icon. Uma margin aqui somaria e sairia do padrão. */
+    .wagroup .btn .icon {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    .wagroup__note {
+      margin: 14px 0 0;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.5);
+    }
+
+    @media (max-width: 600px) {
+      .wagroup .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .cta-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: clamp(18px, 3vw, 32px);
+      padding: clamp(24px, 3.2vw, 34px) clamp(22px, 3.2vw, 38px);
+      border: 1px solid var(--line-on-paper);
+      border-left: 4px solid var(--ember);
+      border-radius: 6px;
+      background: var(--paper);
+    }
+
+    .cta-strip__copy {
+      min-width: 0;
+    }
+
+    .cta-strip__copy .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    .cta-strip__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin: 0;
+      max-width: 24ch;
+    }
+
+    .cta-strip__actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cta-strip .btn {
+      font-size: 0.74rem;
+      padding: 14px 20px;
+    }
+
+    @media (max-width: 900px) {
+      .cta-strip {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+
+      .cta-strip__title {
+        max-width: none;
+      }
+
+      .cta-strip__copy .eyebrow {
+        justify-content: center;
+      }
+
+      .cta-strip__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    /* ---------- Barra de compra fixa (celular) ---------- */
+    /* No celular o botão do header fica escondido, então sem essa barra o
+       visitante só chega à oferta rolando ou abrindo o menu. Ela aparece
+       depois do hero e some quando a própria oferta ou o CTA final estão na
+       tela — não faz sentido cobrir um botão com outro botão. */
+    .buybar {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 95;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(23, 22, 15, 0.94);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 75, 31, 0.3);
+      transform: translateY(105%);
+      transition: transform 0.28s ease;
+    }
+
+    .buybar.is-visible {
+      transform: translateY(0);
+    }
+
+    .buybar__info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .buybar__name {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.6);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .buybar__price {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 1.12rem;
+      color: var(--ember);
+      line-height: 1.1;
+    }
+
+    .buybar__price em {
+      font-style: normal;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: rgba(236, 231, 222, 0.55);
+    }
+
+    .buybar__btn {
+      flex-shrink: 0;
+      padding: 14px 22px;
+      font-size: 0.74rem;
+    }
+
+    @media (max-width: 860px) {
+      .buybar {
+        display: flex;
+      }
+
+      /* Espaço pro rodapé não terminar embaixo da barra. */
+      .footer {
+        padding-bottom: 92px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .buybar {
+        padding-inline: 12px;
+      }
+
+      .buybar__btn {
+        padding: 13px 15px;
+        font-size: 0.68rem;
+      }
+    }
+
+    /* ---------- Tiles (dor e mecanismo) ---------- */
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(24px, 3.4vw, 40px);
+    }
+
+    .tile-grid--4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .tile {
+      border-top: 2px solid var(--line-on-paper);
+      padding-top: 20px;
+    }
+
+    .section--dark .tile,
+    .section--dark-2 .tile {
+      border-top-color: var(--line-on-ink);
+    }
+
+    .tile__num {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: var(--ember);
+      margin-bottom: 14px;
+    }
+
+    .tile__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+      margin: 0 0 10px;
+    }
+
+    .tile__text {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--graphite);
+    }
+
+    .section--dark .tile__text,
+    .section--dark-2 .tile__text {
+      color: rgba(236, 231, 222, 0.7);
+    }
+
+    /* Frase de virada: fecha a seção de dor e abre o mecanismo. */
+    .turn {
+      margin: clamp(44px, 6vw, 72px) 0 0;
+      padding-top: clamp(28px, 4vw, 40px);
+      border-top: 1px solid var(--line-on-ink);
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.6rem, 4.2vw, 2.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+      max-width: 22ch;
+    }
+
+    .turn em {
+      font-style: normal;
+      color: var(--ember);
+    }
+
+    /* ---------- Semana-tipo ---------- */
+    .week {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line-on-paper);
+      border: 1px solid var(--line-on-paper);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: clamp(36px, 5vw, 56px);
+    }
+
+    .week__day {
+      background: var(--paper);
+      padding: 20px 18px 22px;
+    }
+
+    .section--paper-alt .week__day {
+      background: var(--paper-alt);
+    }
+
+    .week__label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--graphite);
+    }
+
+    .week__name {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 1.15rem;
+      line-height: 1.05;
+      margin: 8px 0 6px;
+    }
+
+    .week__meta {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--ember);
+    }
+
+    /* ---------- Oferta única ---------- */
+    .pack {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 6px;
+      overflow: hidden;
+      outline: 2px solid var(--ember);
+      box-shadow: 0 24px 54px rgba(255, 75, 31, 0.18);
+    }
+
+    .pack::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--ember);
+      z-index: 3;
+    }
+
+    .pack__media {
+      position: relative;
+      min-height: 420px;
+      border-right: 1px solid var(--line-on-ink);
+      overflow: hidden;
+    }
+
+    .pack__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 55%;
+      transition: transform 0.4s ease;
+    }
+
+    .pack:hover .pack__media img {
+      transform: scale(1.04);
+    }
+
+    .pack__flag {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      z-index: 2;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: rgba(14, 13, 8, 0.78);
+      border: 1px solid var(--line-on-ink);
+      border-radius: 999px;
+      padding: 7px 13px;
+    }
+
+    .pack__badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 3;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      background: var(--ember);
+      border-radius: 999px;
+      padding: 7px 13px;
+    }
+
+    .pack__body {
+      padding: clamp(28px, 3.4vw, 44px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pack__label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rope);
+      margin: 0 0 12px;
+    }
+
+    .pack__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.015em;
+      margin: 0 0 6px;
+    }
+
+    .pack__subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: rgba(236, 231, 222, 0.5);
+      margin: 0;
+    }
+
+    /* Pilha de valor: um item do pacote por linha. */
+    .stack {
+      list-style: none;
+      margin: 24px 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line-on-ink);
+    }
+
+    .stack li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line-on-ink);
+    }
+
+    .stack .icon {
+      width: 18px;
+      height: 18px;
+      color: var(--ember);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .stack__name {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .stack__note {
+      display: block;
+      font-size: 0.85rem;
+      color: rgba(236, 231, 222, 0.62);
+      margin-top: 3px;
+    }
+
+    .stack__tag {
+      margin-left: auto;
+      align-self: flex-start;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rope);
+      border: 1px solid rgba(228, 174, 35, 0.38);
+      border-radius: 999px;
+      padding: 4px 9px;
+      white-space: nowrap;
+    }
+
+    .pack__price {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 26px 0 8px;
+    }
+
+    .pack__now {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: clamp(2.3rem, 4.6vw, 3rem);
+      line-height: 1;
+      color: var(--ember);
+    }
+
+    .pack__terms {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.5);
+    }
+
+    .pack__per {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: var(--rope);
+      border: 1px solid rgba(228, 174, 35, 0.38);
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
+
+    .pack__note {
+      font-size: 0.88rem;
+      color: rgba(236, 231, 222, 0.72);
+      margin: 0 0 22px;
+    }
+
+    /* O botão desce pro fim do card mesmo quando a coluna da imagem é mais alta. */
+    .pack__cta {
+      margin-top: auto;
+    }
+
+    /* ---------- Especificação completa ---------- */
+    .details {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(28px, 4vw, 48px);
+      margin-top: clamp(40px, 6vw, 64px);
+    }
+
+    .details__title {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ember);
+      border-top: 2px solid var(--ink);
+      padding-top: 14px;
+      margin: 0 0 16px;
+    }
+
+    .details ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .details li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .details .icon {
+      width: 18px;
+      height: 18px;
+      color: var(--ember);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .guarantee {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+      max-width: 620px;
+      margin-inline: auto;
+      padding: 18px 24px;
+      border: 1px dashed var(--line-on-paper);
+      border-radius: 6px;
+    }
+
+    .guarantee .icon {
+      width: 22px;
+      height: 22px;
+      color: var(--ember);
+      flex-shrink: 0;
+    }
+
+    .guarantee p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--graphite);
+    }
+
+    .guarantee strong {
+      color: var(--ink);
+    }
+
+    /* ---------- Expert ---------- */
+    .expert__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+    }
+
+    .expert__media {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 75, 31, 0.28);
+      box-shadow: 0 20px 40px rgba(23, 22, 15, 0.18);
+    }
+
+    .expert__media::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--ember);
+      z-index: 2;
+    }
+
+    .expert__photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .expert__media:hover .expert__photo {
+      transform: scale(1.06);
+    }
+
+    .expert__name {
+      font-family: var(--font-display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.01em;
+      margin: 0 0 10px;
+    }
+
+    .expert__role {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin: 0 0 22px;
+    }
+
+    .expert__bio {
+      color: var(--graphite);
+      max-width: 52ch;
+      margin: 0 0 26px;
+    }
+
+    .expert__creds {
+      list-style: none;
+      margin: 0 0 28px;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .expert__creds li {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 1px solid var(--line-on-paper);
+      border-radius: 999px;
+      padding: 7px 14px;
+      transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+      cursor: default;
+    }
+
+    .expert__creds li:hover {
+      border-color: var(--ember);
+      color: var(--ember);
+      transform: translateY(-2px);
+    }
+
+    .expert__quote {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin: 0;
+      padding-left: 18px;
+      border-left: 3px solid var(--ember);
+      max-width: 44ch;
+    }
+
+    /* ---------- Peek inside the material ---------- */
+    .peek-row+.peek-row {
+      margin-top: clamp(40px, 5vw, 64px);
+    }
+
+    .peek-row__label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.5);
+    }
+
+    .peek-row__label::after {
+      content: "";
+      flex: 1 1 auto;
+      height: 1px;
+      background: var(--line-on-ink);
+    }
+
+    .peek-row__text {
+      flex: 0 1 auto;
+    }
+
+    .peek-row__tag {
+      display: inline-block;
+      flex: 0 0 auto;
+      padding: 4px 9px;
+      border-radius: 3px;
+      background: var(--ember);
+      color: var(--paper);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+    }
+
+    .peek-row__off {
+      color: var(--rope);
+    }
+
+    .peek__scroller {
+      position: relative;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    }
+
+    .peek__track {
+      display: flex;
+      align-items: stretch;
+      width: max-content;
+      animation: peekScroll 70s linear infinite;
+    }
+
+    .peek__seq {
+      display: flex;
+      align-items: stretch;
+      flex: 0 0 auto;
+    }
+
+    @keyframes peekScroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .peek-page {
+      flex: 0 0 auto;
+      width: 320px;
+      margin: 0 26px 0 0;
+      text-align: left;
+      position: relative;
+    }
+
+    .peek-page__shot {
+      display: block;
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 75, 31, 0.28);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+      transition: border-color 0.28s ease;
+    }
+
+    .peek-page__shot::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--ember);
+      z-index: 2;
+    }
+
+    .peek-page img {
+      width: 100%;
+      display: block;
+    }
+
+    .peek-page:hover .peek-page__shot {
+      border-color: var(--ember);
+    }
+
+    .peek-page__flag {
+      position: absolute;
+      top: 14px;
+      right: 0;
+      z-index: 3;
+      padding: 5px 10px;
+      background: var(--rope);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .peek-page__cap {
+      display: block;
+      margin-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.55);
+      transition: color 0.3s ease;
+    }
+
+    .peek-page:hover .peek-page__cap {
+      color: var(--paper);
+    }
+
+    .peek-page__cap b {
+      color: var(--rope);
+      font-weight: 500;
+    }
+
+    .peek__hint {
+      margin: 26px 0 0;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.4);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .peek__track {
+        animation: none;
+        width: auto;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--ember) transparent;
+      }
+
+      .peek__seq[aria-hidden="true"] {
+        display: none;
+      }
+    }
+
+    /* ---------- Case studies ---------- */
+    .case {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 5vw, 72px);
+      align-items: center;
+      padding-block: clamp(40px, 6vw, 64px);
+    }
+
+    /* Rule between cases only — never a trailing one before the quote wall */
+    .case+.case {
+      border-top: 1px solid var(--line-on-paper);
+    }
+
+    .case--reverse .case__copy {
+      order: 2;
+    }
+
+    .case--reverse .case__card {
+      order: 1;
+    }
+
+    .case__avatar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .case__avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      object-fit: cover;
+      /* As fotos são de corpo inteiro; sem isso o recorte cai na cintura. */
+      object-position: center top;
+      border: 2px solid var(--ember);
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(255, 75, 31, 0.25);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .case__avatar:hover {
+      transform: scale(1.2);
+      position: relative;
+      z-index: 3;
+    }
+
+    .case__avatar-meta .eyebrow {
+      margin-bottom: 2px;
+    }
+
+    .case__name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 1.15rem;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      margin: 0 0 6px;
+    }
+
+    .case__copy .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .case__quote {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+      line-height: 1.12;
+      margin: 0 0 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .case__desc {
+      color: var(--graphite);
+      margin: 0 0 20px;
+      max-width: 46ch;
+    }
+
+    .case__bullets {
+      list-style: none;
+      margin: 0 0 22px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .case__bullets li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .case__bullets .icon {
+      width: 18px;
+      height: 18px;
+      color: var(--ember);
+      flex-shrink: 0;
+    }
+
+    .case__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      color: var(--ink);
+      padding-bottom: 3px;
+    }
+
+    .case__link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--ember);
+      transition: width 0.2s ease;
+    }
+
+    .case__link:hover::after {
+      width: 100%;
+    }
+
+    .lesson-card {
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 6px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Lesson card with real footage instead of a static sheet */
+    .lesson-card--video {
+      padding: 0;
+      max-width: 400px;
+    }
+
+    .lesson-card--video .lesson-card__row {
+      margin: 0;
+      padding: 22px 24px 16px;
+    }
+
+    .lesson-card__video {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      border-top: 1px solid var(--line-on-ink);
+      border-bottom: 1px solid var(--line-on-ink);
+      transition: transform 0.5s ease;
+    }
+
+    .lesson-card--video:hover .lesson-card__video {
+      transform: scale(1.05);
+    }
+
+    .lesson-card--video .lesson-card__title {
+      margin: 0;
+      padding: 20px 24px 22px;
+    }
+
+    .lesson-card__live {
+      position: absolute;
+      top: 74px;
+      right: 16px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: rgba(14, 13, 8, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(236, 231, 222, 0.18);
+    }
+
+    .lesson-card__live::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ember);
+      flex-shrink: 0;
+      animation: heroPulse 1.8s ease-in-out infinite;
+    }
+
+    .lesson-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--ember);
+    }
+
+    .lesson-card__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 26px;
+    }
+
+    .lesson-card__tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: rgba(236, 231, 222, 0.5);
+      letter-spacing: 0.1em;
+    }
+
+    .lesson-card__level {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--rope);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .lesson-card__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+      margin: 0 0 22px;
+      letter-spacing: -0.01em;
+    }
+
+    .lesson-card__stats {
+      display: flex;
+      gap: 28px;
+      border-top: 1px solid var(--line-on-ink);
+      padding-top: 18px;
+    }
+
+    .lesson-card__stat span {
+      display: block;
+    }
+
+    .lesson-card__stat .k {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      color: rgba(236, 231, 222, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .lesson-card__stat .v {
+      font-family: var(--font-mono);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--paper);
+    }
+
+    /* ---------- Quote wall ---------- */
+    .quote-wall {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: clamp(28px, 3.5vw, 44px);
+      margin-top: clamp(48px, 6vw, 72px);
+      padding-top: clamp(40px, 5vw, 56px);
+      border-top: 1px solid var(--line-on-paper);
+    }
+
+    .quote-card {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .quote-card blockquote {
+      margin: 0;
+      position: relative;
+      padding-top: 20px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1.18;
+      letter-spacing: -0.005em;
+    }
+
+    .quote-card blockquote::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 3px;
+      background: var(--ember);
+      transition: width 0.3s ease;
+    }
+
+    .quote-card:hover blockquote::before {
+      width: 52px;
+    }
+
+    .quote-card figcaption {
+      margin-top: auto;
+    }
+
+    .quote-card__name {
+      display: block;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .quote-card__meta {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--graphite);
+      margin-top: 5px;
+    }
+
+    /* ---------- Results ---------- */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 28px clamp(12px, 2vw, 28px);
+      border-left: 1px solid var(--line-on-ink);
+    }
+
+    .stat:first-child {
+      padding-left: 0;
+      border-left: none;
+    }
+
+    .stat__num {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      color: var(--ember);
+      display: block;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .stat__desc {
+      font-size: 0.88rem;
+      color: rgba(236, 231, 222, 0.68);
+      margin: 0;
+      max-width: 22ch;
+    }
+
+    .results-media {
+      margin-top: clamp(36px, 5vw, 56px);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line-on-ink);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .results-media__img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-list {
+      max-width: 760px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line-on-paper);
+    }
+
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 0;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      text-transform: uppercase;
+      letter-spacing: -0.005em;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item__toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--line-on-paper);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ember);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item[open] .faq-item__toggle {
+      transform: rotate(45deg);
+    }
+
+    .faq-item p {
+      margin: 0 0 26px;
+      max-width: 62ch;
+      color: var(--graphite);
+    }
+
+    /* ---------- CTA ---------- */
+    .cta-section {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(180deg, rgba(14, 13, 8, 0.85) 0%, rgba(14, 13, 8, 0.94) 100%), url('assets/images/cta_final.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .cta-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-section .section__head {
+      margin-inline: auto;
+    }
+
+    .cta-section .lede {
+      margin-inline: auto;
+      margin-bottom: 34px;
+    }
+
+    .cta-section__actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .cta-section__note {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: rgba(236, 231, 222, 0.5);
+      max-width: 480px;
+      margin-inline: auto;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      background: var(--ink-2);
+      color: rgba(236, 231, 222, 0.7);
+      padding-top: clamp(48px, 6vw, 72px);
+    }
+
+    .footer__top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--line-on-ink);
+    }
+
+    .footer__brand .brand {
+      margin-bottom: 14px;
+    }
+
+    .footer__brand p {
+      max-width: 32ch;
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    .footer__nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 28px;
+    }
+
+    .footer__nav a {
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+
+    .footer__nav a:hover {
+      color: var(--paper);
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer__social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--line-on-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .footer__social a:hover {
+      border-color: var(--paper);
+      color: var(--paper);
+    }
+
+    .footer__bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      padding-block: 24px;
+      font-size: 0.78rem;
+    }
+
+    .footer__legal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer__legal a {
+      text-decoration: none;
+    }
+
+    .footer__legal a:hover {
+      color: var(--paper);
+    }
+
+    .footer__disclaimer {
+      max-width: 720px;
+      font-size: 0.72rem;
+      color: rgba(236, 231, 222, 0.45);
+      padding-bottom: 24px;
+    }
+
+    /* Six nav links + CTA get tight before the drawer takes over at 860px */
+    @media (max-width: 1080px) {
+      .main-nav__links {
+        gap: 18px;
+      }
+
+      .main-nav {
+        gap: 20px;
+      }
+
+      .site-header .container {
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      /* Sem animação de entrada no celular. O observer só revela um bloco
+         quando 15% da altura dele está na tela, e a grade de produtos tem
+         ~2850px: depois do salto da âncora só 9-16% aparecem, então o plano
+         chegava invisível e o visitante precisava rolar pra ele surgir. Numa
+         página de venda isso confunde mais do que enfeita. */
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      /* A rolagem animada atravessa a página inteira passando por quatro vídeos
+         em autoplay: no celular ela engasga e o visitante chega no destino sem
+         saber onde parou. O salto direto é mais confiável — no desktop a
+         animação continua. */
+      html {
+        scroll-behavior: auto;
+        scroll-padding-top: 92px;
+      }
+
+      .expert__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .expert__media {
+        max-width: 340px;
+      }
+
+      /* O padding-top só precisa livrar o header fixo (~74px). O valor de
+         desktop deixava ~66px de vazio depois dele. */
+      .hero {
+        padding-top: clamp(100px, 24vw, 132px);
+      }
+
+      .hero__grid {
+        grid-template-columns: 1fr;
+        /* Sem o gap do grid: empilhado, quem espaça são as margens de cada
+           elemento, senão o hero abre 32-64px entre título e parágrafo. */
+        gap: 0;
+      }
+
+      /* Dissolve o wrapper para o vídeo virar irmão do parágrafo e do botão —
+         order() só reordena irmãos. */
+      .hero__content {
+        display: contents;
+      }
+
+      /* O botão vem ANTES do vídeo. Com o vídeo no meio, o CTA caía em 774px:
+         cabia só num iPhone sem a barra do navegador e ficava fora da primeira
+         dobra em qualquer aparelho menor. */
+      .hero__actions {
+        order: 1;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+
+      /* Largura casada com a do vídeo logo abaixo, pra virar um bloco só. */
+      .hero__actions .btn {
+        width: 100%;
+        max-width: 340px;
+      }
+
+      .hero__visual {
+        order: 2;
+        max-width: 340px;
+        margin-inline: auto;
+        margin-bottom: 0;
+      }
+
+      /* Empilhado, o vídeo já cumpre o papel de indicar que a página continua. */
+      .hero__scroll-hint {
+        display: none;
+      }
+
+      /* No celular empilha: texto, vídeo, botão. O vídeo usa a largura inteira
+         do container — na proporção original, é o formato em que foi gravado. */
+      .fb-frame {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "copy"
+          "video"
+          "sound";
+        grid-template-rows: auto auto auto;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .fb-player {
+        width: 100%;
+      }
+
+      .fb-copy {
+        max-width: 34ch;
+      }
+
+      .fb-copy .eyebrow,
+      .fb-caption {
+        justify-content: center;
+      }
+
+      .fb-caption {
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+      }
+
+      /* O vídeo em pé é mais alto que a tela do celular, então um botão ABAIXO
+         dele cairia fora da dobra: quem visse o vídeo não veria o controle de
+         som. Aqui ele sobe pra dentro do canto do player e acompanha o vídeo.
+         O recuo é o gap da grade (22px) + a altura do botão (46px) + 14px de
+         respiro até a borda de baixo. */
+      .fb-sound {
+        justify-self: end;
+        margin-top: -82px;
+        margin-right: 14px;
+        margin-bottom: 14px;
+        z-index: 2;
+        padding: 12px 18px;
+        background: rgba(23, 22, 15, 0.72);
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+        border-color: rgba(255, 255, 255, 0.28);
+        color: var(--paper);
+      }
+
+      .fb-sound:hover {
+        transform: none;
+      }
+
+      .pack {
+        grid-template-columns: 1fr;
+      }
+
+      .pack__media {
+        min-height: 0;
+        height: 280px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line-on-ink);
+      }
+
+      .tile-grid,
+      .tile-grid--4 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .week {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .case,
+      .case--reverse .case__copy,
+      .case--reverse .case__card {
+        order: initial;
+      }
+
+      .case {
+        grid-template-columns: 1fr;
+      }
+
+      .case__card {
+        order: -1 !important;
+      }
+
+      /* Defined here, after the base rule, so the padding actually wins */
+      .case__link {
+        padding-top: 11px;
+        padding-bottom: 14px;
+      }
+
+      .case__link::after {
+        bottom: 11px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 28px;
+      }
+
+      .stat:nth-child(3) {
+        border-left: none;
+      }
+
+      .stat:nth-child(odd) {
+        border-left: none;
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      /* A 320px page would span the whole phone and get eaten by the edge fade */
+      .peek-page {
+        width: 250px;
+        margin-right: 18px;
+      }
+
+      .peek-row__label {
+        font-size: 0.62rem;
+        letter-spacing: 0.06em;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .peek-row__text {
+        text-wrap: balance;
+      }
+
+      /* O rotulo quebra em duas linhas no telemovel e a regua fica sem espaco */
+      .peek-row__label::after {
+        display: none;
+      }
+
+      /* Num cartao de 250px quase nenhuma legenda cabe numa linha: em vez de
+         doze quebras diferentes, todas passam a ter a mesma forma - produto em
+         cima, pagina em baixo. */
+      .peek-page__cap {
+        letter-spacing: 0.08em;
+      }
+
+      .peek-page__cap b {
+        display: block;
+      }
+
+      .peek-page__sep {
+        display: none;
+      }
+
+      /* Keep price-bearing CTAs on a single line */
+      .btn {
+        font-size: 0.74rem;
+        letter-spacing: 0.03em;
+        padding: 15px 18px;
+      }
+
+      .tile-grid,
+      .tile-grid--4,
+      .week {
+        grid-template-columns: 1fr;
+      }
+
+      .stack__tag {
+        display: none;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .audience__row {
+        gap: 8px 20px;
+      }
+
+      .audience__row span {
+        padding: 0;
+        font-size: 1rem;
+        border-right: none;
+      }
+
+      .footer__top {
+        flex-direction: column;
+      }
+
+      .guarantee {
+        flex-direction: column;
+      }
+    }
+
+    /* Smallest phones still in use (iPhone SE 1st gen) */
+    @media (max-width: 360px) {
+      .btn {
+        font-size: 0.68rem;
+        padding: 14px 12px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="13" r="8" />
+      <line x1="12" y1="13" x2="15" y2="9.5" />
+      <line x1="9" y1="2" x2="15" y2="2" />
+      <line x1="12" y1="2" x2="12" y2="5" />
+    </symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24">
+      <path d="M4 5 C7 3 10 3 12 5 C14 3 17 3 20 5 L20 18 C17 16 14 16 12 18 C10 16 7 16 4 18 Z" />
+      <line x1="12" y1="5" x2="12" y2="18" />
+    </symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24">
+      <line x1="9" y1="6" x2="20" y2="6" />
+      <line x1="9" y1="12" x2="20" y2="12" />
+      <line x1="9" y1="18" x2="20" y2="18" />
+      <circle cx="4.5" cy="6" r="1.4" />
+      <circle cx="4.5" cy="12" r="1.4" />
+      <circle cx="4.5" cy="18" r="1.4" />
+    </symbol>
+    <symbol id="icon-pace" viewBox="0 0 24 24">
+      <path d="M3 17 L9 17" />
+      <path d="M9 8 L17 8" />
+      <path d="M13 4 L21 12 L13 20" />
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="M4 12.5 L9.5 18 L20 6" />
+    </symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24">
+      <line x1="12" y1="4" x2="12" y2="20" />
+      <line x1="4" y1="12" x2="20" y2="12" />
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <line x1="4" y1="7" x2="20" y2="7" />
+      <line x1="4" y1="12" x2="20" y2="12" />
+      <line x1="4" y1="17" x2="20" y2="17" />
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <line x1="5" y1="5" x2="19" y2="19" />
+      <line x1="19" y1="5" x2="5" y2="19" />
+    </symbol>
+    <symbol id="icon-run" viewBox="0 0 24 24">
+      <path d="M4 18 L9 13 L13 16 L20 6" />
+      <path d="M15 6 L20 6 L20 11" />
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 3 L19 6 V11 C19 16 16 19.5 12 21 C8 19.5 5 16 5 11 V6 Z" />
+      <path d="M9 12 L11.3 14.3 L15.5 9.5" />
+    </symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24">
+      <path d="M8 5.5 L18.5 12 L8 18.5 Z" fill="currentColor" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-sound-off" viewBox="0 0 24 24">
+      <path d="M4 9 H7.5 L12 5 V19 L7.5 15 H4 Z" />
+      <line x1="16" y1="9.5" x2="21" y2="14.5" />
+      <line x1="21" y1="9.5" x2="16" y2="14.5" />
+    </symbol>
+    <symbol id="icon-sound-on" viewBox="0 0 24 24">
+      <path d="M4 9 H7.5 L12 5 V19 L7.5 15 H4 Z" />
+      <path d="M15.5 9 C17 10.6 17 13.4 15.5 15" />
+      <path d="M18.5 6.5 C21.2 9.4 21.2 14.6 18.5 17.5" />
+    </symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path d="M3.5 20.5 L4.9 16.3 A8.2 8.2 0 1 1 8 19.3 Z" />
+      <path d="M9 8.4 C9.5 8.4 9.7 8.6 9.9 9.1 L10.5 10.4 C10.6 10.7 10.5 11 10.3 11.2 L9.8 11.8
+               C9.6 12 9.6 12.2 9.7 12.4 A5.5 5.5 0 0 0 12.2 14.7 C12.5 14.8 12.7 14.8 12.8 14.6
+               L13.4 14 C13.6 13.8 13.9 13.7 14.2 13.9 L15.5 14.5 C15.9 14.7 16.1 14.9 16.1 15.3
+               C16.1 16.3 15.3 17 14.3 17 C11 17 7 13 7 9.7 C7 8.7 7.9 8.4 9 8.4 Z" />
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <a href="#top" class="brand">
+        <span class="brand__mark"><svg class="icon">
+            <use href="#icon-clock" />
+          </svg></span>
+        <span class="brand__word"><strong>HYROX</strong><span>DAILY WOD</span></span>
+      </a>
+      <nav class="main-nav">
+        <ul class="main-nav__links">
+          <li><a href="#oferta">Preço</a></li>
+          <li><a href="#programa">O programa</a></li>
+          <li><a href="#pordentro">Por dentro</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#cases">Depoimentos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a href="#oferta" class="btn btn--primary header-cta">Quero o programa</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false"
+        aria-controls="mobileDrawer">
+        <svg class="icon icon--menu">
+          <use href="#icon-menu" />
+        </svg>
+        <svg class="icon icon--close">
+          <use href="#icon-close" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul>
+      <li><a href="#oferta">Preço</a></li>
+      <li><a href="#programa">O programa</a></li>
+      <li><a href="#pordentro">Por dentro</a></li>
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#cases">Depoimentos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#oferta" class="btn btn--primary">Quero o programa</a>
+  </div>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Programa de treino HYROX · 250 sessões</p>
+          <h1 class="hero__heading">Treinar pesado não é a mesma coisa que <em>evoluir.</em></h1>
+          <p class="hero__desc">250 sessões periodizadas em 10 ciclos, do primeiro dia de adaptação ao seu melhor
+            condicionamento. Vale pra quem vai competir e pra quem só cansou de estagnar: você abre o dia, lê a
+            prescrição e executa.</p>
+          <div class="hero__actions">
+            <a href="#oferta" class="btn btn--primary">Quero o programa — R$57</a>
+            <a href="#pordentro" class="hero__scroll-hint">Veja o material por dentro ↓</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <span class="hero__tag"><span class="hero__tag-dot"></span>Cena real de treino</span>
+          <video class="hero__video" autoplay loop muted playsinline poster="assets/images/colt-training.webp">
+            <source src="assets/images/thirdspacelondon_pindown.io_1785350008.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição deste vídeo.
+          </video>
+          <div class="hero__caption"><span>Sem atores. Sem estúdio.</span></div>
+        </div>
+      </div>
+      <div class="container splitbar">
+        <p class="splitbar__label">Toda sessão é construída em cima das 8 estações oficiais do HYROX</p>
+        <div class="splitbar__scroller">
+          <div class="splitbar__track">
+            <div class="splitbar__seq">
+              <div class="station"><span class="station__num">01</span><span class="station__name">SkiErg</span><span
+                  class="station__meta">1000M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">02</span><span class="station__name">Sled Push</span><span
+                  class="station__meta">50M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">03</span><span class="station__name">Sled Pull</span><span
+                  class="station__meta">50M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">04</span><span class="station__name">Burpee Broad
+                  Jump</span><span class="station__meta">80M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">05</span><span class="station__name">Rowing</span><span
+                  class="station__meta">1000M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">06</span><span class="station__name">Farmers
+                  Carry</span><span class="station__meta">200M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">07</span><span class="station__name">Sandbag
+                  Lunges</span><span class="station__meta">100M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">08</span><span class="station__name">Wall
+                  Balls</span><span class="station__meta">100 REP</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+            </div>
+            <div class="splitbar__seq" aria-hidden="true">
+              <div class="station"><span class="station__num">01</span><span class="station__name">SkiErg</span><span
+                  class="station__meta">1000M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">02</span><span class="station__name">Sled Push</span><span
+                  class="station__meta">50M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">03</span><span class="station__name">Sled Pull</span><span
+                  class="station__meta">50M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">04</span><span class="station__name">Burpee Broad
+                  Jump</span><span class="station__meta">80M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">05</span><span class="station__name">Rowing</span><span
+                  class="station__meta">1000M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">06</span><span class="station__name">Farmers
+                  Carry</span><span class="station__meta">200M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">07</span><span class="station__name">Sandbag
+                  Lunges</span><span class="station__meta">100M</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+              <div class="station"><span class="station__num">08</span><span class="station__name">Wall
+                  Balls</span><span class="station__meta">100 REP</span></div>
+              <div class="run-tick"><svg class="icon">
+                  <use href="#icon-run" />
+                </svg>1KM RUN</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audience">
+      <div class="container">
+        <p class="audience__label">Feito pra você que:</p>
+        <div class="audience__row">
+          <span>Cansou de estagnar</span>
+          <span>Quer baixar o tempo</span>
+          <span>Vai fazer a primeira prova</span>
+          <span>Treina em box ou academia</span>
+          <span>Treina sozinho</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-alt" id="oferta">
+      <div class="container">
+        <div class="section__head section__head--center" data-reveal>
+          <p class="eyebrow">O programa completo</p>
+          <h2 class="section-title" style="max-width:22ch; margin-inline:auto;">Tudo o que você precisa pra evoluir
+            o ano inteiro</h2>
+          <p class="lede" style="margin-inline:auto;">Um pagamento. Três materiais. Acesso imediato, sem mensalidade
+            e sem assinatura.</p>
+        </div>
+
+        <div class="pack" data-reveal>
+          <span class="pack__badge">Tudo incluso</span>
+          <div class="pack__media">
+            <img src="assets/images/oferta_250_pag_.jpg" alt="HYROX Daily WOD 250 — programa completo de treino"
+              loading="lazy">
+            <span class="pack__flag">250 sessões · 3 materiais</span>
+          </div>
+          <div class="pack__body">
+            <p class="pack__label">Programa completo</p>
+            <h3 class="pack__title">HYROX Daily WOD 250</h3>
+            <p class="pack__subtitle">Acesso digital imediato · PDF</p>
+
+            <ul class="stack">
+              <li>
+                <svg class="icon">
+                  <use href="#icon-check" />
+                </svg>
+                <span>
+                  <span class="stack__name">250 sessões de treino</span>
+                  <span class="stack__note">Uma pra cada dia útil do ano, periodizadas em 10 mesociclos.</span>
+                </span>
+                <span class="stack__tag">Núcleo</span>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use href="#icon-check" />
+                </svg>
+                <span>
+                  <span class="stack__name">Plano 12 Semanas</span>
+                  <span class="stack__note">Um bloco fechado, semana a semana — pra fechar um ciclo de pico ou pra
+                    chegar afiado numa data marcada.</span>
+                </span>
+                <span class="stack__tag">Incluso</span>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use href="#icon-check" />
+                </svg>
+                <span>
+                  <span class="stack__name">Acompanhamento de Treino</span>
+                  <span class="stack__note">Onde registrar carga, tempo e sensação de cada sessão — pra enxergar a
+                    evolução ciclo a ciclo, e não no achismo.</span>
+                </span>
+                <span class="stack__tag">Incluso</span>
+              </li>
+            </ul>
+
+            <div class="pack__price">
+              <span class="pack__now">R$ 57,00</span>
+              <span class="pack__terms">pagamento único</span>
+              <span class="pack__per">≈ R$ 0,23 por sessão</span>
+            </div>
+            <p class="pack__note">Preço de lançamento. Menos que uma aula avulsa de box — pelo ano inteiro de treino
+              planejado.</p>
+
+            <div class="pack__cta">
+              <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="btn btn--primary btn--block" target="_blank"
+                rel="noopener" data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o
+                programa — R$57</a>
+              <p class="trust-line"><svg class="icon">
+                  <use href="#icon-shield" />
+                </svg>Pagamento único · Acesso imediato · 7 dias de garantia</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="details" data-reveal>
+          <div class="details__col">
+            <h3 class="details__title">O que vem em cada sessão</h3>
+            <ul>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Aquecimento em 3 blocos: elevação geral, mobilidade específica e ativação</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Bloco técnico com os 2 pontos de execução do dia</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Bloco principal com prescrição exata, linha a linha</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Arrefecimento definido</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Erro a vigiar, com a correção ao lado</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Duração fixa de 60 minutos</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Equipamento e espaço declarados no cabeçalho</li>
+            </ul>
+          </div>
+          <div class="details__col">
+            <h3 class="details__title">Carga e intensidade</h3>
+            <ul>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Cargas oficiais de competição por categoria — feminino, masculino e pro</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Escala RPE com os 4 tipos de dia</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Zonas de frequência cardíaca pela fórmula 180 − idade</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Alvos de limiar aeróbio, MLSS e limiar anaeróbio</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Teste da conversa pra achar a Zona 2 sem relógio</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Velocidade de corrida calculada pelo seu tempo de 2 km</li>
+            </ul>
+          </div>
+          <div class="details__col">
+            <h3 class="details__title">Estrutura do ano</h3>
+            <ul>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>10 mesociclos de 5 semanas, cada um com objetivo próprio</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>5ª semana sempre de descarga, com volume em 45%</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Semana-tipo fixa: força, aeróbio, estações, técnica e sessão mista</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Nenhum dia pesado depois de outro dia pesado</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Progressão do trenó de 15 m até os 50 m da prova</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Campo de registro pra acompanhar sua evolução</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="guarantee" data-reveal style="margin-top: clamp(40px, 6vw, 64px);">
+          <svg class="icon">
+            <use href="#icon-shield" />
+          </svg>
+          <p><strong>Garantia incondicional de 7 dias.</strong> Baixe, faça a primeira semana e, se não fizer sentido
+            pro seu treino, devolvemos o valor.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rede de segurança: a maior parte dos visitantes sai sem comprar e sem
+         deixar contato. O grupo converte esse tráfego perdido em lista e em
+         público de remarketing. O link já vai no href — a seção funciona sem o
+         JS, que só confere o formato do convite e tira a seção do ar se ele não
+         estiver configurado. -->
+    <section class="section" id="grupoWhats">
+      <div class="container">
+        <div class="wagroup" data-reveal>
+          <img class="wagroup__bg" src="assets/images/colt-training.webp" alt="" aria-hidden="true" loading="lazy">
+          <div class="wagroup__inner">
+            <span class="wagroup__icon"><svg class="icon">
+                <use href="#icon-whatsapp" />
+              </svg></span>
+            <span class="wagroup__badge">Grupo grátis</span>
+            <h2 class="wagroup__title">Mentoria e acompanhamento no WhatsApp</h2>
+            <p class="wagroup__text">Um grupo pra quem treina no formato HYROX: mentoria, dúvida de execução
+              respondida e acompanhamento de perto de quem participa.</p>
+            <a href="https://chat.whatsapp.com/Hw8MmyxISgv61SyWDXrSi0" class="btn btn--primary" id="whatsGroup"
+              target="_blank" rel="noopener">
+              <svg class="icon">
+                <use href="#icon-whatsapp" />
+              </svg>Quero entrar no grupo</a>
+            <p class="wagroup__note">Abre direto no WhatsApp · Entrada imediata · Sem custo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="problema">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">O problema</p>
+          <h2 class="section-title">Esforço você já tem. O que falta é sequência.</h2>
+          <p class="lede">Quem estaciona não é quem treina pouco. É quem treina muito, sem ordem nenhuma.</p>
+        </div>
+        <div class="tile-grid" data-reveal>
+          <div class="tile">
+            <span class="tile__num">01</span>
+            <h3 class="tile__title">Cada dia um treino solto</h3>
+            <p class="tile__text">Você escolhe o WOD pelo humor do dia. Sem semana definida e sem ciclo, o corpo nunca
+              recebe o mesmo estímulo tempo suficiente pra adaptar — e a evolução empaca.</p>
+          </div>
+          <div class="tile">
+            <span class="tile__num">02</span>
+            <h3 class="tile__title">Corre bem e trava no trenó</h3>
+            <p class="tile__text">Ou empurra o mundo e morre no terceiro quilômetro. Treino que não alterna os
+              dois deixa um lado sempre atrás — e é o lado fraco que define o seu teto.</p>
+          </div>
+          <div class="tile">
+            <span class="tile__num">03</span>
+            <h3 class="tile__title">Treina tudo na mesma intensidade</h3>
+            <p class="tile__text">Sem pace de corrida, sem zona de frequência e sem carga definida, todo dia vira "ir
+              com tudo". O corpo se acostuma, o estímulo perde efeito e a evolução trava.</p>
+          </div>
+        </div>
+        <p class="turn" data-reveal>Não falta vontade. Falta <em>um ano de treino já escrito.</em></p>
+      </div>
+    </section>
+
+    <section class="section" id="programa">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Como funciona</p>
+          <h2 class="section-title">Um ano inteiro de treino, já escrito</h2>
+          <p class="lede">São 10 mesociclos de 5 semanas. Cada semana tem função, cada sessão tem prescrição fechada —
+            do aquecimento ao arrefecimento, linha a linha.</p>
+        </div>
+        <div class="tile-grid tile-grid--4" data-reveal>
+          <div class="tile">
+            <span class="tile__num">01</span>
+            <h3 class="tile__title">10 mesociclos</h3>
+            <p class="tile__text">Cinco semanas cada, com objetivo próprio. A quinta é sempre de descarga, com o volume
+              reduzido a 45%.</p>
+          </div>
+          <div class="tile">
+            <span class="tile__num">02</span>
+            <h3 class="tile__title">Semana-tipo fixa</h3>
+            <p class="tile__text">Força, aeróbio, estações, técnica e sessão mista. Nenhum dia pesado depois de outro
+              dia pesado.</p>
+          </div>
+          <div class="tile">
+            <span class="tile__num">03</span>
+            <h3 class="tile__title">Progressão medida</h3>
+            <p class="tile__text">O trenó sai de 15 m e chega nos 50 m oficiais ao longo do ano. Nada de pular
+              direto pra carga cheia na primeira semana.</p>
+          </div>
+          <div class="tile">
+            <span class="tile__num">04</span>
+            <h3 class="tile__title">Intensidade definida</h3>
+            <p class="tile__text">RPE, zonas de frequência pela fórmula 180 − idade e o pace de corrida calculado a
+              partir do seu tempo de 2 km.</p>
+          </div>
+        </div>
+
+        <div class="week" data-reveal>
+          <div class="week__day">
+            <span class="week__label">Dia 01</span>
+            <span class="week__name">Força</span>
+            <span class="week__meta">60 min</span>
+          </div>
+          <div class="week__day">
+            <span class="week__label">Dia 02</span>
+            <span class="week__name">Aeróbio</span>
+            <span class="week__meta">60 min</span>
+          </div>
+          <div class="week__day">
+            <span class="week__label">Dia 03</span>
+            <span class="week__name">Estações</span>
+            <span class="week__meta">60 min</span>
+          </div>
+          <div class="week__day">
+            <span class="week__label">Dia 04</span>
+            <span class="week__name">Técnica</span>
+            <span class="week__meta">60 min</span>
+          </div>
+          <div class="week__day">
+            <span class="week__label">Dia 05</span>
+            <span class="week__name">Sessão mista</span>
+            <span class="week__meta">60 min</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="pordentro">
+      <div class="container">
+        <div class="section__head section__head--center" data-reveal>
+          <p class="eyebrow">Por dentro do material</p>
+          <h2 class="section-title" style="max-width:24ch; margin-inline:auto;">Veja o que você recebe antes de
+            comprar</h2>
+          <p class="lede" style="margin-inline:auto;">Páginas reais do material que você recebe.</p>
+        </div>
+      </div>
+
+      <div class="peek-row" data-reveal>
+        <div class="container">
+          <p class="peek-row__label"><span class="peek-row__tag">Programa</span><span
+              class="peek-row__text">As 250 sessões&nbsp;— <span class="peek-row__off">o núcleo do
+                material</span></span></p>
+        </div>
+        <div class="peek__scroller">
+          <div class="peek__track">
+            <div class="peek__seq">
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-01-capa.jpg" alt="250 Sessões — Capa" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Capa</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-02-mesociclos.jpg" alt="250 Sessões — Os dez mesociclos" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Os dez mesociclos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-03-aula001.jpg" alt="250 Sessões — Sessão 001 — na íntegra" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Sessão 001 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-04-aula003.jpg" alt="250 Sessões — Sessão 003 — na íntegra" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Sessão 003 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-01-capa.jpg" alt="250 Sessões — Capa" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Capa</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-02-mesociclos.jpg" alt="250 Sessões — Os dez mesociclos" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Os dez mesociclos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-03-aula001.jpg" alt="250 Sessões — Sessão 001 — na íntegra" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Sessão 001 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-04-aula003.jpg" alt="250 Sessões — Sessão 003 — na íntegra" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Sessão 003 — na íntegra</figcaption>
+              </figure>
+            </div>
+            <div class="peek__seq" aria-hidden="true">
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-01-capa.jpg" alt="250 Sessões — Capa" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Capa</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-02-mesociclos.jpg" alt="250 Sessões — Os dez mesociclos" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Os dez mesociclos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-03-aula001.jpg" alt="250 Sessões — Sessão 001 — na íntegra" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Sessão 001 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-04-aula003.jpg" alt="250 Sessões — Sessão 003 — na íntegra" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Sessão 003 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-01-capa.jpg" alt="250 Sessões — Capa" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Capa</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-02-mesociclos.jpg" alt="250 Sessões — Os dez mesociclos" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Os dez mesociclos</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-03-aula001.jpg" alt="250 Sessões — Sessão 001 — na íntegra" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Sessão 001 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <img src="assets/images/previews/wod-04-aula003.jpg" alt="250 Sessões — Sessão 003 — na íntegra" loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>250 Sessões</b><span
+                    class="peek-page__sep"> · </span>Sessão 003 — na íntegra</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="peek-row" data-reveal>
+        <div class="container">
+          <p class="peek-row__label"><span class="peek-row__tag">Incluso</span><span
+              class="peek-row__text">Plano 12 Semanas <span class="peek-row__off">já vem no
+                pacote</span></span></p>
+        </div>
+        <div class="peek__scroller">
+          <div class="peek__track">
+            <div class="peek__seq">
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-01-capa.jpg" alt="Plano 12 Semanas — Capa e arquitetura"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Capa e arquitetura</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-02-mapa.jpg" alt="Plano 12 Semanas — Mapa das 12 semanas"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Mapa das 12 semanas</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-03-semana01.jpg" alt="Plano 12 Semanas — Semana 01 — na íntegra"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Semana 01 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-04-intensidade.jpg" alt="Plano 12 Semanas — Intensidade e estações"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Intensidade e estações</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-01-capa.jpg" alt="Plano 12 Semanas — Capa e arquitetura"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Capa e arquitetura</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-02-mapa.jpg" alt="Plano 12 Semanas — Mapa das 12 semanas"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Mapa das 12 semanas</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-03-semana01.jpg" alt="Plano 12 Semanas — Semana 01 — na íntegra"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Semana 01 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-04-intensidade.jpg" alt="Plano 12 Semanas — Intensidade e estações"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Intensidade e estações</figcaption>
+              </figure>
+            </div>
+            <div class="peek__seq" aria-hidden="true">
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-01-capa.jpg" alt="Plano 12 Semanas — Capa e arquitetura"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Capa e arquitetura</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-02-mapa.jpg" alt="Plano 12 Semanas — Mapa das 12 semanas"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Mapa das 12 semanas</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-03-semana01.jpg" alt="Plano 12 Semanas — Semana 01 — na íntegra"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Semana 01 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-04-intensidade.jpg" alt="Plano 12 Semanas — Intensidade e estações"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Intensidade e estações</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-01-capa.jpg" alt="Plano 12 Semanas — Capa e arquitetura"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Capa e arquitetura</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-02-mapa.jpg" alt="Plano 12 Semanas — Mapa das 12 semanas"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Mapa das 12 semanas</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-03-semana01.jpg" alt="Plano 12 Semanas — Semana 01 — na íntegra"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Semana 01 — na íntegra</figcaption>
+              </figure>
+              <figure class="peek-page">
+                <span class="peek-page__shot">
+                  <span class="peek-page__flag">Incluso</span>
+                  <img src="assets/images/previews/bonus-plano-04-intensidade.jpg" alt="Plano 12 Semanas — Intensidade e estações"
+                      loading="lazy">
+                </span>
+                <figcaption class="peek-page__cap"><b>Plano 12 Semanas</b><span
+                    class="peek-page__sep"> · </span>Intensidade e estações</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-strip" data-reveal>
+          <div class="cta-strip__copy">
+            <p class="eyebrow">Acabou de ver as páginas</p>
+            <h2 class="cta-strip__title">É esse o treino que você quer nos próximos 12 meses?</h2>
+          </div>
+          <div class="cta-strip__actions">
+            <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="btn btn--primary" target="_blank" rel="noopener"
+              data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa —
+              R$57</a>
+          </div>
+          <p class="trust-line"><svg class="icon">
+              <use href="#icon-shield" />
+            </svg>Pagamento único · Acesso imediato · 7 dias de garantia</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="resultados">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Resultados</p>
+          <h2 class="section-title">O que muda no seu treino</h2>
+          <p class="lede">Você para de escolher o treino do dia e passa a seguir um plano que já sabe onde termina.</p>
+        </div>
+        <div class="stats-grid" data-reveal>
+          <div class="stat"><span class="stat__num">250</span>
+            <p class="stat__desc">sessões prontas, uma pra cada dia de treino</p>
+          </div>
+          <div class="stat"><span class="stat__num">10</span>
+            <p class="stat__desc">ciclos com objetivo próprio, encadeados o ano inteiro</p>
+          </div>
+          <div class="stat"><span class="stat__num">8</span>
+            <p class="stat__desc">estações oficiais trabalhadas em rodízio</p>
+          </div>
+          <div class="stat"><span class="stat__num">3</span>
+            <p class="stat__desc">níveis de adaptação em cada sessão do catálogo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="feedbacks">
+      <div class="container">
+        <div class="fb-frame" data-reveal>
+          <div class="fb-copy">
+            <p class="eyebrow">Feedbacks</p>
+            <h2 class="section-title">Antes de decidir, ouça quem já treinou com isso</h2>
+            <p class="lede">Quem baixou levou pro próprio treino e voltou pra gravar o que achou.</p>
+            <p class="fb-caption">Depoimento em vídeo · 32 segundos</p>
+          </div>
+
+          <div class="fb-player">
+            <div class="fb-player__tag"><span>Feedback real</span></div>
+            <video class="fb-player__video" id="feedbackVideo" autoplay loop muted playsinline preload="metadata">
+              <source src="assets/images/feed.mp4" type="video/mp4">
+              Seu navegador não suporta a exibição deste vídeo.
+            </video>
+            <span class="fb-player__play" aria-hidden="true"><svg class="icon">
+                <use href="#icon-play" />
+              </svg></span>
+          </div>
+
+          <button type="button" class="fb-sound" id="feedbackSound" aria-pressed="false"
+            aria-label="Ativar som do vídeo">
+            <svg class="icon icon--on">
+              <use href="#icon-sound-off" />
+            </svg>
+            <svg class="icon icon--off">
+              <use href="#icon-sound-on" />
+            </svg>
+            <span class="fb-sound__label">Ativar som</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper-alt" id="expert">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Quem assina o programa</p>
+          <h2 class="section-title">O treinador por trás do método</h2>
+        </div>
+        <div class="expert__grid" data-reveal>
+          <div class="expert__media">
+            <img src="assets/images/expert_rafael.png" alt="Rafael Menezes, treinador de HYROX" class="expert__photo"
+              loading="lazy">
+          </div>
+          <div class="expert__copy">
+            <h3 class="expert__name">Rafael Menezes</h3>
+            <p class="expert__role">Treinador de HYROX · São Paulo</p>
+            <p class="expert__bio">Treina no formato HYROX desde que a prova chegou ao Brasil e acompanha atletas
+              amadores há 12 anos — dos que competem aos que só querem evoluir. Escreveu as 250 sessões a partir do
+              que aplica na própria turma toda semana: nada aqui é teoria que ele nunca rodou.</p>
+            <ul class="expert__creds">
+              <li>CREF ativo</li>
+              <li>12 anos de trabalho</li>
+              <li>300+ atletas preparados</li>
+              <li>HYROX</li>
+            </ul>
+            <p class="expert__quote">"Todo mundo sabe montar um treino difícil. O difícil é montar 250 que conversam
+              entre si."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Depoimentos</p>
+          <h2 class="section-title">Três atletas, três pontos de partida</h2>
+        </div>
+
+        <div class="case" data-reveal>
+          <div class="case__copy">
+            <div class="case__avatar-wrap">
+              <img src="assets/images/avatar_case_2.jpg" alt="Camila Duarte, aluna" class="case__avatar" loading="lazy">
+              <div class="case__avatar-meta">
+                <p class="case__name">Camila Duarte</p>
+                <p class="eyebrow" style="margin:0;">Treina há 2 anos</p>
+              </div>
+            </div>
+            <p class="case__quote">"Na primeira semana já deu pra sentir que o treino tinha um plano."</p>
+            <p class="case__desc">Antes cada dia era um treino solto. Agora a semana inteira conversa entre si e eu
+              consigo ver onde estou evoluindo.</p>
+            <ul class="case__bullets">
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Semana com progressão clara</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Sei o que vou treinar e por quê</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Evolução visível nas estações</li>
+            </ul>
+            <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="case__link" target="_blank" rel="noopener"
+              data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa — R$57
+              →</a>
+          </div>
+          <div class="case__card">
+            <div class="lesson-card lesson-card--video">
+              <div class="lesson-card__row"><span class="lesson-card__tag">SESSÃO #142</span><span
+                  class="lesson-card__level">NÍVEL 2</span></div>
+              <span class="lesson-card__live">Treino rodando</span>
+              <video class="lesson-card__video" autoplay loop muted playsinline
+                poster="assets/images/colt-training.webp">
+                <source src="assets/images/video_1.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição deste vídeo.
+              </video>
+              <p class="lesson-card__title">Sled + Wall Ball Day</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case case--reverse" data-reveal>
+          <div class="case__copy">
+            <div class="case__avatar-wrap">
+              <img src="assets/images/avatar_case_3.jpg" alt="Marcos Vieira, aluno" class="case__avatar" loading="lazy">
+              <div class="case__avatar-meta">
+                <p class="case__name">Marcos Vieira</p>
+                <p class="eyebrow" style="margin:0;">Treina há 8 meses</p>
+              </div>
+            </div>
+            <p class="case__quote">"Viajei duas semanas e voltei sem perder o fio do treino."</p>
+            <p class="case__desc">A sequência já estava escrita, era só retomar de onde parei. Não teve aquela semana
+              perdida tentando lembrar o que eu vinha fazendo.</p>
+            <ul class="case__bullets">
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Nenhum dia improvisado</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Dá pra retomar de onde parou</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Progressão que não zera</li>
+            </ul>
+            <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="case__link" target="_blank" rel="noopener"
+              data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa — R$57
+              →</a>
+          </div>
+          <div class="case__card">
+            <div class="lesson-card lesson-card--video">
+              <div class="lesson-card__row"><span class="lesson-card__tag">SESSÃO #219</span><span
+                  class="lesson-card__level">NÍVEL 3</span></div>
+              <span class="lesson-card__live">Treino rodando</span>
+              <video class="lesson-card__video" autoplay loop muted playsinline
+                poster="assets/images/colt-training.webp">
+                <source src="assets/images/video2.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição deste vídeo.
+              </video>
+              <p class="lesson-card__title">Row + Sandbag Day</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case" data-reveal>
+          <div class="case__copy">
+            <div class="case__avatar-wrap">
+              <img src="assets/images/avatar_case_4.jpg" alt="Juliana Prado, aluna" class="case__avatar" loading="lazy">
+              <div class="case__avatar-meta">
+                <p class="case__name">Juliana Prado</p>
+                <p class="eyebrow" style="margin:0;">Treina há 1 ano</p>
+              </div>
+            </div>
+            <p class="case__quote">"Comecei sem nunca ter feito funcional e nunca me senti perdida."</p>
+            <p class="case__desc">Sempre tem uma versão do exercício que dá pra fazer no meu nível. Nunca precisei
+              pular uma estação por não dar conta da carga.</p>
+            <ul class="case__bullets">
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Sempre tem uma versão pro meu nível</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Nunca precisei pular uma estação</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Aprendi a técnica antes de pegar carga</li>
+            </ul>
+            <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="case__link" target="_blank" rel="noopener"
+              data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa — R$57
+              →</a>
+          </div>
+          <div class="case__card">
+            <div class="lesson-card lesson-card--video">
+              <div class="lesson-card__row"><span class="lesson-card__tag">SESSÃO #063</span><span
+                  class="lesson-card__level">NÍVEL 1</span></div>
+              <span class="lesson-card__live">Treino rodando</span>
+              <video class="lesson-card__video" autoplay loop muted playsinline
+                poster="assets/images/colt-training.webp">
+                <source src="assets/images/video3.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição deste vídeo.
+              </video>
+              <p class="lesson-card__title">Burpee + SkiErg Day</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-wall" data-reveal>
+          <figure class="quote-card">
+            <blockquote>"Nunca mais abri o Instagram atrás de treino do dia."</blockquote>
+            <figcaption>
+              <span class="quote-card__name">Marina Sales</span>
+              <span class="quote-card__meta">Treina há 2 anos</span>
+            </figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>"Seis meses seguindo e ainda não repeti uma sessão."</blockquote>
+            <figcaption>
+              <span class="quote-card__name">Thiago Bastos</span>
+              <span class="quote-card__meta">Treina há 3 anos</span>
+            </figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>"Saí do trenó leve pro pesado sem nunca ter forçado nada."</blockquote>
+            <figcaption>
+              <span class="quote-card__name">Renata Lima</span>
+              <span class="quote-card__meta">Treina há 6 meses</span>
+            </figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>"Dá pra perceber que o treino de hoje conversa com o da semana passada."</blockquote>
+            <figcaption>
+              <span class="quote-card__name">Eduardo Kimura</span>
+              <span class="quote-card__meta">Treina há 4 anos</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title">Perguntas de quem tá pensando em começar</h2>
+        </div>
+        <div class="faq-list" data-reveal>
+          <details class="faq-item" open>
+            <summary>Preciso já ter feito HYROX pra começar?<span class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Não. O primeiro mesociclo é de adaptação e cada sessão traz três níveis de execução — funciona mesmo
+              se você nunca competiu nem treinou no formato antes.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Onde eu treino isso?<span class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Box de CrossFit, academia de funcional, studio ou qualquer espaço com os equipamentos listados. Cada
+              sessão declara no cabeçalho o equipamento e o espaço necessários antes de você começar.</p>
+          </details>
+          <details class="faq-item">
+            <summary>E se eu não tiver trenó ou SkiErg?<span class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Cada sessão vem com três níveis de adaptação e com o equipamento declarado, então dá pra ajustar ao que
+              você tem à mão. Quanto mais perto do equipamento oficial, mais fiel fica a preparação.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Quanto tempo dura cada sessão?<span class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>60 minutos fixos, do aquecimento ao arrefecimento. Cinco sessões por semana, com a quinta semana de cada
+              ciclo em descarga.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Serve pra quem não vai competir?<span class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Serve, e é praí que vai a maior parte de quem usa. A estrutura é montada em cima das 8 estações
+              oficiais, mas o que você leva é um ano de condicionamento periodizado — força, aeróbio e técnica
+              encadeados. A prova é um destino possível, não a condição pra começar.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Como recebo depois de comprar?<span class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Acesso digital imediato após a confirmação do pagamento, direto no e-mail cadastrado no checkout. Os
+              três materiais vêm juntos.</p>
+          </details>
+          <details class="faq-item">
+            <summary>E se não for o que eu esperava?<span class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Garantia incondicional de 7 dias — se não fizer sentido pro seu treino, devolvemos o valor sem
+              pergunta nenhuma.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark-2 cta-section" id="cta">
+      <div class="container">
+        <div class="section__head section__head--center" data-reveal>
+          <p class="eyebrow">Próximo passo</p>
+          <h2 class="section-title" style="max-width:22ch; margin-inline:auto;">Seu próximo ano de treino já está
+            escrito</h2>
+          <p class="lede">Preço de lançamento — pode subir a qualquer momento. Você recebe os três materiais no
+            e-mail assim que o pagamento é confirmado.</p>
+        </div>
+        <div class="cta-section__actions" data-reveal>
+          <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="btn btn--primary" target="_blank" rel="noopener"
+            data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa — R$57</a>
+        </div>
+        <p class="cta-section__note" data-reveal>Pagamento único de R$57 · Acesso imediato · Garantia incondicional de
+          7 dias.</p>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#top" class="brand">
+            <span class="brand__mark"><svg class="icon">
+                <use href="#icon-clock" />
+              </svg></span>
+            <span class="brand__word"><strong>HYROX</strong><span>DAILY WOD</span></span>
+          </a>
+          <p>Programa de treino com 250 sessões periodizadas pra quem quer evoluir de verdade no treino funcional, com ou sem prova marcada.</p>
+        </div>
+        <nav class="footer__nav">
+          <ul>
+            <li><a href="#oferta">Preço</a></li>
+            <li><a href="#programa">O programa</a></li>
+            <li><a href="#pordentro">Por dentro</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#cases">Depoimentos</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="X (Twitter)">X</a>
+          <a href="#" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+      <p class="footer__disclaimer">HYROX® é marca registrada de seus respectivos proprietários. HYROX Daily WOD é um
+        material de treino independente, voltado à preparação física de atletas amadores, sem afiliação oficial com a
+        organização da competição. Consulte um profissional antes de iniciar qualquer programa de treino.</p>
+      <div class="footer__bottom">
+        <p>© 2026 HYROX Daily WOD. Todos os direitos reservados.</p>
+        <div class="footer__legal">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Barra de compra fixa: só aparece no celular, onde o botão do header some. -->
+  <div class="buybar" id="buyBar">
+    <div class="buybar__info">
+      <span class="buybar__name">HYROX Daily WOD 250</span>
+      <span class="buybar__price">R$ 57,00 <em>≈ R$ 0,23/sessão</em></span>
+    </div>
+    <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="btn btn--primary buybar__btn" target="_blank" rel="noopener"
+      data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa</a>
+  </div>
+
+  <script>
+    (function () {
+      var header = document.getElementById('siteHeader');
+      var onScroll = function () {
+        header.classList.toggle('is-scrolled', window.scrollY > 8);
+      };
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var navToggle = document.getElementById('navToggle');
+      var drawer = document.getElementById('mobileDrawer');
+      var closeDrawer = function () {
+        document.body.classList.remove('nav-open');
+        drawer.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      };
+      navToggle.addEventListener('click', function () {
+        var isOpen = drawer.classList.toggle('is-open');
+        document.body.classList.toggle('nav-open', isOpen);
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrawer(); });
+
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      /* No celular a revelação por scroll fica desligada (ver o CSS): aqui o JS
+         acompanha, marcando tudo como visível de uma vez em vez de observar. */
+      var skipReveal = reduceMotion || window.matchMedia('(max-width: 900px)').matches;
+
+      var revealEls = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && !skipReveal) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* Feedbacks: o vídeo entra mudo (única forma de autoplay funcionar no
+         celular) e o botão devolve o som pra quem quiser ouvir o depoimento.
+         Ao sair da tela, volta a ficar mudo e pausado — evita áudio tocando
+         numa seção que o visitante já passou. */
+      var fbVideo = document.getElementById('feedbackVideo');
+      var fbSound = document.getElementById('feedbackSound');
+      var fbPlayer = document.querySelector('.fb-player');
+
+      if (fbVideo && fbSound) {
+        var fbLabel = fbSound.querySelector('.fb-sound__label');
+
+        var setSound = function (on) {
+          fbVideo.muted = !on;
+          fbSound.setAttribute('aria-pressed', String(on));
+          fbSound.setAttribute('aria-label', on ? 'Desativar som do vídeo' : 'Ativar som do vídeo');
+          if (fbLabel) fbLabel.textContent = on ? 'Desativar som' : 'Ativar som';
+        };
+
+        /* O selo de play só existe pra quando o autoplay não rola (iOS em modo
+           de baixo consumo, aba em segundo plano). Sem ele o visitante veria um
+           quadro parado sem saber que dá pra tocar. */
+        var syncPaused = function () {
+          if (fbPlayer) fbPlayer.classList.toggle('is-paused', fbVideo.paused);
+        };
+        fbVideo.addEventListener('play', syncPaused);
+        fbVideo.addEventListener('pause', syncPaused);
+        syncPaused();
+
+        var tryPlay = function () {
+          var p = fbVideo.play();
+          if (p && p.catch) p.catch(function () { syncPaused(); });
+        };
+
+        fbSound.addEventListener('click', function () {
+          var turningOn = fbVideo.muted;
+          setSound(turningOn);
+          if (turningOn) {
+            /* Voltar ao início: com som, o depoimento vale desde a primeira fala. */
+            fbVideo.currentTime = 0;
+            var p = fbVideo.play();
+            if (p && p.catch) p.catch(function () { setSound(false); syncPaused(); });
+          }
+        });
+
+        /* Tocar no próprio vídeo dá play/pause — é o gesto que o visitante já
+           espera de um vídeo vertical no celular. */
+        if (fbPlayer) {
+          fbPlayer.addEventListener('click', function (e) {
+            if (e.target.closest('.fb-sound')) return;
+            if (fbVideo.paused) tryPlay(); else fbVideo.pause();
+          });
+        }
+
+        if ('IntersectionObserver' in window) {
+          var fbIo = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                tryPlay();
+              } else {
+                fbVideo.pause();
+                if (!fbVideo.muted) setSound(false);
+              }
+            });
+          }, { threshold: 0.25 });
+          fbIo.observe(fbVideo);
+        }
+      }
+
+      /* Barra de compra fixa do celular. Regras: só entra depois que o hero
+         saiu da tela, e sai quando a oferta ou o CTA final estão visíveis —
+         cobrir o botão real com uma barra flutuante só atrapalha. Também some
+         com o menu aberto, que já ocupa a tela inteira. */
+      var buyBar = document.getElementById('buyBar');
+
+      if (buyBar) {
+        var buyHero = document.querySelector('.hero');
+        /* Onde já existe um botão de compra grande na tela, a barra sai: dois
+           botões concorrendo é pior que um. */
+        var buyZones = Array.prototype.slice.call(
+          document.querySelectorAll('#oferta, #cta, .cta-strip'));
+        var zoneVisible = false;
+
+        var updateBuyBar = function () {
+          var pastHero = buyHero
+            ? (window.pageYOffset > buyHero.offsetHeight * 0.75)
+            : (window.pageYOffset > 400);
+          var blocked = document.body.classList.contains('nav-open');
+          buyBar.classList.toggle('is-visible', pastHero && !zoneVisible && !blocked);
+        };
+
+        if ('IntersectionObserver' in window && buyZones.length) {
+          var zoneIo = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) { entry.target.dataset.bbSeen = entry.isIntersecting ? '1' : ''; });
+            zoneVisible = buyZones.some(function (z) { return z.dataset.bbSeen === '1'; });
+            updateBuyBar();
+          }, { threshold: 0 });
+          buyZones.forEach(function (z) { zoneIo.observe(z); });
+        }
+
+        /* O menu mexe numa classe do body; um observer avisa a barra sem
+           precisar espalhar chamadas por cada handler. */
+        if ('MutationObserver' in window) {
+          new MutationObserver(updateBuyBar)
+            .observe(document.body, { attributes: true, attributeFilter: ['class'] });
+        }
+
+        window.addEventListener('scroll', updateBuyBar, { passive: true });
+        window.addEventListener('resize', updateBuyBar);
+        updateBuyBar();
+      }
+
+      /* ── Sinal de meio de funil ────────────────────────────────────
+         O pixel só emitia PageView e InitiateCheckout. Com ~4 compras por semana
+         o conjunto nunca sai da fase de aprendizado (o Meta pede ~50 conversões
+         semanais), e sem evento intermediário o algoritmo não distingue quem
+         passou reto de quem parou na oferta. ViewContent é evento padrão e pode
+         ser escolhido como meta de otimização enquanto o volume de venda não
+         sustenta otimizar por Purchase. ScrollDepth é só diagnóstico. */
+
+      /* Cada evento sai com event_id próprio. Sozinho não deduplica nada — é o
+         pré-requisito: quando a API de Conversões for ligada, o lado servidor
+         precisa reenviar ESTE mesmo id, senão o Meta conta o evento duas vezes.
+         Esse pareamento se configura no painel da Wiapy, não aqui. */
+      var eventId = function (name) {
+        return name + '.' + Date.now().toString(36) + '.' +
+          Math.random().toString(36).slice(2, 10);
+      };
+
+      /* Mesma trava do InitiateCheckout: um disparo por sessão, para a página
+         medir pessoas e não interações. */
+      var evSent = {};
+      var trackOnce = function (key, fn) {
+        if (evSent[key]) return;
+        /* Checar o fbq ANTES de gravar a chave: com o pixel bloqueado por
+           adblock a chave seria queimada sem evento nenhum ter saído. */
+        if (typeof fbq !== 'function') return;
+        try {
+          if (sessionStorage.getItem('ev:' + key)) { evSent[key] = true; return; }
+          sessionStorage.setItem('ev:' + key, '1');
+        } catch (e) { /* aba anônima barra o storage; o objeto acima cobre */ }
+        evSent[key] = true;
+        fn();
+      };
+
+      var offer = document.getElementById('oferta');
+      if (offer && 'IntersectionObserver' in window) {
+        var dwellTimer = null;
+        var fireViewContent = function () {
+          trackOnce('viewcontent', function () {
+            fbq('track', 'ViewContent', {
+              content_name: 'HYROX Daily WOD 250',
+              content_type: 'product',
+              content_ids: ['programa-250'],
+              value: 57.00,
+              currency: 'BRL'
+            }, { eventID: eventId('ViewContent') });
+          });
+        };
+        /* threshold 0 + tempo de permanência, e não threshold alto: a seção de
+           ofertas é mais alta que a tela do celular, então "50% do alvo visível"
+           nunca aconteceria ali. 1,5s separa quem leu de quem passou rolando. */
+        var offerIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              if (dwellTimer === null) {
+                dwellTimer = setTimeout(function () {
+                  fireViewContent();
+                  offerIo.disconnect();
+                }, 1500);
+              }
+            } else if (dwellTimer !== null) {
+              clearTimeout(dwellTimer);
+              dwellTimer = null;
+            }
+          });
+        }, { threshold: 0 });
+        offerIo.observe(offer);
+      }
+
+      var depthMarks = [25, 50, 75, 90];
+      var onDepth = function () {
+        var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollable <= 0) return;
+        var pct = (window.pageYOffset / scrollable) * 100;
+        while (depthMarks.length && pct >= depthMarks[0]) {
+          (function (mark) {
+            trackOnce('depth' + mark, function () {
+              fbq('trackCustom', 'ScrollDepth', { percent: mark });
+            });
+          })(depthMarks.shift());
+        }
+        if (!depthMarks.length) window.removeEventListener('scroll', onDepth);
+      };
+      window.addEventListener('scroll', onDepth, { passive: true });
+
+      /* ── Grupo do WhatsApp ───────────────────────────────
+         Link de convite que o próprio WhatsApp gera, guardado sem os parâmetros
+         de origem que o app cola junto (?s=cl&p=i&mlu=4): eles só dizem de onde
+         o link foi copiado e atrapalhariam os UTMs que o rastreio anexa depois.
+
+         O href já está no HTML; daqui o JS só confere o formato e tira a seção
+         do ar se o convite não estiver configurado — botão morto na página é
+         pior que seção nenhuma. */
+      var WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/Hw8MmyxISgv61SyWDXrSi0';
+
+      var waSection = document.getElementById('grupoWhats');
+      var waGroup = document.getElementById('whatsGroup');
+
+      if (waSection && waGroup) {
+        if (/^https:\/\/chat\.whatsapp\.com\/[A-Za-z0-9_-]{6,}(\?.*)?$/
+          .test(WHATSAPP_GROUP_URL)) {
+          waGroup.href = WHATSAPP_GROUP_URL;
+
+          /* Lead é evento padrão: dá ao Meta um sinal frequente o bastante para
+             otimizar enquanto o volume de Purchase não sustenta, e alimenta o
+             público de remarketing com quem demonstrou interesse sem comprar. */
+          waGroup.addEventListener('click', function () {
+            trackOnce('leadgrupo', function () {
+              fbq('track', 'Lead', {
+                content_name: 'Grupo do WhatsApp',
+                content_category: 'lead-magnet'
+              }, { eventID: eventId('Lead') });
+            });
+          });
+        } else {
+          waSection.hidden = true;
+        }
+      }
+
+      /* Produto único: um link de checkout para a página inteira. Trocar a
+         constante troca todos os botões de uma vez — inclusive a barra fixa do
+         celular. Os href do HTML já apontam pro mesmo endereço, então nada
+         quebra se o JS não rodar. */
+      var CHECKOUT_URL = 'https://pay.wiapy.com/3jxDdFXDqyU7';
+
+      document.querySelectorAll('a[data-sku="programa-250"]').forEach(function (a) {
+        a.href = CHECKOUT_URL;
+      });
+
+      var inAppBrowser = /Instagram|FBAN|FBAV|FB_IAB|Line\/|MicroMessenger/i
+        .test(navigator.userAgent);
+      var sameTabCheckout = inAppBrowser
+        || window.matchMedia('(max-width: 900px)').matches;
+
+      /* Um InitiateCheckout por sessão. Com vários CTAs na página, quem clicava
+         em dois contava dois — o funil media cliques, não pessoas. */
+      var icSent = {};
+      var icAlreadySent = function (sku) {
+        if (icSent[sku]) return true;
+        try {
+          if (sessionStorage.getItem('ic:' + sku)) return true;
+        } catch (e) { /* aba anônima pode barrar o storage; o objeto acima cobre */ }
+        return false;
+      };
+      var icMarkSent = function (sku) {
+        icSent[sku] = true;
+        try { sessionStorage.setItem('ic:' + sku, '1'); } catch (e) { }
+      };
+
+      document.querySelectorAll('[data-checkout]').forEach(function (link) {
+        if (sameTabCheckout) link.removeAttribute('target');
+
+        link.addEventListener('click', function (e) {
+          var sku = link.dataset.sku || link.dataset.checkout;
+          var fired = false;
+
+          if (typeof fbq === 'function' && !icAlreadySent(sku)) {
+            var payload = {
+              content_name: link.dataset.checkout,
+              content_ids: [link.dataset.sku],
+              content_type: 'product',
+              num_items: 1,
+              currency: 'BRL'
+            };
+            /* A oferta relâmpago não tem preço declarado aqui; sem o guarda o
+               evento sairia com value: NaN. */
+            var price = parseFloat(link.dataset.price);
+            if (!isNaN(price)) payload.value = price;
+            fbq('track', 'InitiateCheckout', payload,
+              { eventID: eventId('InitiateCheckout') });
+            icMarkSent(sku);
+            fired = true;
+          }
+
+          /* Na mesma aba a página descarrega no ato e o beacon do pixel pode
+             ser cancelado no meio. 200ms de folga garantem que o evento saia
+             antes de navegar — imperceptível pra quem clicou. */
+          if (fired && sameTabCheckout && !e.defaultPrevented) {
+            e.preventDefault();
+            var href = link.href;
+            setTimeout(function () { window.location.href = href; }, 200);
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

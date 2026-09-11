@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HYROX Daily WOD 250 — Programa completo de treino para HYROX</title>
   <meta name="description"
-    content="250 sessões de treino periodizadas em 10 ciclos. Um ano inteiro de treino no formato HYROX pra evoluir de verdade — com ou sem prova marcada. R$57, acesso imediato.">
+    content="250 sessões de treino periodizadas em 10 ciclos. Um ano inteiro de treino no formato HYROX pra evoluir de verdade — com ou sem prova marcada. A partir de R$10, acesso imediato.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1497,20 +1497,483 @@
       color: var(--ember);
     }
 
-    /* ---------- Oferta única ---------- */
-    .pack {
-      position: relative;
+    /* ---------- Offer ---------- */
+    .offer-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(24px, 4vw, 40px);
+      margin-bottom: 36px;
+    }
+
+    /* Pacote Completo. Faixa inteira embaixo dos dois cards de propósito: o
+       visitante só entende "leve tudo" depois de ver o que é cada coisa. Larga
+       em vez de um terceiro card porque as duas colunas já estão densas — uma
+       terceira espremeria as três. */
+    .offer-bundle {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      align-items: center;
+      gap: clamp(24px, 4vw, 44px);
+      margin-bottom: 28px;
+      padding: clamp(26px, 3.6vw, 36px);
+      border-radius: 6px;
+      background: var(--ink);
+      color: var(--paper);
+      outline: 2px solid var(--rope);
+      box-shadow: 0 24px 54px rgba(228, 174, 35, 0.14);
+    }
+
+    .offer-bundle::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--rope);
+      z-index: 2;
+    }
+
+    .offer-bundle__copy {
+      min-width: 0;
+    }
+
+    .offer-bundle .eyebrow {
+      color: var(--rope);
+      margin-bottom: 10px;
+    }
+
+    .offer-bundle .eyebrow::before {
+      background: var(--rope);
+    }
+
+    .offer-bundle__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+      line-height: 1;
+      letter-spacing: -0.015em;
+      margin: 0 0 10px;
+    }
+
+    .offer-bundle__desc {
+      margin: 0 0 18px;
+      font-size: 0.95rem;
+      color: rgba(236, 231, 222, 0.78);
+    }
+
+    .offer-bundle__bullets {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    .offer-bundle__bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: rgba(236, 231, 222, 0.9);
+    }
+
+    .offer-bundle__bullets .icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 0.2em;
+      color: var(--rope);
+    }
+
+    /* Urgência do Pacote Completo. Uma faixa só, com as três informações que
+       não se repetem: o que é o lote, quanto tempo falta e quantas vagas
+       sobraram. Antes a mesma frase aparecia em três lugares do bloco — badge,
+       tarja e aviso em cima do preço — e a repetição lia como pressão, não
+       como escassez real. */
+    .offer-bundle__urgency-bar {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: clamp(14px, 2.4vw, 26px);
+      padding: 12px clamp(14px, 2vw, 20px);
+      background: linear-gradient(90deg, rgba(255, 75, 31, 0.2) 0%, rgba(228, 174, 35, 0.12) 100%);
+      border: 1px solid rgba(228, 174, 35, 0.45);
+      border-radius: 4px;
+      box-shadow: 0 4px 18px rgba(228, 174, 35, 0.1);
+      margin-bottom: 4px;
+    }
+
+    /* O JS esconde a faixa inteira quando o prazo passa: melhor sumir do que
+       exibir um contador zerado embaixo do preço. */
+    .offer-bundle__urgency-bar[hidden] {
+      display: none;
+    }
+
+    .offer-bundle__urgency-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--ember);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 11px;
+      border-radius: 3px;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(255, 75, 31, 0.35);
+    }
+
+    .offer-bundle__pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #fff;
+      display: inline-block;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85);
+      animation: bundlePulseDot 1.6s infinite;
+    }
+
+    @keyframes bundlePulseDot {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85);
+        transform: scale(0.95);
+      }
+
+      70% {
+        box-shadow: 0 0 0 7px rgba(255, 255, 255, 0);
+        transform: scale(1.1);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        transform: scale(0.95);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .offer-bundle__pulse-dot {
+        animation: none;
+      }
+    }
+
+    /* ---- Contagem regressiva ---- */
+    .bundle-countdown {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .bundle-countdown__label {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.6);
+    }
+
+    .bundle-countdown__slots {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .bundle-countdown__slot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 42px;
+      padding: 5px 6px 4px;
+      border: 1px solid rgba(228, 174, 35, 0.35);
+      border-radius: 3px;
+      background: rgba(14, 13, 8, 0.45);
+    }
+
+    .bundle-countdown__slot b {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--rope);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .bundle-countdown__slot i {
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-size: 0.54rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.5);
+      margin-top: 3px;
+    }
+
+    /* ---- Vagas do lote ---- */
+    .bundle-slots {
+      min-width: 132px;
+    }
+
+    .bundle-slots__text {
+      margin: 0 0 6px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.7);
+      text-align: right;
+    }
+
+    .bundle-slots__text strong {
+      color: var(--rope);
+      font-weight: 700;
+    }
+
+    .bundle-slots__meter {
+      display: block;
+      height: 5px;
+      border-radius: 3px;
+      background: rgba(236, 231, 222, 0.14);
+      overflow: hidden;
+    }
+
+    .bundle-slots__meter i {
+      display: block;
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--rope), var(--ember));
+      transition: width .6s ease;
+    }
+
+    /* ---- As quatro capas. Fileira legenda a legenda, sem sobreposição: as
+       capas sao A4 escuras com o titulo no terco de cima, entao empilhadas e
+       cortadas viravam quatro manchas iguais. Cada uma com o nome embaixo
+       identifica o material; as duas primeiras usam as capas de verdade, nao
+       os mockups fotograficos das cards de cima. ---- */
+    .bundle-stack {
+      margin: 22px 0 0;
+    }
+
+    .bundle-stack__label {
+      margin: 0 0 10px;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rope);
+    }
+
+    .bundle-stack__row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .bundle-stack__item {
+      flex: 1 1 0;
+      max-width: 104px;
+      margin: 0;
+      min-width: 0;
+    }
+
+    .bundle-stack__item img {
+      width: 100%;
+      aspect-ratio: 1 / 1.414;
+      object-fit: cover;
+      display: block;
+      border: 1px solid rgba(228, 174, 35, 0.3);
+      border-radius: 3px;
+      background: var(--ink-2);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+      transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .bundle-stack__item:hover img {
+      transform: translateY(-4px);
+      border-color: var(--rope);
+    }
+
+    .bundle-stack__item figcaption {
+      margin-top: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      line-height: 1.3;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      color: rgba(236, 231, 222, 0.55);
+    }
+
+    /* ---- Painel de compra ---- */
+    .offer-bundle__buy {
+      text-align: center;
+      padding: clamp(20px, 2.6vw, 26px) clamp(16px, 2vw, 22px);
+      border: 1px solid rgba(228, 174, 35, 0.3);
+      border-radius: 5px;
+      background: rgba(228, 174, 35, 0.05);
+    }
+
+    .offer-bundle__buy-label {
+      margin: 0 0 12px;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.55);
+    }
+
+    .offer-bundle__price {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .offer-bundle__price .was {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: rgba(236, 231, 222, 0.5);
+      margin-bottom: 6px;
+    }
+
+    .offer-bundle__price .was s {
+      text-decoration-color: rgba(255, 75, 31, 0.8);
+    }
+
+    .offer-bundle__price .amount {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2.8rem, 7.4vw, 3.8rem);
+      line-height: 0.9;
+      color: var(--rope);
+    }
+
+    .offer-bundle__price .terms {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(236, 231, 222, 0.55);
+      margin-top: 8px;
+    }
+
+    .offer-bundle__price .per {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--rope);
+      margin-top: 6px;
+    }
+
+    .offer-bundle__extra {
+      margin: 0 0 16px;
+      padding: 10px 12px;
+      border: 1px dashed rgba(228, 174, 35, 0.4);
+      border-radius: 4px;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      color: rgba(236, 231, 222, 0.72);
+    }
+
+    .offer-bundle__extra strong {
+      color: var(--paper);
+      font-weight: 600;
+    }
+
+    .offer-bundle .btn--bundle {
+      background: var(--rope);
+      color: var(--ink);
+    }
+
+    .offer-bundle .btn--bundle:hover {
+      background: #CF9C17;
+    }
+
+    @media (max-width: 900px) {
+      .offer-bundle {
+        grid-template-columns: 1fr;
+      }
+
+      .offer-bundle__urgency-bar {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 12px;
+      }
+
+      .bundle-slots {
+        width: 100%;
+        max-width: 260px;
+      }
+
+      .bundle-slots__text {
+        text-align: center;
+      }
+
+      .offer-bundle .eyebrow {
+        justify-content: center;
+      }
+
+      .offer-bundle__copy {
+        text-align: center;
+      }
+
+      .offer-bundle__bullets li {
+        text-align: left;
+      }
+
+      .bundle-stack {
+        text-align: center;
+      }
+
+      .bundle-stack__row {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .bundle-countdown__slot {
+        min-width: 38px;
+      }
+
+      .bundle-countdown__slot b {
+        font-size: 1.3rem;
+      }
+
+      .bundle-stack__row {
+        flex-wrap: wrap;
+      }
+
+      .bundle-stack__item {
+        flex: 0 0 calc(50% - 5px);
+        max-width: calc(50% - 5px);
+      }
+    }
+
+    .offer-card {
       background: var(--ink);
       color: var(--paper);
       border-radius: 6px;
+      padding: 32px;
+      position: relative;
       overflow: hidden;
-      outline: 2px solid var(--ember);
-      box-shadow: 0 24px 54px rgba(255, 75, 31, 0.18);
+      display: flex;
+      flex-direction: column;
     }
 
-    .pack::before {
+    .offer-card::before {
       content: "";
       position: absolute;
       top: 0;
@@ -1518,46 +1981,17 @@
       right: 0;
       height: 6px;
       background: var(--ember);
-      z-index: 3;
-    }
-
-    .pack__media {
-      position: relative;
-      min-height: 420px;
-      border-right: 1px solid var(--line-on-ink);
-      overflow: hidden;
-    }
-
-    .pack__media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 55%;
-      transition: transform 0.4s ease;
-    }
-
-    .pack:hover .pack__media img {
-      transform: scale(1.04);
-    }
-
-    .pack__flag {
-      position: absolute;
-      left: 20px;
-      bottom: 20px;
       z-index: 2;
-      font-family: var(--font-mono);
-      font-size: 0.66rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--paper);
-      background: rgba(14, 13, 8, 0.78);
-      border: 1px solid var(--line-on-ink);
-      border-radius: 999px;
-      padding: 7px 13px;
     }
 
-    .pack__badge {
+    /* Destaque do card principal. Usa outline, e não border, para não deslocar
+       o conteúdo — a mídia depende das margens negativas casarem com o padding. */
+    .offer-card--featured {
+      outline: 2px solid var(--ember);
+      box-shadow: 0 24px 54px rgba(255, 75, 31, 0.18);
+    }
+
+    .offer-card__badge {
       position: absolute;
       top: 20px;
       right: 20px;
@@ -1573,114 +2007,63 @@
       padding: 7px 13px;
     }
 
-    .pack__body {
-      padding: clamp(28px, 3.4vw, 44px);
-      display: flex;
-      flex-direction: column;
+    .offer-card__media {
+      margin: -32px -32px 24px -32px;
+      height: 340px;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 1px solid var(--line-on-ink);
     }
 
-    .pack__label {
+    .offer-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      transition: transform 0.4s ease;
+    }
+
+    .offer-card:hover .offer-card__media img {
+      transform: scale(1.04);
+    }
+
+    .offer-card__label {
       font-family: var(--font-mono);
       font-size: 0.68rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--rope);
-      margin: 0 0 12px;
+      margin: 0 0 14px;
     }
 
-    .pack__title {
+    .offer-card__title {
       font-family: var(--font-display);
       font-weight: 800;
       text-transform: uppercase;
-      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
-      line-height: 0.98;
-      letter-spacing: -0.015em;
-      margin: 0 0 6px;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      line-height: 1;
+      margin: 0 0 4px;
+      letter-spacing: -0.01em;
     }
 
-    .pack__subtitle {
+    .offer-card__subtitle {
       font-family: var(--font-mono);
       font-size: 0.78rem;
       color: rgba(236, 231, 222, 0.5);
-      margin: 0;
+      margin: 0 0 18px;
     }
 
-    /* Pilha de valor: um item do pacote por linha. */
-    .stack {
-      list-style: none;
-      margin: 24px 0 0;
-      padding: 0;
-      border-top: 1px solid var(--line-on-ink);
-    }
-
-    .stack li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 15px 0;
-      border-bottom: 1px solid var(--line-on-ink);
-    }
-
-    .stack .icon {
-      width: 18px;
-      height: 18px;
-      color: var(--ember);
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-
-    .stack__name {
-      display: block;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .stack__note {
-      display: block;
-      font-size: 0.85rem;
-      color: rgba(236, 231, 222, 0.62);
-      margin-top: 3px;
-    }
-
-    .stack__tag {
-      margin-left: auto;
-      align-self: flex-start;
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--rope);
-      border: 1px solid rgba(228, 174, 35, 0.38);
-      border-radius: 999px;
-      padding: 4px 9px;
-      white-space: nowrap;
-    }
-
-    .pack__price {
+    .offer-card__price {
       display: flex;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 12px;
-      margin: 26px 0 8px;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line-on-ink);
     }
 
-    .pack__now {
-      font-family: var(--font-mono);
-      font-weight: 600;
-      font-size: clamp(2.3rem, 4.6vw, 3rem);
-      line-height: 1;
-      color: var(--ember);
-    }
-
-    .pack__terms {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      color: rgba(236, 231, 222, 0.5);
-    }
-
-    .pack__per {
+    .offer-card__per {
       font-family: var(--font-mono);
       font-size: 0.7rem;
       letter-spacing: 0.04em;
@@ -1690,59 +2073,75 @@
       padding: 4px 10px;
     }
 
-    .pack__note {
-      font-size: 0.88rem;
-      color: rgba(236, 231, 222, 0.72);
-      margin: 0 0 22px;
-    }
-
-    /* O botão desce pro fim do card mesmo quando a coluna da imagem é mais alta. */
-    .pack__cta {
-      margin-top: auto;
-    }
-
-    /* ---------- Especificação completa ---------- */
-    .details {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(28px, 4vw, 48px);
-      margin-top: clamp(40px, 6vw, 64px);
-    }
-
-    .details__title {
+    .offer-card__price .amount {
       font-family: var(--font-mono);
-      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-size: 2rem;
       color: var(--ember);
-      border-top: 2px solid var(--ink);
-      padding-top: 14px;
-      margin: 0 0 16px;
     }
 
-    .details ul {
+    .offer-card__price .terms {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: rgba(236, 231, 222, 0.5);
+      text-transform: uppercase;
+    }
+
+    .offer-card__desc {
+      color: rgba(236, 231, 222, 0.72);
+      font-size: 0.94rem;
+      margin: 0 0 20px;
+    }
+
+    .offer-card__bullets {
       list-style: none;
-      margin: 0;
+      margin: 0 0 26px;
       padding: 0;
       display: flex;
       flex-direction: column;
       gap: 10px;
+      flex-grow: 1;
     }
 
-    .details li {
+    .offer-card__bullets li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
       font-size: 0.9rem;
     }
 
-    .details .icon {
+    .offer-card__bullets .icon {
       width: 18px;
       height: 18px;
       color: var(--ember);
       flex-shrink: 0;
       margin-top: 2px;
+    }
+
+    .offer-card__group {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rope);
+      margin-top: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line-on-ink);
+    }
+
+    .offer-card__group:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .offer-split {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--graphite);
+      margin: 0 0 40px;
     }
 
     .guarantee {
@@ -2774,24 +3173,13 @@
         transform: none;
       }
 
-      .pack {
+      .offer-grid {
         grid-template-columns: 1fr;
-      }
-
-      .pack__media {
-        min-height: 0;
-        height: 280px;
-        border-right: 0;
-        border-bottom: 1px solid var(--line-on-ink);
       }
 
       .tile-grid,
       .tile-grid--4 {
         grid-template-columns: 1fr 1fr;
-      }
-
-      .details {
-        grid-template-columns: 1fr;
       }
 
       .week {
@@ -2889,8 +3277,12 @@
         grid-template-columns: 1fr;
       }
 
-      .stack__tag {
-        display: none;
+      .offer-card {
+        padding: 24px;
+      }
+
+      .offer-card__media {
+        margin: -24px -24px 24px -24px;
       }
 
       .stats-grid {
@@ -2924,6 +3316,188 @@
       }
     }
 
+
+    /* ---------- Oferta Relâmpago (upsell no clique da oferta de R$10) ---------- */
+    body.flash-open {
+      overflow: hidden;
+    }
+
+    .flash {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(14, 13, 8, 0.82);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .flash.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .flash__dialog {
+      position: relative;
+      width: min(460px, 100%);
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      background: var(--ink);
+      color: var(--paper);
+      border: 1px solid rgba(255, 75, 31, 0.4);
+      border-radius: 8px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 75, 31, 0.18);
+      padding: 36px 28px 28px;
+      text-align: center;
+      transform: translateY(16px) scale(0.98);
+      transition: transform 0.28s cubic-bezier(0.34, 1.3, 0.64, 1);
+    }
+
+    .flash.is-open .flash__dialog {
+      transform: none;
+    }
+
+    .flash__dialog::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--ember);
+    }
+
+    .flash__close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1px solid var(--line-on-ink);
+      border-radius: 50%;
+      color: rgba(236, 231, 222, 0.6);
+      cursor: pointer;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .flash__close:hover {
+      color: var(--ember);
+      border-color: var(--ember);
+    }
+
+    .flash__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rope);
+      margin: 0 0 14px;
+    }
+
+    .flash__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ember);
+      flex-shrink: 0;
+      animation: heroPulse 1.8s ease-in-out infinite;
+    }
+
+    .flash__title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(1.8rem, 6vw, 2.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.01em;
+      margin: 0 0 12px;
+    }
+
+    .flash__text {
+      color: rgba(236, 231, 222, 0.72);
+      font-size: 0.95rem;
+      margin: 0 0 18px;
+    }
+
+    .flash__price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 0 0 22px;
+    }
+
+    .flash__price-old {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: rgba(236, 231, 222, 0.45);
+      text-decoration: line-through;
+    }
+
+    .flash__price-new {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: clamp(2rem, 8vw, 2.6rem);
+      line-height: 1;
+      color: var(--ember);
+    }
+
+    .flash__price-off {
+      align-self: center;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--ink);
+      background: var(--rope);
+      border-radius: 999px;
+      padding: 4px 9px;
+    }
+
+    .flash__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .flash__keep {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: rgba(236, 231, 222, 0.55);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      padding-block: 10px;
+    }
+
+    .flash__keep:hover {
+      color: var(--paper);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .flash,
+      .flash__dialog {
+        transition: none;
+      }
+
+      .flash__dot {
+        animation: none;
+      }
+    }
   </style>
 </head>
 
@@ -3017,7 +3591,7 @@
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
-      <a href="#oferta" class="btn btn--primary header-cta">Quero o programa</a>
+      <a href="#oferta" class="btn btn--primary header-cta">Ver os materiais</a>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false"
         aria-controls="mobileDrawer">
         <svg class="icon icon--menu">
@@ -3039,7 +3613,7 @@
       <li><a href="#cases">Depoimentos</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="#oferta" class="btn btn--primary">Quero o programa</a>
+    <a href="#oferta" class="btn btn--primary">Ver os materiais</a>
   </div>
 
   <main id="top">
@@ -3053,7 +3627,7 @@
             condicionamento. Vale pra quem vai competir e pra quem só cansou de estagnar: você abre o dia, lê a
             prescrição e executa.</p>
           <div class="hero__actions">
-            <a href="#oferta" class="btn btn--primary">Quero o programa — R$57</a>
+            <a href="#oferta" class="btn btn--primary">Ver os 3 materiais</a>
             <a href="#pordentro" class="hero__scroll-hint">Veja o material por dentro ↓</a>
           </div>
         </div>
@@ -3175,89 +3749,94 @@
     <section class="section section--paper-alt" id="oferta">
       <div class="container">
         <div class="section__head section__head--center" data-reveal>
-          <p class="eyebrow">O programa completo</p>
-          <h2 class="section-title" style="max-width:22ch; margin-inline:auto;">Tudo o que você precisa pra evoluir
-            o ano inteiro</h2>
-          <p class="lede" style="margin-inline:auto;">Um pagamento. Três materiais. Acesso imediato, sem mensalidade
-            e sem assinatura.</p>
+          <p class="eyebrow">Os materiais</p>
+          <h2 class="section-title" style="max-width:22ch; margin-inline:auto;">Escolha por onde começar a evoluir
+          </h2>
+          <p class="lede" style="margin-inline:auto;">Um te explica o porquê de cada treino. O outro te entrega o
+            treino pronto pra seguir. Ou leve todo o material de uma vez no Pacote Completo.</p>
         </div>
 
-        <div class="pack" data-reveal>
-          <span class="pack__badge">Tudo incluso</span>
-          <div class="pack__media">
-            <img src="assets/images/oferta_250_pag_.jpg" alt="HYROX Daily WOD 250 — programa completo de treino"
-              loading="lazy">
-            <span class="pack__flag">250 sessões · 3 materiais</span>
-          </div>
-          <div class="pack__body">
-            <p class="pack__label">Programa completo</p>
-            <h3 class="pack__title">HYROX Daily WOD 250</h3>
-            <p class="pack__subtitle">Acesso digital imediato · PDF</p>
-
-            <ul class="stack">
-              <li>
-                <svg class="icon">
+        <div class="offer-grid" data-reveal>
+          <div class="offer-card">
+            <div class="offer-card__media">
+              <img src="assets/images/oferta_150_pag.jpg" alt="HYROX Master Class 150 Páginas - Fundamentação técnica"
+                loading="lazy">
+            </div>
+            <p class="offer-card__label">Para entender seu treino</p>
+            <h3 class="offer-card__title">HYROX Master Class</h3>
+            <p class="offer-card__subtitle">150 páginas · PDF digital</p>
+            <div class="offer-card__price">
+              <span class="amount">R$ 10,00</span>
+              <span class="terms">pagamento único</span>
+            </div>
+            <p class="offer-card__desc">A base técnica por trás de cada treino: por que essa estação, essa carga,
+              essa ordem — e o que isso muda na sua evolução.</p>
+            <ul class="offer-card__bullets">
+              <li><svg class="icon">
                   <use href="#icon-check" />
-                </svg>
-                <span>
-                  <span class="stack__name">250 sessões de treino</span>
-                  <span class="stack__note">Uma pra cada dia útil do ano, periodizadas em 10 mesociclos.</span>
-                </span>
-                <span class="stack__tag">Núcleo</span>
-              </li>
-              <li>
-                <svg class="icon">
+                </svg>Fisiologia do treino funcional: o que cada estímulo faz no seu corpo</li>
+              <li><svg class="icon">
                   <use href="#icon-check" />
-                </svg>
-                <span>
-                  <span class="stack__name">Plano 12 Semanas</span>
-                  <span class="stack__note">Um bloco fechado, semana a semana — pra fechar um ciclo de pico ou pra
-                    chegar afiado numa data marcada.</span>
-                </span>
-                <span class="stack__tag">Incluso</span>
-              </li>
-              <li>
-                <svg class="icon">
+                </svg>Periodização e progressão de carga — como evoluir sem estagnar</li>
+              <li><svg class="icon">
                   <use href="#icon-check" />
-                </svg>
-                <span>
-                  <span class="stack__name">Acompanhamento de Treino</span>
-                  <span class="stack__note">Onde registrar carga, tempo e sensação de cada sessão — pra enxergar a
-                    evolução ciclo a ciclo, e não no achismo.</span>
-                </span>
-                <span class="stack__tag">Incluso</span>
-              </li>
+                </svg>Prevenção de lesões: o que observar na sua execução</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Correção postural e consciência corporal</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Como dosar a intensidade para o seu objetivo</li>
             </ul>
-
-            <div class="pack__price">
-              <span class="pack__now">R$ 57,00</span>
-              <span class="pack__terms">pagamento único</span>
-              <span class="pack__per">≈ R$ 0,23 por sessão</span>
-            </div>
-            <p class="pack__note">Preço de lançamento. Menos que uma aula avulsa de box — pelo ano inteiro de treino
-              planejado.</p>
-
-            <div class="pack__cta">
-              <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="btn btn--primary btn--block" target="_blank"
-                rel="noopener" data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o
-                programa — R$57</a>
-              <p class="trust-line"><svg class="icon">
-                  <use href="#icon-shield" />
-                </svg>Pagamento único · Acesso imediato · 7 dias de garantia</p>
-            </div>
+            <a href="https://pay.wiapy.com/LXGERO2qjnZE" class="btn btn--primary btn--block" target="_blank"
+              rel="noopener" data-checkout="HYROX Master Class" data-sku="master-class" data-price="10.00">Quero a
+              Master Class — R$10</a>
+            <p class="trust-line"><svg class="icon">
+                <use href="#icon-shield" />
+              </svg>Pagamento único · Acesso imediato · 7 dias de garantia</p>
           </div>
-        </div>
 
-        <div class="details" data-reveal>
-          <div class="details__col">
-            <h3 class="details__title">O que vem em cada sessão</h3>
-            <ul>
+          <div class="offer-card offer-card--featured">
+            <span class="offer-card__badge">Mais completo</span>
+            <div class="offer-card__media">
+              <img src="assets/images/oferta_250_pag_.jpg" alt="250 Aulas Prontas Daily WOD - Material completo"
+                loading="lazy">
+            </div>
+            <p class="offer-card__label">Para treinar amanhã</p>
+            <h3 class="offer-card__title">250 Aulas Prontas</h3>
+            <p class="offer-card__subtitle">250 sessões de treino · acesso digital imediato</p>
+            <div class="offer-card__price">
+              <span class="amount">R$ 27,00</span>
+              <span class="terms">pagamento único</span>
+              <span class="offer-card__per">≈ R$ 0,11 por sessão</span>
+            </div>
+            <p class="offer-card__desc">O ano inteiro de treino já planejado — você abre o dia, lê e executa. Do
+              aquecimento ao arrefecimento, linha a linha, com carga e intensidade definidas.</p>
+            <ul class="offer-card__bullets">
+              <li class="offer-card__group">Estrutura do ano</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
-                </svg>Aquecimento em 3 blocos: elevação geral, mobilidade específica e ativação</li>
+                </svg>10 mesociclos de 5 semanas — cada um com objetivo próprio</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
-                </svg>Bloco técnico com os 2 pontos de execução do dia</li>
+                </svg>5ª semana sempre de descarga, com volume reduzido a 45%</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Semana-tipo fixa: força, aeróbio, estações, técnica, sessão mista</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Nenhum dia pesado depois de outro dia pesado</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Progressão do trenó de 15 m até os 50 m da prova ao longo do ano</li>
+
+              <li class="offer-card__group">O que vem em cada sessão</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Aquecimento em 3 blocos: elevação geral, mobilidade específica, ativação</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Bloco técnico com os 2 pontos de execução pra acertar naquele dia</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
                 </svg>Bloco principal com prescrição exata, linha a linha</li>
@@ -3266,68 +3845,148 @@
                 </svg>Arrefecimento definido</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
-                </svg>Erro a vigiar, com a correção ao lado</li>
+                </svg>Dica de execução pronta — o foco pra manter durante o treino</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Erro mais comum, com a correção</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Campo pra registrar suas cargas e tempos</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
                 </svg>Duração fixa de 60 minutos</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
                 </svg>Equipamento e espaço declarados no cabeçalho</li>
-            </ul>
-          </div>
-          <div class="details__col">
-            <h3 class="details__title">Carga e intensidade</h3>
-            <ul>
+
+              <li class="offer-card__group">Cargas e intensidade prontas</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
-                </svg>Cargas oficiais de competição por categoria — feminino, masculino e pro</li>
+                </svg>Cargas oficiais de competição por categoria — feminino, masculino, pro</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
                 </svg>Escala RPE com os 4 tipos de dia</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
-                </svg>Zonas de frequência cardíaca pela fórmula 180 − idade</li>
+                </svg>Zonas de frequência cardíaca calculadas pela fórmula 180 − idade</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
                 </svg>Alvos de limiar aeróbio, MLSS e limiar anaeróbio</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
-                </svg>Teste da conversa pra achar a Zona 2 sem relógio</li>
+                </svg>Teste da conversa para achar a Zona 2 sem equipamento</li>
               <li><svg class="icon">
                   <use href="#icon-check" />
-                </svg>Velocidade de corrida calculada pelo seu tempo de 2 km</li>
+                </svg>Cálculo de velocidade de corrida a partir do seu tempo de 2 km</li>
             </ul>
-          </div>
-          <div class="details__col">
-            <h3 class="details__title">Estrutura do ano</h3>
-            <ul>
-              <li><svg class="icon">
-                  <use href="#icon-check" />
-                </svg>10 mesociclos de 5 semanas, cada um com objetivo próprio</li>
-              <li><svg class="icon">
-                  <use href="#icon-check" />
-                </svg>5ª semana sempre de descarga, com volume em 45%</li>
-              <li><svg class="icon">
-                  <use href="#icon-check" />
-                </svg>Semana-tipo fixa: força, aeróbio, estações, técnica e sessão mista</li>
-              <li><svg class="icon">
-                  <use href="#icon-check" />
-                </svg>Nenhum dia pesado depois de outro dia pesado</li>
-              <li><svg class="icon">
-                  <use href="#icon-check" />
-                </svg>Progressão do trenó de 15 m até os 50 m da prova</li>
-              <li><svg class="icon">
-                  <use href="#icon-check" />
-                </svg>Campo de registro pra acompanhar sua evolução</li>
-            </ul>
+            <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="btn btn--primary btn--block" target="_blank"
+              rel="noopener" data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as 250
+              Aulas — R$27</a>
+            <p class="trust-line"><svg class="icon">
+                <use href="#icon-shield" />
+              </svg>Pagamento único · Acesso imediato · 7 dias de garantia</p>
           </div>
         </div>
 
-        <div class="guarantee" data-reveal style="margin-top: clamp(40px, 6vw, 64px);">
+        <!-- Pacote Completo. O prazo e as vagas ficam declarados em atributos
+             (data-deadline, data-restantes) para existir um lugar só onde
+             mexer: o JS lá embaixo lê daqui, e some com a faixa quando o prazo
+             passa. Ajuste data-restantes conforme as vendas reais. -->
+        <div class="offer-bundle" data-reveal>
+          <div class="offer-bundle__urgency-bar" data-bundle-urgency data-deadline="2026-09-15T23:59:59-03:00">
+            <span class="offer-bundle__urgency-badge">
+              <span class="offer-bundle__pulse-dot"></span>
+              Lote de início de mês
+            </span>
+
+            <div class="bundle-countdown" data-bundle-countdown>
+              <span class="bundle-countdown__label">Encerra em</span>
+              <div class="bundle-countdown__slots">
+                <span class="bundle-countdown__slot"><b data-cd="dias">--</b><i>dias</i></span>
+                <span class="bundle-countdown__slot"><b data-cd="horas">--</b><i>horas</i></span>
+                <span class="bundle-countdown__slot"><b data-cd="min">--</b><i>min</i></span>
+                <span class="bundle-countdown__slot"><b data-cd="seg">--</b><i>seg</i></span>
+              </div>
+            </div>
+
+            <div class="bundle-slots" data-bundle-slots data-total="10" data-restantes="10">
+              <p class="bundle-slots__text"><span data-slots-verb>Restam</span> <strong
+                  data-slots-left>10</strong> de <span data-slots-total>10</span> vagas</p>
+              <span class="bundle-slots__meter"><i data-slots-meter style="width:100%"></i></span>
+            </div>
+          </div>
+
+          <div class="offer-bundle__copy">
+            <p class="eyebrow">Oferta Início de Mês</p>
+            <h3 class="offer-bundle__title">Pacote Completo — leve todo o material</h3>
+            <p class="offer-bundle__desc">Comece o mês com tudo organizado para evoluir no HYROX sem improviso.
+              É praticamente um ano inteiro de treino, planejamento e suporte em um só lugar.</p>
+            <ul class="offer-bundle__bullets">
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>250 sessões estruturadas, prontas pra seguir</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Plano 12 Semanas pra fechar um ciclo ou chegar afiado numa data marcada</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Master Class e Manual do Coach: o método por trás de cada treino</li>
+              <li><svg class="icon">
+                  <use href="#icon-check" />
+                </svg>Possibilidade de acompanhamento para ajudar nos ajustes ao longo da evolução</li>
+            </ul>
+
+            <div class="bundle-stack">
+              <p class="bundle-stack__label">4 materiais · um acesso só</p>
+              <div class="bundle-stack__row">
+                <figure class="bundle-stack__item">
+                  <img src="assets/images/previews/wod-01-capa.jpg" alt="Capa de 250 Aulas Prontas" loading="lazy">
+                  <figcaption>250 Aulas</figcaption>
+                </figure>
+                <figure class="bundle-stack__item">
+                  <img src="assets/images/previews/mc-01-capa.jpg" alt="Capa da HYROX Master Class" loading="lazy">
+                  <figcaption>Master Class</figcaption>
+                </figure>
+                <figure class="bundle-stack__item">
+                  <img src="assets/images/previews/bonus-coach-01-capa.jpg" alt="Capa do Manual do Coach"
+                    loading="lazy">
+                  <figcaption>Manual do Coach</figcaption>
+                </figure>
+                <figure class="bundle-stack__item">
+                  <img src="assets/images/previews/bonus-plano-01-capa.jpg" alt="Capa do plano de 12 semanas"
+                    loading="lazy">
+                  <figcaption>12 Semanas</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-bundle__buy">
+            <p class="offer-bundle__buy-label">Levando tudo de uma vez</p>
+            <div class="offer-bundle__price">
+              <span class="was">Os dois materiais avulsos: <s>R$ 37,00</s></span>
+              <span class="amount">R$ 35,50</span>
+              <span class="terms">pagamento único</span>
+              <span class="per">≈ R$ 0,14 por sessão</span>
+            </div>
+            <p class="offer-bundle__extra">E ainda entram o <strong>Plano 12 Semanas</strong>, o
+              <strong>Manual do Coach</strong> e a possibilidade de <strong>acompanhamento</strong>.</p>
+            <a href="https://pay.wiapy.com/R2b0Z288WWHq" class="btn btn--bundle btn--block" target="_blank"
+              rel="noopener" data-checkout="Pacote Completo — Início de Mês" data-sku="pacote-completo"
+              data-price="35.50">Quero tudo — R$35,50</a>
+            <p class="trust-line"><svg class="icon">
+                <use href="#icon-shield" />
+              </svg>Pagamento único · Acesso imediato · 7 dias de garantia</p>
+          </div>
+        </div>
+
+        <p class="offer-split" data-reveal>Cada produto tem checkout próprio — leve um, os dois, ou tudo no pacote.</p>
+
+        <div class="guarantee" data-reveal>
           <svg class="icon">
             <use href="#icon-shield" />
           </svg>
-          <p><strong>Garantia incondicional de 7 dias.</strong> Baixe, faça a primeira semana e, se não fizer sentido
+          <p><strong>Garantia incondicional de 7 dias</strong> em qualquer um dos materiais. Se não fizer sentido
             pro seu treino, devolvemos o valor.</p>
         </div>
       </div>
@@ -3597,16 +4256,16 @@
 
       <div class="peek-row" data-reveal>
         <div class="container">
-          <p class="peek-row__label"><span class="peek-row__tag">Incluso</span><span
-              class="peek-row__text">Plano 12 Semanas <span class="peek-row__off">já vem no
-                pacote</span></span></p>
+          <p class="peek-row__label"><span class="peek-row__tag">No pacote</span><span
+              class="peek-row__text">Plano 12 Semanas <span class="peek-row__off">vem no
+                Pacote Completo</span></span></p>
         </div>
         <div class="peek__scroller">
           <div class="peek__track">
             <div class="peek__seq">
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-01-capa.jpg" alt="Plano 12 Semanas — Capa e arquitetura"
                       loading="lazy">
                 </span>
@@ -3615,7 +4274,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-02-mapa.jpg" alt="Plano 12 Semanas — Mapa das 12 semanas"
                       loading="lazy">
                 </span>
@@ -3624,7 +4283,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-03-semana01.jpg" alt="Plano 12 Semanas — Semana 01 — na íntegra"
                       loading="lazy">
                 </span>
@@ -3633,7 +4292,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-04-intensidade.jpg" alt="Plano 12 Semanas — Intensidade e estações"
                       loading="lazy">
                 </span>
@@ -3642,7 +4301,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-01-capa.jpg" alt="Plano 12 Semanas — Capa e arquitetura"
                       loading="lazy">
                 </span>
@@ -3651,7 +4310,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-02-mapa.jpg" alt="Plano 12 Semanas — Mapa das 12 semanas"
                       loading="lazy">
                 </span>
@@ -3660,7 +4319,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-03-semana01.jpg" alt="Plano 12 Semanas — Semana 01 — na íntegra"
                       loading="lazy">
                 </span>
@@ -3669,7 +4328,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-04-intensidade.jpg" alt="Plano 12 Semanas — Intensidade e estações"
                       loading="lazy">
                 </span>
@@ -3680,7 +4339,7 @@
             <div class="peek__seq" aria-hidden="true">
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-01-capa.jpg" alt="Plano 12 Semanas — Capa e arquitetura"
                       loading="lazy">
                 </span>
@@ -3689,7 +4348,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-02-mapa.jpg" alt="Plano 12 Semanas — Mapa das 12 semanas"
                       loading="lazy">
                 </span>
@@ -3698,7 +4357,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-03-semana01.jpg" alt="Plano 12 Semanas — Semana 01 — na íntegra"
                       loading="lazy">
                 </span>
@@ -3707,7 +4366,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-04-intensidade.jpg" alt="Plano 12 Semanas — Intensidade e estações"
                       loading="lazy">
                 </span>
@@ -3716,7 +4375,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-01-capa.jpg" alt="Plano 12 Semanas — Capa e arquitetura"
                       loading="lazy">
                 </span>
@@ -3725,7 +4384,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-02-mapa.jpg" alt="Plano 12 Semanas — Mapa das 12 semanas"
                       loading="lazy">
                 </span>
@@ -3734,7 +4393,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-03-semana01.jpg" alt="Plano 12 Semanas — Semana 01 — na íntegra"
                       loading="lazy">
                 </span>
@@ -3743,7 +4402,7 @@
               </figure>
               <figure class="peek-page">
                 <span class="peek-page__shot">
-                  <span class="peek-page__flag">Incluso</span>
+                  <span class="peek-page__flag">No pacote</span>
                   <img src="assets/images/previews/bonus-plano-04-intensidade.jpg" alt="Plano 12 Semanas — Intensidade e estações"
                       loading="lazy">
                 </span>
@@ -3764,9 +4423,10 @@
             <h2 class="cta-strip__title">É esse o treino que você quer nos próximos 12 meses?</h2>
           </div>
           <div class="cta-strip__actions">
-            <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="btn btn--primary" target="_blank" rel="noopener"
-              data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa —
-              R$57</a>
+            <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="btn btn--primary" target="_blank" rel="noopener"
+              data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as 250 Aulas — R$27</a>
+            <a href="https://pay.wiapy.com/LXGERO2qjnZE" class="btn btn--ghost" target="_blank" rel="noopener"
+              data-checkout="HYROX Master Class" data-sku="master-class" data-price="10.00">Master Class — R$10</a>
           </div>
           <p class="trust-line"><svg class="icon">
               <use href="#icon-shield" />
@@ -3894,9 +4554,8 @@
                   <use href="#icon-check" />
                 </svg>Evolução visível nas estações</li>
             </ul>
-            <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="case__link" target="_blank" rel="noopener"
-              data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa — R$57
-              →</a>
+            <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="case__link" target="_blank" rel="noopener"
+              data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as 250 Aulas — R$27 →</a>
           </div>
           <div class="case__card">
             <div class="lesson-card lesson-card--video">
@@ -3936,9 +4595,8 @@
                   <use href="#icon-check" />
                 </svg>Progressão que não zera</li>
             </ul>
-            <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="case__link" target="_blank" rel="noopener"
-              data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa — R$57
-              →</a>
+            <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="case__link" target="_blank" rel="noopener"
+              data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as 250 Aulas — R$27 →</a>
           </div>
           <div class="case__card">
             <div class="lesson-card lesson-card--video">
@@ -3978,9 +4636,8 @@
                   <use href="#icon-check" />
                 </svg>Aprendi a técnica antes de pegar carga</li>
             </ul>
-            <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="case__link" target="_blank" rel="noopener"
-              data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa — R$57
-              →</a>
+            <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="case__link" target="_blank" rel="noopener"
+              data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as 250 Aulas — R$27 →</a>
           </div>
           <div class="case__card">
             <div class="lesson-card lesson-card--video">
@@ -4045,6 +4702,21 @@
               se você nunca competiu nem treinou no formato antes.</p>
           </details>
           <details class="faq-item">
+            <summary>É pra treinador ou pra quem treina?<span class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Pra quem treina. Cada sessão vem escrita pra você abrir, ler a prescrição e executar — sozinho, no box
+              ou na academia. Não precisa de formação nenhuma nem de alguém montando o treino por você.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Qual material eu escolho?<span class="faq-item__toggle"><svg class="icon">
+                  <use href="#icon-plus" />
+                </svg></span></summary>
+            <p>Se você quer o treino do dia pronto pra seguir, as 250 Aulas. Se quer entender o porquê de cada
+              escolha — carga, ordem, intensidade —, a Master Class. Se quer os dois, mais o Plano 12 Semanas e a
+              possibilidade de acompanhamento, o Pacote Completo.</p>
+          </details>
+          <details class="faq-item">
             <summary>Onde eu treino isso?<span class="faq-item__toggle"><svg class="icon">
                   <use href="#icon-plus" />
                 </svg></span></summary>
@@ -4077,8 +4749,8 @@
             <summary>Como recebo depois de comprar?<span class="faq-item__toggle"><svg class="icon">
                   <use href="#icon-plus" />
                 </svg></span></summary>
-            <p>Acesso digital imediato após a confirmação do pagamento, direto no e-mail cadastrado no checkout. Os
-              três materiais vêm juntos.</p>
+            <p>Acesso digital imediato após a confirmação do pagamento, direto no e-mail cadastrado no checkout. Cada
+              material tem checkout próprio — leve um, os dois, ou tudo no Pacote Completo.</p>
           </details>
           <details class="faq-item">
             <summary>E se não for o que eu esperava?<span class="faq-item__toggle"><svg class="icon">
@@ -4097,15 +4769,18 @@
           <p class="eyebrow">Próximo passo</p>
           <h2 class="section-title" style="max-width:22ch; margin-inline:auto;">Seu próximo ano de treino já está
             escrito</h2>
-          <p class="lede">Preço de lançamento — pode subir a qualquer momento. Você recebe os três materiais no
-            e-mail assim que o pagamento é confirmado.</p>
+          <p class="lede">Preço de lançamento — pode subir a qualquer momento. Escolha o material e comece a treinar
+            com plano ainda essa semana.</p>
         </div>
         <div class="cta-section__actions" data-reveal>
-          <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="btn btn--primary" target="_blank" rel="noopener"
-            data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa — R$57</a>
+          <a href="https://pay.wiapy.com/LXGERO2qjnZE" class="btn btn--primary" target="_blank" rel="noopener"
+            data-checkout="HYROX Master Class" data-sku="master-class" data-price="10.00">Quero a
+            Master Class — R$10</a>
+          <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="btn btn--ghost-light" target="_blank" rel="noopener"
+            data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero
+            as 250 Aulas — R$27</a>
         </div>
-        <p class="cta-section__note" data-reveal>Pagamento único de R$57 · Acesso imediato · Garantia incondicional de
-          7 dias.</p>
+        <p class="cta-section__note" data-reveal>Garantia incondicional de 7 dias em qualquer um dos dois materiais.</p>
       </div>
     </section>
 
@@ -4158,11 +4833,40 @@
   <!-- Barra de compra fixa: só aparece no celular, onde o botão do header some. -->
   <div class="buybar" id="buyBar">
     <div class="buybar__info">
-      <span class="buybar__name">HYROX Daily WOD 250</span>
-      <span class="buybar__price">R$ 57,00 <em>≈ R$ 0,23/sessão</em></span>
+      <span class="buybar__name">250 Aulas Prontas</span>
+      <span class="buybar__price">R$ 27,00 <em>≈ R$ 0,11/sessão</em></span>
     </div>
-    <a href="https://pay.wiapy.com/3jxDdFXDqyU7" class="btn btn--primary buybar__btn" target="_blank" rel="noopener"
-      data-checkout="HYROX Daily WOD 250" data-sku="programa-250" data-price="57.00">Quero o programa</a>
+    <a href="https://pay.wiapy.com/CdXaK3TtIhXw" class="btn btn--primary buybar__btn" target="_blank" rel="noopener"
+      data-checkout="250 Aulas Prontas" data-sku="250-aulas" data-price="27.00">Quero as aulas</a>
+  </div>
+
+  <!-- Upsell disparado quando o visitante clica na oferta de R$10 -->
+  <div class="flash" id="flashOffer" role="dialog" aria-modal="true" aria-labelledby="flashTitle" aria-hidden="true">
+    <div class="flash__dialog">
+      <button class="flash__close" id="flashClose" type="button" aria-label="Fechar">
+        <svg class="icon">
+          <use href="#icon-close" />
+        </svg>
+      </button>
+      <p class="flash__eyebrow"><span class="flash__dot"></span>Oferta Relâmpago</p>
+      <h2 class="flash__title" id="flashTitle">250 Aulas Prontas</h2>
+      <p class="flash__text">A Master Class te explica o porquê. Estas 250 sessões te dão o treino pronto pra amanhã —
+        uma pra cada dia de treino do ano, já periodizadas. Esse preço só aparece aqui.</p>
+      <div class="flash__price">
+        <span class="flash__price-old">R$ 27,00</span>
+        <span class="flash__price-new">R$ 18,90</span>
+        <span class="flash__price-off">-30%</span>
+      </div>
+      <div class="flash__actions">
+        <a href="https://pay.wiapy.com/edBBBIpvphVB" class="btn btn--primary btn--block" id="flashTake" target="_blank"
+          rel="noopener" data-checkout="250 Aulas Prontas — Oferta Relâmpago" data-sku="250-aulas-relampago"
+          data-price="18.90">Quero as 250 Aulas —
+          R$18,90</a>
+        <a href="https://pay.wiapy.com/LXGERO2qjnZE" class="flash__keep" id="flashKeep" target="_blank" rel="noopener"
+          data-checkout="HYROX Master Class" data-sku="master-class" data-price="10.00">Continuar com a Master Class —
+          R$10</a>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -4280,7 +4984,7 @@
       /* Barra de compra fixa do celular. Regras: só entra depois que o hero
          saiu da tela, e sai quando a oferta ou o CTA final estão visíveis —
          cobrir o botão real com uma barra flutuante só atrapalha. Também some
-         com o menu aberto, que já ocupa a tela inteira. */
+         com o menu ou o modal abertos, que já ocupam a tela inteira. */
       var buyBar = document.getElementById('buyBar');
 
       if (buyBar) {
@@ -4295,7 +4999,8 @@
           var pastHero = buyHero
             ? (window.pageYOffset > buyHero.offsetHeight * 0.75)
             : (window.pageYOffset > 400);
-          var blocked = document.body.classList.contains('nav-open');
+          var blocked = document.body.classList.contains('nav-open')
+            || document.body.classList.contains('flash-open');
           buyBar.classList.toggle('is-visible', pastHero && !zoneVisible && !blocked);
         };
 
@@ -4308,8 +5013,8 @@
           buyZones.forEach(function (z) { zoneIo.observe(z); });
         }
 
-        /* O menu mexe numa classe do body; um observer avisa a barra sem
-           precisar espalhar chamadas por cada handler. */
+        /* O menu e o modal mexem em classes do body; um observer avisa a barra
+           sem precisar espalhar chamadas por cada handler. */
         if ('MutationObserver' in window) {
           new MutationObserver(updateBuyBar)
             .observe(document.body, { attributes: true, attributeFilter: ['class'] });
@@ -4318,6 +5023,76 @@
         window.addEventListener('scroll', updateBuyBar, { passive: true });
         window.addEventListener('resize', updateBuyBar);
         updateBuyBar();
+      }
+
+      /* Oferta Relâmpago: intercepta a saída para o checkout de R$10 e mostra as
+         250 Aulas antes de liberar o visitante. Fica ANTES do rastreio de
+         propósito: registrado primeiro, usa stopImmediatePropagation() para o
+         link original não disparar um InitiateCheckout que ainda não aconteceu.
+         Quem contabiliza são os botões do próprio modal — ambos vivem FORA do
+         <main>, escapam do interceptador e caem no rastreio comum lá embaixo.
+         O IC, portanto, só sai quando alguém de fato segue para um checkout.
+
+         Mantido ligado: converte bem na prática. A flag existe para desligar em
+         teste sem mexer no markup, que fica no lugar de qualquer jeito. */
+      var FLASH_OFFER_ENABLED = true;
+
+      if (FLASH_OFFER_ENABLED) {
+        var flash = document.getElementById('flashOffer');
+        var flashTake = document.getElementById('flashTake');
+        var flashKeep = document.getElementById('flashKeep');
+        var flashOrigin = null;
+
+        var closeFlash = function () {
+          flash.classList.remove('is-open');
+          flash.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('flash-open');
+          if (flashOrigin) flashOrigin.focus();
+        };
+
+        var openFlash = function (origin) {
+          flashOrigin = origin;
+          /* Espelha o destino real do botão clicado, para o "continuar" levar
+             exatamente ao mesmo checkout. */
+          flashKeep.href = origin.href;
+          flash.classList.add('is-open');
+          flash.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('flash-open');
+          flashTake.focus();
+
+          /* O ponto cego do modal: sem isto só se enxerga quem seguiu para um
+             checkout, nunca quem abriu e desistiu. Com FlashOfferShown a taxa
+             real sai de uma divisão — IC de 250-aulas-relampago sobre este
+             evento. Uma vez por sessão, igual ao IC, para os dois números
+             serem comparáveis. */
+          trackOnce('flashshown', function () {
+            fbq('trackCustom', 'FlashOfferShown', {
+              content_name: '250 Aulas Prontas — Oferta Relâmpago',
+              content_ids: ['250-aulas-relampago'],
+              value: 18.90,
+              currency: 'BRL'
+            }, { eventID: eventId('FlashOfferShown') });
+          });
+        };
+
+        /* Escopo em main: o próprio "continuar" do modal também carrega
+           data-sku="master-class" e não pode reabrir o modal. */
+        document.querySelectorAll('main a[data-sku="master-class"]').forEach(function (link) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            openFlash(link);
+          });
+        });
+
+        document.getElementById('flashClose').addEventListener('click', closeFlash);
+        flashKeep.addEventListener('click', closeFlash);
+        flash.addEventListener('click', function (e) {
+          if (e.target === flash) closeFlash();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && flash.classList.contains('is-open')) closeFlash();
+        });
       }
 
       /* ── Sinal de meio de funil ────────────────────────────────────
@@ -4359,10 +5134,9 @@
         var fireViewContent = function () {
           trackOnce('viewcontent', function () {
             fbq('track', 'ViewContent', {
-              content_name: 'HYROX Daily WOD 250',
-              content_type: 'product',
-              content_ids: ['programa-250'],
-              value: 57.00,
+              content_name: 'Seção de ofertas',
+              content_type: 'product_group',
+              content_ids: ['master-class', '250-aulas'],
               currency: 'BRL'
             }, { eventID: eventId('ViewContent') });
           });
@@ -4438,16 +5212,6 @@
         }
       }
 
-      /* Produto único: um link de checkout para a página inteira. Trocar a
-         constante troca todos os botões de uma vez — inclusive a barra fixa do
-         celular. Os href do HTML já apontam pro mesmo endereço, então nada
-         quebra se o JS não rodar. */
-      var CHECKOUT_URL = 'https://pay.wiapy.com/3jxDdFXDqyU7';
-
-      document.querySelectorAll('a[data-sku="programa-250"]').forEach(function (a) {
-        a.href = CHECKOUT_URL;
-      });
-
       var inAppBrowser = /Instagram|FBAN|FBAV|FB_IAB|Line\/|MicroMessenger/i
         .test(navigator.userAgent);
       var sameTabCheckout = inAppBrowser
@@ -4506,6 +5270,115 @@
     })();
   </script>
 
+
+  <!-- Urgência do Pacote Completo: contagem regressiva e barra de vagas. Lê o
+       prazo e o número de vagas dos data-attributes do bloco, então trocar a
+       data é mexer no HTML, não aqui. Prazo vencido esconde a faixa inteira —
+       um contador zerado em cima do preço é pior do que nenhum. -->
+  <script>
+    (function () {
+      var bar = document.querySelector('[data-bundle-urgency]');
+      if (!bar) return;
+
+      /* ---- Vagas do lote ----
+         Cada clique no botão do pacote consome uma vaga, e o número fica
+         guardado no navegador de quem clicou: recarregar a página não devolve
+         a vaga. É um contador POR VISITANTE, não global — sem um backend
+         guardando o número, o visitante seguinte começa de novo no total
+         declarado em data-restantes. Nunca chega a zero: para em
+         MIN_VAGAS para a oferta não parecer encerrada. */
+      var MIN_VAGAS = 1;
+      var STORE_KEY = 'hx_vagas_pacote';
+      var slots = bar.querySelector('[data-bundle-slots]');
+
+      if (slots) {
+        var total = parseInt(slots.dataset.total, 10);
+        var declarado = parseInt(slots.dataset.restantes, 10);
+
+        if (isFinite(total) && total > 0 && isFinite(declarado)) {
+          var leftEl = slots.querySelector('[data-slots-left]');
+          var verbEl = slots.querySelector('[data-slots-verb]');
+          var totalEl = slots.querySelector('[data-slots-total]');
+          var meter = slots.querySelector('[data-slots-meter]');
+
+          /* localStorage quebra em janela anônima de alguns navegadores e com
+             cookies de terceiros bloqueados: os acessos ficam protegidos e o
+             contador simplesmente não persiste. */
+          function ler() {
+            try {
+              var v = parseInt(localStorage.getItem(STORE_KEY), 10);
+              return isFinite(v) ? v : null;
+            } catch (e) { return null; }
+          }
+
+          function gravar(v) {
+            try { localStorage.setItem(STORE_KEY, String(v)); } catch (e) { }
+          }
+
+          function limitar(v) {
+            return Math.max(MIN_VAGAS, Math.min(v, total));
+          }
+
+          /* O valor gravado nunca sobe o número de volta: se você baixar o
+             data-restantes no HTML, quem já tinha um valor maior vê o menor. */
+          var salvo = ler();
+          var vagas = limitar(salvo === null ? declarado : Math.min(salvo, declarado));
+
+          function pintar() {
+            if (leftEl) leftEl.textContent = String(vagas);
+            if (verbEl) verbEl.textContent = vagas === 1 ? 'Resta' : 'Restam';
+            if (totalEl) totalEl.textContent = String(total);
+            if (meter) meter.style.width = (vagas / total * 100) + '%';
+          }
+
+          pintar();
+
+          /* O botão abre o checkout em outra aba, então quem clicou continua
+             aqui e vê o número cair. */
+          var cta = document.querySelector('.offer-bundle .btn--bundle');
+          if (cta) {
+            cta.addEventListener('click', function () {
+              if (vagas <= MIN_VAGAS) return;
+              vagas = limitar(vagas - 1);
+              gravar(vagas);
+              pintar();
+            });
+          }
+        }
+      }
+
+      /* ---- Contagem ---- */
+      var deadline = new Date(bar.dataset.deadline);
+      var cd = bar.querySelector('[data-bundle-countdown]');
+      if (!cd || isNaN(deadline.getTime())) return;
+
+      var fields = {
+        dias: cd.querySelector('[data-cd="dias"]'),
+        horas: cd.querySelector('[data-cd="horas"]'),
+        min: cd.querySelector('[data-cd="min"]'),
+        seg: cd.querySelector('[data-cd="seg"]')
+      };
+
+      function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+      function tick() {
+        var falta = deadline.getTime() - Date.now();
+        if (falta <= 0) {
+          bar.hidden = true;
+          clearInterval(timer);
+          return;
+        }
+        var s = Math.floor(falta / 1000);
+        fields.dias.textContent = pad(Math.floor(s / 86400));
+        fields.horas.textContent = pad(Math.floor(s % 86400 / 3600));
+        fields.min.textContent = pad(Math.floor(s % 3600 / 60));
+        fields.seg.textContent = pad(s % 60);
+      }
+
+      tick();
+      var timer = setInterval(tick, 1000);
+    })();
+  </script>
 </body>
 
 </html>

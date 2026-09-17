@@ -4932,6 +4932,23 @@
         heroVideo.addEventListener('loadeddata', heroKick);
         heroVideo.addEventListener('canplay', heroKick);
         heroKick();
+
+        /* Rede de segurança pro celular: no modo de baixa energia do iPhone e
+           no economizador de dados do Android o autoplay é bloqueado de vez, e
+           o hero fica congelado no poster como se fosse uma foto. Qualquer
+           primeiro gesto do visitante já autoriza o vídeo — o toque ou o
+           scroll que ele daria de qualquer jeito destrava a cena. */
+        var heroUnlock = function () {
+          if (heroVideo.paused) heroKick();
+          if (!heroVideo.paused) {
+            document.removeEventListener('touchstart', heroUnlock);
+            document.removeEventListener('click', heroUnlock);
+            document.removeEventListener('scroll', heroUnlock);
+          }
+        };
+        document.addEventListener('touchstart', heroUnlock, { passive: true });
+        document.addEventListener('click', heroUnlock);
+        document.addEventListener('scroll', heroUnlock, { passive: true });
       }
 
       /* Vídeos com som (Feedbacks e apresentação do treinador): entram mudos

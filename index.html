@@ -2182,36 +2182,21 @@
       align-items: center;
     }
 
+    /* Mesmo player dos Feedbacks. A largura máxima evita que o vídeo em pé
+       vire uma tela inteira de altura no desktop. */
     .expert__media {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 75, 31, 0.28);
-      box-shadow: 0 20px 40px rgba(23, 22, 15, 0.18);
-    }
-
-    .expert__media::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      background: var(--ember);
-      z-index: 2;
-    }
-
-    .expert__photo {
+      display: grid;
+      gap: 22px;
       width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: center 20%;
-      display: block;
-      transition: transform 0.5s ease;
+      max-width: 380px;
+      justify-self: center;
     }
 
-    .expert__media:hover .expert__photo {
-      transform: scale(1.06);
+    /* As áreas "video" e "sound" só existem na grade dos Feedbacks; aqui
+       player e botão só empilham. */
+    .expert__media .fb-player,
+    .expert__media .fb-sound {
+      grid-area: auto;
     }
 
     .expert__name {
@@ -4502,11 +4487,31 @@
         </div>
         <div class="expert__grid" data-reveal>
           <div class="expert__media">
-            <img src="assets/images/expert_rafael.png" alt="Rafael Menezes, treinador de HYROX" class="expert__photo"
-              loading="lazy">
+            <div class="fb-player">
+              <div class="fb-player__tag"><span>Apresentação</span></div>
+              <video class="fb-player__video" id="expertVideo" loop muted playsinline preload="none"
+                poster="assets/images/mateus_apresentacao.jpg" aria-label="Vídeo de apresentação de Mateus Menezes">
+                <source src="assets/images/mateus_apresentacao.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição deste vídeo.
+              </video>
+              <span class="fb-player__play" aria-hidden="true"><svg class="icon">
+                  <use href="#icon-play" />
+                </svg></span>
+            </div>
+
+            <button type="button" class="fb-sound" id="expertSound" aria-pressed="false"
+              aria-label="Ativar som do vídeo">
+              <svg class="icon icon--on">
+                <use href="#icon-sound-off" />
+              </svg>
+              <svg class="icon icon--off">
+                <use href="#icon-sound-on" />
+              </svg>
+              <span class="fb-sound__label">Ativar som</span>
+            </button>
           </div>
           <div class="expert__copy">
-            <h3 class="expert__name">Rafael Menezes</h3>
+            <h3 class="expert__name">Mateus Menezes</h3>
             <p class="expert__role">Treinador de HYROX · São Paulo</p>
             <p class="expert__bio">Treina no formato HYROX desde que a prova chegou ao Brasil e acompanha atletas
               amadores há 12 anos — dos que competem aos que só querem evoluir. Escreveu as 250 sessões a partir do
@@ -4913,15 +4918,13 @@
         revealEls.forEach(function (el) { el.classList.add('is-visible'); });
       }
 
-      /* Feedbacks: o vídeo entra mudo (única forma de autoplay funcionar no
-         celular) e o botão devolve o som pra quem quiser ouvir o depoimento.
-         Ao sair da tela, volta a ficar mudo e pausado — evita áudio tocando
-         numa seção que o visitante já passou. */
-      var fbVideo = document.getElementById('feedbackVideo');
-      var fbSound = document.getElementById('feedbackSound');
-      var fbPlayer = document.querySelector('.fb-player');
-
-      if (fbVideo && fbSound) {
+      /* Vídeos com som (Feedbacks e apresentação do treinador): entram mudos
+         (única forma de autoplay funcionar no celular) e o botão devolve o som
+         pra quem quiser ouvir. Ao sair da tela, voltam a ficar mudos e pausados
+         — evita áudio tocando numa seção que o visitante já passou. */
+      var setupSoundVideo = function (fbVideo, fbSound) {
+        if (!fbVideo || !fbSound) return;
+        var fbPlayer = fbVideo.closest('.fb-player');
         var fbLabel = fbSound.querySelector('.fb-sound__label');
 
         var setSound = function (on) {
@@ -4979,7 +4982,10 @@
           }, { threshold: 0.25 });
           fbIo.observe(fbVideo);
         }
-      }
+      };
+
+      setupSoundVideo(document.getElementById('feedbackVideo'), document.getElementById('feedbackSound'));
+      setupSoundVideo(document.getElementById('expertVideo'), document.getElementById('expertSound'));
 
       /* Barra de compra fixa do celular. Regras: só entra depois que o hero
          saiu da tela, e sai quando a oferta ou o CTA final estão visíveis —

@@ -4456,7 +4456,7 @@
 
           <div class="fb-player">
             <div class="fb-player__tag"><span>Feedback real</span></div>
-            <video class="fb-player__video" id="feedbackVideo" autoplay loop muted playsinline preload="metadata">
+            <video class="fb-player__video" id="feedbackVideo" loop muted playsinline preload="none">
               <source src="assets/images/feed.mp4" type="video/mp4">
               Seu navegador não suporta a exibição deste vídeo.
             </video>
@@ -4567,7 +4567,7 @@
               <div class="lesson-card__row"><span class="lesson-card__tag">SESSÃO #142</span><span
                   class="lesson-card__level">NÍVEL 2</span></div>
               <span class="lesson-card__live">Treino rodando</span>
-              <video class="lesson-card__video" autoplay loop muted playsinline
+              <video class="lesson-card__video" loop muted playsinline preload="none"
                 poster="assets/images/colt-training.webp">
                 <source src="assets/images/video_1.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição deste vídeo.
@@ -4608,7 +4608,7 @@
               <div class="lesson-card__row"><span class="lesson-card__tag">SESSÃO #219</span><span
                   class="lesson-card__level">NÍVEL 3</span></div>
               <span class="lesson-card__live">Treino rodando</span>
-              <video class="lesson-card__video" autoplay loop muted playsinline
+              <video class="lesson-card__video" loop muted playsinline preload="none"
                 poster="assets/images/colt-training.webp">
                 <source src="assets/images/video2.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição deste vídeo.
@@ -4649,7 +4649,7 @@
               <div class="lesson-card__row"><span class="lesson-card__tag">SESSÃO #063</span><span
                   class="lesson-card__level">NÍVEL 1</span></div>
               <span class="lesson-card__live">Treino rodando</span>
-              <video class="lesson-card__video" autoplay loop muted playsinline
+              <video class="lesson-card__video" loop muted playsinline preload="none"
                 poster="assets/images/colt-training.webp">
                 <source src="assets/images/video3.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição deste vídeo.
@@ -4918,6 +4918,22 @@
         revealEls.forEach(function (el) { el.classList.add('is-visible'); });
       }
 
+      /* O vídeo do hero é a primeira coisa que o visitante vê. O autoplay
+         declarativo do Chrome só começa quando o arquivo inteiro dá pra tocar
+         sem parar (canplaythrough) — num 4G de celular isso leva ~13s, e até
+         lá o hero fica no poster parado, como se fosse uma foto. Um play()
+         explícito assim que há quadro suficiente (canplay) corta essa espera. */
+      var heroVideo = document.querySelector('.hero__video');
+      if (heroVideo) {
+        var heroKick = function () {
+          var p = heroVideo.play();
+          if (p && p.catch) p.catch(function () { });
+        };
+        heroVideo.addEventListener('loadeddata', heroKick);
+        heroVideo.addEventListener('canplay', heroKick);
+        heroKick();
+      }
+
       /* Vídeos com som (Feedbacks e apresentação do treinador): entram mudos
          (única forma de autoplay funcionar no celular) e o botão devolve o som
          pra quem quiser ouvir. Ao sair da tela, voltam a ficar mudos e pausados
@@ -4945,6 +4961,9 @@
         syncPaused();
 
         var tryPlay = function () {
+          /* preload="none" significa que nem os metadados vieram: o load() e o
+             que dispara o download antes do play. */
+          if (!fbVideo.dataset.loaded) { fbVideo.load(); fbVideo.dataset.loaded = '1'; }
           var p = fbVideo.play();
           if (p && p.catch) p.catch(function () { syncPaused(); });
         };
@@ -4986,6 +5005,35 @@
 
       setupSoundVideo(document.getElementById('feedbackVideo'), document.getElementById('feedbackSound'));
       setupSoundVideo(document.getElementById('expertVideo'), document.getElementById('expertSound'));
+
+      /* Os videos das aulas ficam a ~4 telas de scroll. Com autoplay o browser
+         baixava os tres (15MB) junto do hero: a pagina abria disputando banda
+         com eles e cada card ficava parado no poster. Agora so carregam quando
+         entram na tela - mesma regra do feedbackVideo e do expertVideo. */
+      var lessonVideos = document.querySelectorAll('.lesson-card__video');
+      if (lessonVideos.length && 'IntersectionObserver' in window) {
+        var lessonIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            var v = entry.target;
+            if (entry.isIntersecting) {
+              if (!v.dataset.loaded) { v.load(); v.dataset.loaded = '1'; }
+              var p = v.play();
+              if (p && p.catch) p.catch(function () { });
+            } else {
+              v.pause();
+            }
+          });
+        }, { threshold: 0.25 });
+        Array.prototype.forEach.call(lessonVideos, function (v) { lessonIo.observe(v); });
+      } else {
+        /* Sem IntersectionObserver (browser antigo), volta ao comportamento
+           anterior pra nao deixar card parado no poster. */
+        Array.prototype.forEach.call(lessonVideos, function (v) {
+          v.setAttribute('preload', 'metadata');
+          var p = v.play();
+          if (p && p.catch) p.catch(function () { });
+        });
+      }
 
       /* Barra de compra fixa do celular. Regras: só entra depois que o hero
          saiu da tela, e sai quando a oferta ou o CTA final estão visíveis —

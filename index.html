@@ -4949,6 +4949,19 @@
         document.addEventListener('touchstart', heroUnlock, { passive: true });
         document.addEventListener('click', heroUnlock);
         document.addEventListener('scroll', heroUnlock, { passive: true });
+
+        /* O hero seguia decodificando quatro telas abaixo, onde ninguém mais o
+           vê. Celular tem limite de vídeos decodificando ao mesmo tempo — com
+           ele preso, os play() dos cards de aula eram recusados em silêncio e
+           o card ficava parado no poster. Fora da tela, ele sai do caminho. */
+        if ('IntersectionObserver' in window) {
+          var heroIo = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) heroKick(); else heroVideo.pause();
+            });
+          }, { threshold: 0.15 });
+          heroIo.observe(heroVideo);
+        }
       }
 
       /* Vídeos com som (Feedbacks e apresentação do treinador): entram mudos
@@ -5029,18 +5042,33 @@
          entram na tela - mesma regra do feedbackVideo e do expertVideo. */
       var lessonVideos = document.querySelectorAll('.lesson-card__video');
       if (lessonVideos.length && 'IntersectionObserver' in window) {
+        var lessonPlay = function (v) {
+          var p = v.play();
+          if (p && p.catch) p.catch(function () { });
+        };
         var lessonIo = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             var v = entry.target;
             if (entry.isIntersecting) {
-              if (!v.dataset.loaded) { v.load(); v.dataset.loaded = '1'; }
-              var p = v.play();
-              if (p && p.catch) p.catch(function () { });
+              if (!v.dataset.loaded) {
+                v.load();
+                v.dataset.loaded = '1';
+                /* Esse primeiro play() sai com readyState 0 e o browser pode
+                   recusar — no celular ele recusa mesmo. Antes nada tentava
+                   de novo e o card ficava no poster pra sempre. Agora cada
+                   quadro novo é uma nova chance, enquanto ele estiver à vista. */
+                var retry = function () { if (v.dataset.visible) lessonPlay(v); };
+                v.addEventListener('loadeddata', retry);
+                v.addEventListener('canplay', retry);
+              }
+              v.dataset.visible = '1';
+              lessonPlay(v);
             } else {
+              delete v.dataset.visible;
               v.pause();
             }
           });
-        }, { threshold: 0.25 });
+        }, { threshold: 0.2, rootMargin: '250px 0px' });
         Array.prototype.forEach.call(lessonVideos, function (v) { lessonIo.observe(v); });
       } else {
         /* Sem IntersectionObserver (browser antigo), volta ao comportamento

@@ -499,7 +499,10 @@
     .hero {
       background: var(--ink);
       color: var(--paper);
-      padding-top: clamp(140px, 20vw, 200px);
+      /* O teto de 200px deixava ~126px de vazio depois do header fixo e
+         empurrava os botões pra fora da primeira dobra num notebook de 820px.
+         Só o respiro do topo encolheu — nada do conteúdo mudou de tamanho. */
+      padding-top: clamp(140px, 20vw, 150px);
       padding-bottom: var(--pad-section);
       position: relative;
       overflow: hidden;
@@ -567,10 +570,21 @@
       text-decoration: none;
     }
 
+    /* Sozinho no hero, o botão carrega a dobra inteira: corpo e área de toque
+       maiores que os CTAs do resto da página, que sempre vêm acompanhados de
+       um card ou de uma faixa. */
+    .hero__cta {
+      font-size: 0.92rem;
+      padding: 19px 34px;
+    }
+
     .hero__visual {
       position: relative;
       border-radius: 8px;
       overflow: hidden;
+      /* Sem poster, o espaço do vídeo fica com a cor do próprio site até o
+         primeiro frame chegar — não com um buraco claro. */
+      background: var(--ink);
       border: 1px solid rgba(255, 75, 31, 0.35);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 35px rgba(255, 75, 31, 0.2);
     }
@@ -594,45 +608,6 @@
       display: block;
       object-fit: cover;
       border-radius: 8px;
-    }
-
-    /* So entra quando o navegador recusa o autoplay (iOS em baixo consumo,
-       Safari com autoplay desligado, webview do Instagram). Antes disso a
-       pessoa ficava olhando um poster parado, sem sinal de que ali tem video. */
-    .hero__play {
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      width: 100%;
-      padding: 0;
-      border: 0;
-      background: rgba(14, 13, 8, 0.38);
-      color: var(--paper);
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-
-    .hero__visual.is-blocked .hero__play {
-      display: flex;
-    }
-
-    .hero__play .icon {
-      width: 56px;
-      height: 56px;
-      padding: 15px;
-      border-radius: 50%;
-      background: var(--ember);
-      color: var(--paper);
-      stroke: none;
     }
 
     .hero__tag {
@@ -2646,10 +2621,56 @@
       padding: 20px 24px 22px;
     }
 
+    /* Mesmo papel do .fb-player__play: quando o browser recusa o autoplay, o
+       card ficava num quadro congelado e sem nenhum sinal de que ali tem
+       vídeo — e ainda por cima embaixo de um selo escrito "Treino rodando". O
+       card inteiro vira área de toque. */
+    .lesson-card--video .lesson-card__video {
+      cursor: pointer;
+    }
+
+    .lesson-card__play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(14, 13, 8, 0.62);
+      backdrop-filter: blur(6px);
+      color: var(--paper);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .lesson-card__play .icon {
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
+      stroke: none;
+    }
+
+    .lesson-card--video.is-paused .lesson-card__play {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Parado, "Treino rodando" com o ponto pulsando é uma mentira na tela. */
+    .lesson-card--video.is-paused .lesson-card__live {
+      opacity: 0;
+    }
+
     .lesson-card__live {
       position: absolute;
       top: 74px;
       right: 16px;
+      transition: opacity 0.25s ease;
       z-index: 2;
       display: flex;
       align-items: center;
@@ -3651,22 +3672,22 @@
             condicionamento. Vale pra quem vai competir e pra quem só cansou de estagnar: você abre o dia, lê a
             prescrição e executa.</p>
           <div class="hero__actions">
-            <a href="#oferta" class="btn btn--primary">Ver os 3 materiais</a>
+            <a href="#oferta" class="btn btn--primary hero__cta">Ver os 3 materiais</a>
             <a href="#pordentro" class="hero__scroll-hint">Veja o material por dentro ↓</a>
           </div>
         </div>
         <div class="hero__visual">
           <span class="hero__tag"><span class="hero__tag-dot"></span>Cena real de treino</span>
-          <video class="hero__video" autoplay loop muted playsinline poster="assets/images/colt-training.webp">
+          <!-- O poster é o quadro 0 do próprio vídeo, extraído dele. Não é a
+               foto de banco que estava aqui antes: como é o mesmo frame em que
+               o vídeo abre, a troca poster→vídeo não se vê. Serve pra nunca
+               existir o retângulo escuro enquanto os primeiros megabytes
+               descem, que é o que passa sensação de site quebrado. -->
+          <video class="hero__video" autoplay loop muted playsinline preload="auto"
+            poster="assets/images/hero-frame.jpg">
             <source src="assets/images/thirdspacelondon_pindown.io_1785350008.mp4" type="video/mp4">
             Seu navegador não suporta a exibição deste vídeo.
           </video>
-          <button class="hero__play" id="heroPlay" type="button">
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-play" />
-            </svg>
-            <span>Ver a cena</span>
-          </button>
           <div class="hero__caption"><span>Sem atores. Sem estúdio.</span></div>
         </div>
       </div>
@@ -4612,11 +4633,13 @@
               <div class="lesson-card__row"><span class="lesson-card__tag">SESSÃO #142</span><span
                   class="lesson-card__level">NÍVEL 2</span></div>
               <span class="lesson-card__live">Treino rodando</span>
-              <video class="lesson-card__video" loop muted playsinline preload="none"
-                poster="assets/images/colt-training.webp">
+              <video class="lesson-card__video" loop muted playsinline preload="none">
                 <source src="assets/images/video_1.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição deste vídeo.
               </video>
+              <span class="lesson-card__play" aria-hidden="true"><svg class="icon">
+                  <use href="#icon-play" />
+                </svg></span>
               <p class="lesson-card__title">Sled + Wall Ball Day</p>
             </div>
           </div>
@@ -4653,11 +4676,13 @@
               <div class="lesson-card__row"><span class="lesson-card__tag">SESSÃO #219</span><span
                   class="lesson-card__level">NÍVEL 3</span></div>
               <span class="lesson-card__live">Treino rodando</span>
-              <video class="lesson-card__video" loop muted playsinline preload="none"
-                poster="assets/images/colt-training.webp">
+              <video class="lesson-card__video" loop muted playsinline preload="none">
                 <source src="assets/images/video2.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição deste vídeo.
               </video>
+              <span class="lesson-card__play" aria-hidden="true"><svg class="icon">
+                  <use href="#icon-play" />
+                </svg></span>
               <p class="lesson-card__title">Row + Sandbag Day</p>
             </div>
           </div>
@@ -4694,11 +4719,13 @@
               <div class="lesson-card__row"><span class="lesson-card__tag">SESSÃO #063</span><span
                   class="lesson-card__level">NÍVEL 1</span></div>
               <span class="lesson-card__live">Treino rodando</span>
-              <video class="lesson-card__video" loop muted playsinline preload="none"
-                poster="assets/images/colt-training.webp">
+              <video class="lesson-card__video" loop muted playsinline preload="none">
                 <source src="assets/images/video3.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição deste vídeo.
               </video>
+              <span class="lesson-card__play" aria-hidden="true"><svg class="icon">
+                  <use href="#icon-play" />
+                </svg></span>
               <p class="lesson-card__title">Burpee + SkiErg Day</p>
             </div>
           </div>
@@ -4963,17 +4990,57 @@
         revealEls.forEach(function (el) { el.classList.add('is-visible'); });
       }
 
-      /* ── Play dos vídeos ───────────────────────────────────
-         play() devolve uma promessa que vários navegadores recusam mesmo com
-         o vídeo mudo: iOS em modo de baixo consumo, Safari com "reprodução
-         automática: nunca", aba aberta em segundo plano e — o caso mais comum
-         aqui, porque o tráfego vem de anúncio — o navegador interno do
-         Instagram/Facebook. A recusa era engolida por um catch vazio: o vídeo
-         travava no poster para sempre. Agora cada recusa fica numa fila e volta
-         a tentar no primeiro gesto da pessoa (que já é gesto válido para o
-         navegador) e quando a aba volta para a frente.
-         Os depoimentos (feedbackVideo e expertVideo) seguem com a lógica
-         própria deles, por causa do botão de som. */
+      /* Manda o browser começar a baixar um vídeo que entrou com preload="none".
+         O load() só entra quando o elemento ainda não tem nada (readyState 0):
+         chamado num vídeo que já tem dados, ele zeraria o que foi baixado e
+         abortaria um play em andamento. */
+      var warmVideo = function (v) {
+        if (!v || v.dataset.loaded || v.preload !== 'none') return;
+        v.dataset.loaded = '1';
+        if (v.readyState > 0) return;
+        v.preload = 'auto';
+        v.load();
+      };
+
+      /* Um play() disparado antes do vídeo ter dados — o caso de todo vídeo com
+         preload="none" numa conexão de celular — é rejeitado pelo browser. O
+         código antigo engolia essa rejeição num catch vazio, e o resultado era
+         o vídeo parado no primeiro frame (ou no poster) pra sempre. Aqui a
+         rejeição agenda uma segunda tentativa pro instante em que o vídeo avisa
+         que já tem dados suficientes, que é o que faz ele sair rodando sozinho. */
+      var startVideo = function (v, onFail) {
+        if (!v) return;
+        warmVideo(v);
+        var retry = function () {
+          if (v.dataset.waiting) return;
+          v.dataset.waiting = '1';
+          v.addEventListener('canplay', function again() {
+            v.removeEventListener('canplay', again);
+            delete v.dataset.waiting;
+            var r = v.play();
+            if (r && r.catch) r.catch(function () { if (onFail) onFail(); });
+          });
+        };
+        var p = v.play();
+        if (p && p.catch) {
+          p.catch(function () {
+            if (onFail) onFail();
+            retry();
+          });
+        }
+      };
+
+      /* startVideo() acima cobre a recusa por falta de dados: ele espera o
+         canplay e tenta de novo. O que faltava era a recusa por política —
+         iOS em modo de baixo consumo, Safari com "reprodução automática:
+         nunca" e o navegador interno do Instagram (de onde vem o anúncio)
+         recusam mesmo com o vídeo mudo e com o arquivo inteiro na mão. Aí
+         nenhum canplay novo chega e o vídeo fica parado pra sempre. Nesses
+         casos só um gesto da pessoa autoriza: cada recusa entra numa fila que
+         volta a tentar no primeiro toque/clique/tecla e quando a aba volta
+         para a frente.
+         Os depoimentos seguem no startVideo por causa do botão de som: aqui o
+         muted é forçado, o que apagaria o áudio que a pessoa pediu. */
       var filaDeGesto = [];
 
       var destravarVideos = function () {
@@ -4992,13 +5059,11 @@
 
       var tocarVideo = function (video, aoFalhar, aoConseguir) {
         if (!video) return;
-        if (!video.getAttribute('src') && !video.querySelector('source')) return;
         /* A propriedade, e não só o atributo: o Safari só aceita autoplay
            quando muted está marcado no objeto na hora do play(). */
         video.muted = true;
         video.playsInline = true;
-        /* preload="none" deixa o elemento em NETWORK_EMPTY; sem um load()
-           explícito o Safari não busca nada e o play() morre na largada. */
+        warmVideo(video);
         if (video.readyState === 0) { try { video.load(); } catch (e) { } }
         var p;
         try { p = video.play(); } catch (e) { p = null; }
@@ -5014,49 +5079,42 @@
         }
       };
 
-      /* ── Vídeo do hero ────────────────────────────────────
-         É a primeira coisa que o visitante vê. O autoplay declarativo do Chrome
-         só começa quando o arquivo inteiro dá pra tocar sem parar
-         (canplaythrough) — num 4G isso leva mais de dez segundos, e até lá o
-         hero parece uma foto. O play() explícito já no primeiro quadro
-         (canplay) corta essa espera; quando mesmo assim for recusado, o botão
-         aparece por cima do poster. */
+      /* O hero não tem selo de play nem botão: ele tem que sair rodando, e um
+         botão por cima já é o aviso de que não saiu. Se o browser recusar, o
+         poster é o quadro 0 do próprio vídeo — fica uma cena real de treino
+         parada, não um player quebrado — e qualquer toque na página destrava
+         pela fila de gesto, sem precisar acertar um alvo. */
       var heroVideo = document.querySelector('.hero__video');
-      var heroVisual = heroVideo && heroVideo.closest('.hero__visual');
-      var heroPlay = document.getElementById('heroPlay');
 
       if (heroVideo) {
-        var heroBloqueado = function () {
-          if (heroVisual) heroVisual.classList.add('is-blocked');
-        };
-        var heroTocando = function () {
-          if (heroVisual) heroVisual.classList.remove('is-blocked');
-        };
-        var heroKick = function () { tocarVideo(heroVideo, heroBloqueado, heroTocando); };
+        var heroKick = function () { tocarVideo(heroVideo); };
 
-        heroVideo.addEventListener('playing', heroTocando);
         heroVideo.addEventListener('loadeddata', heroKick);
         heroVideo.addEventListener('canplay', heroKick);
-        heroKick();
-
-        if (heroPlay) {
-          heroPlay.addEventListener('click', function (e) {
-            e.preventDefault();
-            heroKick();
-          });
-        }
+        if (heroVideo.paused) heroKick();
 
         /* O hero seguia decodificando quatro telas abaixo, onde ninguém mais o
            vê. Celular tem limite de vídeos decodificando ao mesmo tempo — com
-           ele preso, os play() dos cards de aula eram recusados em silêncio e o
-           card ficava parado no poster. Fora da tela, ele sai do caminho. */
+           ele preso, os play() dos cards de aula eram recusados em silêncio. */
+        var heroNaTela = true;
         if ('IntersectionObserver' in window) {
           new IntersectionObserver(function (entradas) {
             entradas.forEach(function (entrada) {
+              heroNaTela = entrada.isIntersecting;
               if (entrada.isIntersecting) heroKick(); else heroVideo.pause();
             });
           }, { threshold: 0.15 }).observe(heroVideo);
         }
+
+        /* Trocar de app no iPhone pausa o vídeo, e ao voltar o hero ficava num
+           quadro congelado — a cena que mais passa impressão de site quebrado,
+           porque é a primeira coisa que o lead vê. A fila de gesto não cobre
+           este caso: ali não houve recusa nenhuma pra enfileirar, foi o sistema
+           que pausou. Só chuta com ele na tela — fora dela a pausa é de
+           propósito, pra não prender o decodificador dos cards de aula. */
+        document.addEventListener('visibilitychange', function () {
+          if (!document.hidden && heroNaTela && heroVideo.paused) heroKick();
+        });
       }
 
       /* Vídeos com som (Feedbacks e apresentação do treinador): entram mudos
@@ -5086,11 +5144,7 @@
         syncPaused();
 
         var tryPlay = function () {
-          /* preload="none" significa que nem os metadados vieram: o load() e o
-             que dispara o download antes do play. */
-          if (!fbVideo.dataset.loaded) { fbVideo.load(); fbVideo.dataset.loaded = '1'; }
-          var p = fbVideo.play();
-          if (p && p.catch) p.catch(function () { syncPaused(); });
+          startVideo(fbVideo, syncPaused);
         };
 
         fbSound.addEventListener('click', function () {
@@ -5099,8 +5153,7 @@
           if (turningOn) {
             /* Voltar ao início: com som, o depoimento vale desde a primeira fala. */
             fbVideo.currentTime = 0;
-            var p = fbVideo.play();
-            if (p && p.catch) p.catch(function () { setSound(false); syncPaused(); });
+            startVideo(fbVideo, function () { setSound(false); syncPaused(); });
           }
         });
 
@@ -5132,26 +5185,61 @@
       setupSoundVideo(document.getElementById('expertVideo'), document.getElementById('expertSound'));
 
       /* Os vídeos das aulas ficam a ~4 telas de scroll. Com autoplay o browser
-         baixava os três junto do hero e a página abria disputando banda com
-         eles. Agora só carregam quando entram na tela, e cada recusa de play()
-         entra na fila de gesto em vez de virar card parado no poster. */
+         baixava os três (14MB) junto do hero e a página demorava a abrir pra
+         quem chegava do anúncio. Agora só carregam quando entram na tela —
+         mesma regra que o feedbackVideo e o expertVideo já seguiam. */
       var lessonVideos = document.querySelectorAll('.lesson-card__video');
+
+      /* Antes, um card recusado pelo autoplay ficava num quadro congelado sem
+         nenhum sinal de que ali tem vídeo. Agora o selo de play entra e o
+         toque no card dá play — a mesma saída que o .fb-player já tinha.
+
+         Os 700ms existem porque o vídeo entra com preload="none": ele fica
+         parado uns instantes entre aparecer na tela e o primeiro quadro
+         chegar, e sem a espera o selo piscaria a cada rolagem. Quem foi
+         recusado de verdade continua parado depois disso e aí o selo entra. */
+      Array.prototype.forEach.call(lessonVideos, function (v) {
+        var card = v.closest('.lesson-card--video');
+        if (!card) return;
+
+        var espera;
+        /* Guardada no próprio elemento porque o observador abaixo também
+           precisa chamá-la: quando o play() é recusado, o vídeo nunca sai do
+           estado parado e nenhum evento de mídia dispara — só quem pediu o
+           play sabe que a recusa aconteceu. */
+        var sincronizar = v.__selo = function () {
+          clearTimeout(espera);
+          if (!v.paused) { card.classList.remove('is-paused'); return; }
+          espera = setTimeout(function () {
+            if (v.paused) card.classList.add('is-paused');
+          }, 700);
+        };
+
+        v.addEventListener('play', sincronizar);
+        v.addEventListener('playing', sincronizar);
+        v.addEventListener('pause', sincronizar);
+
+        card.addEventListener('click', function () {
+          if (v.paused) tocarVideo(v, sincronizar, sincronizar); else v.pause();
+        });
+      });
+
       if (lessonVideos.length && 'IntersectionObserver' in window) {
         var lessonIo = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             var v = entry.target;
             if (entry.isIntersecting) {
-              if (!v.dataset.loaded) {
-                v.dataset.loaded = '1';
+              if (!v.dataset.armado) {
+                v.dataset.armado = '1';
                 /* Cada quadro novo é mais uma chance enquanto o card está à
                    vista: o primeiro play() sai com readyState 0 e no celular
                    costuma ser recusado. */
-                var retry = function () { if (v.dataset.visible) tocarVideo(v); };
+                var retry = function () { if (v.dataset.visible) tocarVideo(v, v.__selo, v.__selo); };
                 v.addEventListener('loadeddata', retry);
                 v.addEventListener('canplay', retry);
               }
               v.dataset.visible = '1';
-              tocarVideo(v);
+              tocarVideo(v, v.__selo, v.__selo);
             } else {
               delete v.dataset.visible;
               v.pause();
@@ -5160,12 +5248,25 @@
         }, { threshold: 0.2, rootMargin: '250px 0px' });
         Array.prototype.forEach.call(lessonVideos, function (v) { lessonIo.observe(v); });
       } else {
-        /* Sem IntersectionObserver (browser antigo), carrega e toca todos —
-           melhor gastar banda do que deixar card parado no poster. */
-        Array.prototype.forEach.call(lessonVideos, function (v) {
-          v.setAttribute('preload', 'metadata');
-          tocarVideo(v);
-        });
+        /* Sem IntersectionObserver (browser antigo), volta ao comportamento
+           anterior pra não deixar card com frame preto parado. */
+        Array.prototype.forEach.call(lessonVideos, function (v) { tocarVideo(v, v.__selo, v.__selo); });
+      }
+
+      /* O download só começava quando o card já estava na tela, então o visitante
+         encarava um retângulo escuro enquanto os primeiros megabytes desciam.
+         Este segundo observador larga na frente: uma tela e meia antes, pede o
+         arquivo sem tocar em play. Quando o card chega, já tem o que mostrar. */
+      var lazyVideos = document.querySelectorAll('video[preload="none"]');
+      if (lazyVideos.length && 'IntersectionObserver' in window) {
+        var warmIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            warmIo.unobserve(entry.target);
+            warmVideo(entry.target);
+          });
+        }, { rootMargin: '150% 0px' });
+        Array.prototype.forEach.call(lazyVideos, function (v) { warmIo.observe(v); });
       }
 
       /* Barra de compra fixa do celular. Regras: só entra depois que o hero

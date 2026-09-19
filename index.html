@@ -604,11 +604,75 @@
     .hero__video {
       width: 100%;
       height: 100%;
-      max-height: 520px;
+      max-height: 600px;
       display: block;
       object-fit: cover;
       border-radius: 8px;
     }
+
+    /* O vídeo do hero é vertical e de gente falando: no recorte do desktop o
+       centro cortaria o rosto, então o enquadramento sobe. */
+    .hero__video {
+      object-position: 50% 22%;
+    }
+
+    /* Quadro no formato exato do vídeo (9:16): o vídeo aparece inteiro,
+       sem zoom nem corte nas bordas. 338px de largura dão os 600px de altura. */
+    .hero__visual {
+      width: min(100%, 338px);
+      justify-self: center;
+    }
+
+    .hero__video {
+      aspect-ratio: 9 / 16;
+      height: auto;
+    }
+
+    /* Mesmo papel do .fb-sound, mas dentro do quadro: no hero o vídeo divide a
+       dobra com o título e o botão por fora cairia longe dele. */
+    .hero__sound {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      background: rgba(23, 22, 15, 0.72);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      color: var(--paper);
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .hero__sound:hover {
+      background: var(--ember);
+      border-color: var(--ember);
+    }
+
+    .hero__sound .icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .hero__sound .icon--off,
+    .hero__sound[aria-pressed="true"] .icon--on {
+      display: none;
+    }
+
+    .hero__sound[aria-pressed="true"] .icon--off {
+      display: block;
+    }
+
 
     .hero__tag {
       position: absolute;
@@ -3154,7 +3218,7 @@
 
       .hero__visual {
         order: 2;
-        max-width: 340px;
+        max-width: 380px;
         margin-inline: auto;
         margin-bottom: 0;
       }
@@ -3677,18 +3741,26 @@
           </div>
         </div>
         <div class="hero__visual">
-          <span class="hero__tag"><span class="hero__tag-dot"></span>Cena real de treino</span>
           <!-- O poster é o quadro 0 do próprio vídeo, extraído dele. Não é a
                foto de banco que estava aqui antes: como é o mesmo frame em que
                o vídeo abre, a troca poster→vídeo não se vê. Serve pra nunca
                existir o retângulo escuro enquanto os primeiros megabytes
                descem, que é o que passa sensação de site quebrado. -->
           <video class="hero__video" autoplay loop muted playsinline preload="auto"
-            poster="assets/images/hero-frame.jpg">
-            <source src="assets/images/thirdspacelondon_pindown.io_1785350008.mp4" type="video/mp4">
+            poster="assets/images/hero-treino.jpg">
+            <source src="assets/images/hero-treino.mp4" type="video/mp4">
             Seu navegador não suporta a exibição deste vídeo.
           </video>
-          <div class="hero__caption"><span>Sem atores. Sem estúdio.</span></div>
+          <button type="button" class="hero__sound" id="heroSound" aria-pressed="false"
+            aria-label="Ativar som do vídeo">
+            <svg class="icon icon--on">
+              <use href="#icon-sound-off" />
+            </svg>
+            <svg class="icon icon--off">
+              <use href="#icon-sound-on" />
+            </svg>
+            <span class="hero__sound-label">Ativar som</span>
+          </button>
         </div>
       </div>
       <div class="container splitbar">
@@ -5061,7 +5133,7 @@
         if (!video) return;
         /* A propriedade, e não só o atributo: o Safari só aceita autoplay
            quando muted está marcado no objeto na hora do play(). */
-        video.muted = true;
+        if (!video.__comSom) video.muted = true;
         video.playsInline = true;
         warmVideo(video);
         if (video.readyState === 0) { try { video.load(); } catch (e) { } }
@@ -5115,6 +5187,73 @@
         document.addEventListener('visibilitychange', function () {
           if (!document.hidden && heroNaTela && heroVideo.paused) heroKick();
         });
+
+        /* O vídeo do hero é alguém falando, então ele tenta sair com som. Os
+           navegadores de celular (e o do Instagram, de onde vem o anúncio) só
+           liberam som depois de um toque na página: quando recusam, o vídeo
+           segue mudo e o primeiro toque em qualquer lugar liga o som e volta
+           a fala pro começo. Com som ligado o tocarVideo não remuta — senão o
+           próximo chute (canplay, volta da aba) apagaria o áudio. Ao sair da
+           tela volta a ficar mudo; se a pessoa desligar no botão, nenhum
+           toque religa. */
+        var heroSound = document.getElementById('heroSound');
+        if (heroSound) {
+          var heroSoundLabel = heroSound.querySelector('.hero__sound-label');
+          var setHeroSound = function (on) {
+            heroVideo.__comSom = on;
+            heroVideo.muted = !on;
+            heroSound.setAttribute('aria-pressed', String(on));
+            heroSound.setAttribute('aria-label', on ? 'Desativar som do vídeo' : 'Ativar som do vídeo');
+            if (heroSoundLabel) heroSoundLabel.textContent = on ? 'Desativar som' : 'Ativar som';
+          };
+
+          /* Liga o som e só depois de o navegador aceitar volta pro começo —
+             uma recusa não pode reiniciar o vídeo mudo a cada toque. */
+          var heroComSom = function (doComeco) {
+            setHeroSound(true);
+            var p = heroVideo.play();
+            if (p && p.then) {
+              p.then(function () {
+                if (doComeco) { try { heroVideo.currentTime = 0; } catch (e) { } }
+              }, function () {
+                setHeroSound(false);
+                heroKick();
+              });
+            }
+            return p;
+          };
+
+          var gestosDeSom = ['pointerup', 'touchend', 'keydown', 'click'];
+          var desarmarSomHero = function () {
+            gestosDeSom.forEach(function (ev) { document.removeEventListener(ev, somHeroNoGesto, true); });
+          };
+          var somHeroNoGesto = function (e) {
+            if (!heroNaTela || !heroVideo.muted) return;
+            if (e.target && e.target.closest && e.target.closest('#heroSound')) return;
+            /* Toque que virou rolagem não libera som: nem tenta. */
+            if (navigator.userActivation && !navigator.userActivation.isActive) return;
+            var p = heroComSom(true);
+            if (p && p.then) p.then(desarmarSomHero, function () { }); else desarmarSomHero();
+          };
+          gestosDeSom.forEach(function (ev) { document.addEventListener(ev, somHeroNoGesto, true); });
+
+          heroSound.addEventListener('click', function () {
+            desarmarSomHero();
+            if (heroVideo.muted) heroComSom(true); else setHeroSound(false);
+          });
+
+          if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (entradas) {
+              entradas.forEach(function (entrada) {
+                if (!entrada.isIntersecting && heroVideo.__comSom) setHeroSound(false);
+              });
+            }, { threshold: 0.15 }).observe(heroVideo);
+          }
+
+          /* Primeira tentativa já com som. Desktop que a pessoa já visitou
+             costuma aceitar; o resto cai no mudo e espera o toque. */
+          heroComSom(false);
+        }
       }
 
       /* Vídeos com som (Feedbacks e apresentação do treinador): entram mudos
